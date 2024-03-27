@@ -382,6 +382,15 @@ window.addEventListener("load", async () => {
     let rutPEP6 = document.getElementById("rutPEP6") ? document.getElementById("rutPEP6").value : null;
     let nombreCompletoPEP6 = document.getElementById("nombreCompletoPEP6") ? document.getElementById("nombreCompletoPEP6").value : null;
 
+    let rutPEP7 = document.getElementById("rutPEP7") ? document.getElementById("rutPEP7").value : null;
+    let nombreCompletoPEP7 = document.getElementById("nombreCompletoPEP7") ? document.getElementById("nombreCompletoPEP7").value : null;
+    /*
+        let rutPEP8 = document.getElementById("rutPEP8") ? document.getElementById("rutPEP8").value : null;
+        let nombreCompletoPEP8 = document.getElementById("nombreCompletoPEP8") ? document.getElementById("nombreCompletoPEP8").value : null;
+    
+        let rutPEP9 = document.getElementById("rutPEP9") ? document.getElementById("rutPEP9").value : null;
+        let nombreCompletoPEP9 = document.getElementById("nombreCompletoPEP9") ? document.getElementById("nombreCompletoPEP9").value : null;
+    */
     let PEPagregado = document.querySelector("input[name='PEPagregado']:checked") ? document.querySelector("input[name='PEPagregado']:checked").value : null;
 
     let PEPagregado2 = document.querySelector("input[name='PEPagregado2']:checked") ? document.querySelector("input[name='PEPagregado2']:checked").value : null;
@@ -393,6 +402,15 @@ window.addEventListener("load", async () => {
     let PEPagregado5 = document.querySelector("input[name='PEPagregado5']:checked") ? document.querySelector("input[name='PEPagregado5']:checked").value : null;
 
     let PEPagregado6 = document.querySelector("input[name='PEPagregado6']:checked") ? document.querySelector("input[name='PEPagregado6']:checked").value : null;
+
+    let PEPagregado7 = document.querySelector("input[name='PEPagregado7']:checked") ? document.querySelector("input[name='PEPagregado7']:checked").value : null;
+  
+     /* let PEPagregado8 = document.querySelector("input[name='PEPagregado8']:checked") ? document.querySelector("input[name='PEPagregado8']:checked").value : null;
+  
+      let PEPagregado9 = document.querySelector("input[name='PEPagregado9']:checked") ? document.querySelector("input[name='PEPagregado9']:checked").value : null;
+  */
+
+    let declaroInversionista = document.querySelector("input[name='declaroInversionista']:checked") ? document.querySelector("input[name='declaroInversionista']:checked").value : null;
 
     await generatePDF( //Pasandole los datos al PDF
       razon,
@@ -582,6 +600,15 @@ window.addEventListener("load", async () => {
       rutPEP6,
       nombreCompletoPEP6,
 
+      rutPEP7,
+      nombreCompletoPEP7,
+      /*
+            rutPEP8,
+            nombreCompletoPEP8,
+      
+            rutPEP9,
+            nombreCompletoPEP9, */
+
       PEPagregado,
 
       PEPagregado2,
@@ -593,6 +620,13 @@ window.addEventListener("load", async () => {
       PEPagregado5,
 
       PEPagregado6,
+
+      PEPagregado7,
+      /*
+      PEPagregado8,
+      PEPagregado9, */
+
+      declaroInversionista,
 
     );
   });
@@ -785,12 +819,27 @@ async function generatePDF( //datos que se generaran el el PDF
   rutPEP6,
   nombreCompletoPEP6,
 
+  rutPEP7,
+  nombreCompletoPEP7,
+  /*
+    rutPEP8,
+    nombreCompletoPEP8,
+  
+    rutPEP9,
+    nombreCompletoPEP9, */
+
   PEPagregado,
   PEPagregado2,
   PEPagregado3,
   PEPagregado4,
   PEPagregado5,
   PEPagregado6,
+  PEPagregado7,
+  /*
+  PEPagregado8,
+  PEPagregado9, */
+
+  declaroInversionista,
 
 ) {
 
@@ -1120,7 +1169,7 @@ async function generatePDF( //datos que se generaran el el PDF
 
   pdf.addPage();
 
-  const image6 = await loadImage("(Ficha Persona Jurídica) (1)-imágenes-6.jpg"); //Página 6 PDF
+  const image6 = await loadImage("(Ficha Persona Jurídica) (1)-imágenes-6 copy.jpg"); //Página 6 PDF
 
   pdf.addImage(image6, "PNG", 0, 0, 600, 800);
 
@@ -1143,6 +1192,9 @@ async function generatePDF( //datos que se generaran el el PDF
 
   pdf.text(rutPEP6, 338, 323);
   pdf.text(nombreCompletoPEP6, 165, 323);
+
+  pdf.text(rutPEP7, 338, 347);
+  pdf.text(nombreCompletoPEP7, 165, 347);
 
 
   if (parseInt(PEPagregado) === 0) { //si
@@ -1181,6 +1233,29 @@ async function generatePDF( //datos que se generaran el el PDF
     pdf.circle(569, 316, 4, "FD");
   }
 
+  if (parseInt(PEPagregado7) === 7) { //si
+    pdf.circle(527, 332, 4, "FD");
+  } else {  //no
+    pdf.circle(569, 332, 4, "FD");
+  }
+
+  pdf.addPage();
+
+  const image7 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0007.jpg"); //Página 7 PDF
+
+  pdf.addImage(image7, "PNG", 0, 0, 600, 800);
+
+  pdf.addPage();
+
+  const image8 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0008.jpg"); //Página 7 PDF
+
+  pdf.addImage(image8, "PNG", 0, 0, 600, 800);
+
+  if (parseInt(declaroInversionista ) === 0) { //Ser
+    pdf.circle(100, 100, 4, "FD");
+  } else {  //No ser
+    pdf.circle(200, 200, 4, "FD");
+  }
 
   pdf.save("Formulario Ficha de Cliente Persona Jurídica.pdf"); // nombre con el cual se descarga el PDF
 }

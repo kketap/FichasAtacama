@@ -60,6 +60,42 @@ document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar m�
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto2
+  const botonAlternar = document.getElementById('alternarTexto4');
+  const texto = document.getElementById('texto4');
+  const textoAdicional = texto.querySelector('.texto-adicional4');
+
+  botonAlternar.addEventListener('click', function () {
+    if (texto.classList.contains('texto-completo4')) {
+      texto.classList.remove('texto-completo4');
+      textoAdicional.style.display = 'inline'; // Mostrar texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+    } else {
+      texto.classList.add('texto-completo4');
+      textoAdicional.style.display = 'none'; // Ocultar texto adicional
+      botonAlternar.textContent = 'Mostrar Definición' // Cambiar texto del botón
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto2
+  const botonAlternar = document.getElementById('alternarTexto5');
+  const texto = document.getElementById('texto5');
+  const textoAdicional = texto.querySelector('.texto-adicional5');
+
+  botonAlternar.addEventListener('click', function () {
+    if (texto.classList.contains('texto-completo5')) {
+      texto.classList.remove('texto-completo5');
+      textoAdicional.style.display = 'inline'; // Mostrar texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+    } else {
+      texto.classList.add('texto-completo5');
+      textoAdicional.style.display = 'none'; // Ocultar texto adicional
+      botonAlternar.textContent = 'Mostrar Definición' // Cambiar texto del botón
+    }
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('signature-canvas');
   const contexto = canvas.getContext('2d');
