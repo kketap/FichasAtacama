@@ -265,12 +265,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <input type="text" id="rutPEP${clienteIndex}"  class="form-control">
 
         <div class="input-group-text">
-          <label for="PEPsi">Si</label>
+          <label for="PEPsi" style="padding-right: 5px;">Si</label>
           <input name="PEPagregado${clienteIndex}" id="PEPsi${clienteIndex}" class="form-check-input mt-0" type="radio" value="${clienteIndex}">
         </div>
 
         <div class="input-group-text">
-          <label for="PEPno">No</label>
+          <label for="PEPno" style="padding-right: 5px;">No</label>
           <input name="PEPagregado${clienteIndex}" id="PEPno${clienteIndex}" class="form-check-input mt-0" type="radio" value="${1 + clienteIndex}">
         </div>
       </div>
@@ -285,4 +285,3 @@ document.addEventListener('DOMContentLoaded', function () {
     clientesPEPContainer.appendChild(nuevoClienteContainer);
   });
 });
-

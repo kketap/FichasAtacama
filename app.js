@@ -360,9 +360,12 @@ window.addEventListener("load", async () => {
     let opcionActCliente = document.querySelector("input[name='opcionActCliente']:checked") ? document.querySelector("input[name='opcionActCliente']:checked").value : null;
     let inputActCliente = document.getElementById("inputActCliente") ? document.getElementById("inputActCliente").value : null;
 
+
     let nomCargo = document.getElementById("nomCargo").value;
 
+
     let opcionClientePEP = document.querySelector("input[name='opcionClientePEP']:checked") ? document.querySelector("input[name='opcionClientePEP']:checked").value : null;
+
 
     let rutPEP = document.getElementById("rutPEP") ? document.getElementById("rutPEP").value : null;
     let nombreCompletoPEP = document.getElementById("nombreCompletoPEP") ? document.getElementById("nombreCompletoPEP").value : null;
@@ -384,13 +387,13 @@ window.addEventListener("load", async () => {
 
     let rutPEP7 = document.getElementById("rutPEP7") ? document.getElementById("rutPEP7").value : null;
     let nombreCompletoPEP7 = document.getElementById("nombreCompletoPEP7") ? document.getElementById("nombreCompletoPEP7").value : null;
-    /*
-        let rutPEP8 = document.getElementById("rutPEP8") ? document.getElementById("rutPEP8").value : null;
-        let nombreCompletoPEP8 = document.getElementById("nombreCompletoPEP8") ? document.getElementById("nombreCompletoPEP8").value : null;
-    
-        let rutPEP9 = document.getElementById("rutPEP9") ? document.getElementById("rutPEP9").value : null;
-        let nombreCompletoPEP9 = document.getElementById("nombreCompletoPEP9") ? document.getElementById("nombreCompletoPEP9").value : null;
-    */
+
+    let rutPEP8 = document.getElementById("rutPEP8") ? document.getElementById("rutPEP8").value : null;
+    let nombreCompletoPEP8 = document.getElementById("nombreCompletoPEP8") ? document.getElementById("nombreCompletoPEP8").value : null;
+
+    let rutPEP9 = document.getElementById("rutPEP9") ? document.getElementById("rutPEP9").value : null;
+    let nombreCompletoPEP9 = document.getElementById("nombreCompletoPEP9") ? document.getElementById("nombreCompletoPEP9").value : null;
+
     let PEPagregado = document.querySelector("input[name='PEPagregado']:checked") ? document.querySelector("input[name='PEPagregado']:checked").value : null;
 
     let PEPagregado2 = document.querySelector("input[name='PEPagregado2']:checked") ? document.querySelector("input[name='PEPagregado2']:checked").value : null;
@@ -404,13 +407,25 @@ window.addEventListener("load", async () => {
     let PEPagregado6 = document.querySelector("input[name='PEPagregado6']:checked") ? document.querySelector("input[name='PEPagregado6']:checked").value : null;
 
     let PEPagregado7 = document.querySelector("input[name='PEPagregado7']:checked") ? document.querySelector("input[name='PEPagregado7']:checked").value : null;
-  
-     /* let PEPagregado8 = document.querySelector("input[name='PEPagregado8']:checked") ? document.querySelector("input[name='PEPagregado8']:checked").value : null;
-  
-      let PEPagregado9 = document.querySelector("input[name='PEPagregado9']:checked") ? document.querySelector("input[name='PEPagregado9']:checked").value : null;
-  */
+
+    let PEPagregado8 = document.querySelector("input[name='PEPagregado8']:checked") ? document.querySelector("input[name='PEPagregado8']:checked").value : null;
+
+    let PEPagregado9 = document.querySelector("input[name='PEPagregado9']:checked") ? document.querySelector("input[name='PEPagregado9']:checked").value : null;
+
 
     let declaroInversionista = document.querySelector("input[name='declaroInversionista']:checked") ? document.querySelector("input[name='declaroInversionista']:checked").value : null;
+
+    let AreaPregunta1 = document.querySelector("input[name='AreaPregunta1']:checked") ? document.querySelector("input[name='AreaPregunta1']:checked").value : null;
+
+    let AreaPregunta2 = document.querySelector("input[name='AreaPregunta2']:checked") ? document.querySelector("input[name='AreaPregunta2']:checked").value : null;
+
+    let AreaPregunta3 = document.querySelector("input[name='AreaPregunta3']:checked") ? document.querySelector("input[name='AreaPregunta3']:checked").value : null;
+
+
+    let fechaConstCRS = document.getElementById("fechaConstCRS").value;
+    let nacionalidadCRS = document.getElementById("nacionalidadCRS").value;
+
+    let residenciaFiscalPregunta = document.querySelector("input[name='residenciaFiscalPregunta']:checked") ? document.querySelector("input[name='residenciaFiscalPregunta']:checked").value : null;
 
     await generatePDF( //Pasandole los datos al PDF
       razon,
@@ -602,12 +617,12 @@ window.addEventListener("load", async () => {
 
       rutPEP7,
       nombreCompletoPEP7,
-      /*
-            rutPEP8,
-            nombreCompletoPEP8,
-      
-            rutPEP9,
-            nombreCompletoPEP9, */
+
+      rutPEP8,
+      nombreCompletoPEP8,
+
+      rutPEP9,
+      nombreCompletoPEP9,
 
       PEPagregado,
 
@@ -622,11 +637,23 @@ window.addEventListener("load", async () => {
       PEPagregado6,
 
       PEPagregado7,
-      /*
+
       PEPagregado8,
-      PEPagregado9, */
+
+      PEPagregado9,
+
 
       declaroInversionista,
+
+      AreaPregunta1,
+      AreaPregunta2,
+      AreaPregunta3,
+
+
+      fechaConstCRS,
+      nacionalidadCRS,
+
+      residenciaFiscalPregunta,
 
     );
   });
@@ -821,12 +848,13 @@ async function generatePDF( //datos que se generaran el el PDF
 
   rutPEP7,
   nombreCompletoPEP7,
-  /*
-    rutPEP8,
-    nombreCompletoPEP8,
-  
-    rutPEP9,
-    nombreCompletoPEP9, */
+
+  rutPEP8,
+  nombreCompletoPEP8,
+
+  rutPEP9,
+  nombreCompletoPEP9,
+
 
   PEPagregado,
   PEPagregado2,
@@ -835,11 +863,21 @@ async function generatePDF( //datos que se generaran el el PDF
   PEPagregado5,
   PEPagregado6,
   PEPagregado7,
-  /*
   PEPagregado8,
-  PEPagregado9, */
+  PEPagregado9,
+
 
   declaroInversionista,
+
+  AreaPregunta1,
+  AreaPregunta2,
+  AreaPregunta3,
+
+
+  fechaConstCRS,
+  nacionalidadCRS,
+
+  residenciaFiscalPregunta,
 
 ) {
 
@@ -1178,23 +1216,29 @@ async function generatePDF( //datos que se generaran el el PDF
   pdf.text(rutPEP, 338, 196);
   pdf.text(nombreCompletoPEP, 165, 196);
 
-  pdf.text(rutPEP2, 338, 223);
-  pdf.text(nombreCompletoPEP2, 165, 223);
+  pdf.text(rutPEP2 || "", 338, 223);
+  pdf.text(nombreCompletoPEP2 || "", 165, 223);
 
-  pdf.text(rutPEP3, 338, 250);
-  pdf.text(nombreCompletoPEP3, 165, 250);
+  pdf.text(rutPEP3 || "", 338, 250);
+  pdf.text(nombreCompletoPEP3 || "", 165, 250);
 
-  pdf.text(rutPEP4, 338, 273);
-  pdf.text(nombreCompletoPEP4, 165, 273);
+  pdf.text(rutPEP4 || "", 338, 273);
+  pdf.text(nombreCompletoPEP4 || "", 165, 273);
 
-  pdf.text(rutPEP5, 338, 299);
-  pdf.text(nombreCompletoPEP5, 165, 299);
+  pdf.text(rutPEP5 || "", 338, 299);
+  pdf.text(nombreCompletoPEP5 || "", 165, 299);
 
-  pdf.text(rutPEP6, 338, 323);
-  pdf.text(nombreCompletoPEP6, 165, 323);
+  pdf.text(rutPEP6 || "", 338, 323);
+  pdf.text(nombreCompletoPEP6 || "", 165, 323);
 
-  pdf.text(rutPEP7, 338, 347);
-  pdf.text(nombreCompletoPEP7, 165, 347);
+  pdf.text(rutPEP7 || "", 338, 347);
+  pdf.text(nombreCompletoPEP7 || "", 165, 347);
+
+  pdf.text(rutPEP8 || "", 338, 371);
+  pdf.text(nombreCompletoPEP8 || "", 165, 371);
+
+  pdf.text(rutPEP9 || "", 338, 397);
+  pdf.text(nombreCompletoPEP9 || "", 165, 397);
 
 
   if (parseInt(PEPagregado) === 0) { //si
@@ -1203,40 +1247,52 @@ async function generatePDF( //datos que se generaran el el PDF
     pdf.circle(569, 189, 4, "FD");
   }
 
-  if (parseInt(PEPagregado2) === 2) { //si
+  if (parseInt(PEPagregado2 || "") === 2) { //si
     pdf.circle(527, 215, 4, "FD");
   } else {  //no
     pdf.circle(569, 215, 4, "FD");
   }
 
-  if (parseInt(PEPagregado3) === 3) { //si
+  if (parseInt(PEPagregado3 || "") === 3) { //si
     pdf.circle(527, 240, 4, "FD");
   } else {  //no
     pdf.circle(569, 240, 4, "FD");
   }
 
-  if (parseInt(PEPagregado4) === 4) { //si
+  if (parseInt(PEPagregado4 || "") === 4) { //si
     pdf.circle(527, 265, 4, "FD");
   } else {  //no
     pdf.circle(569, 265, 4, "FD");
   }
 
-  if (parseInt(PEPagregado5) === 5) { //si
+  if (parseInt(PEPagregado5 || "") === 5) { //si
     pdf.circle(527, 290, 4, "FD");
   } else {  //no
     pdf.circle(569, 290, 4, "FD");
   }
 
-  if (parseInt(PEPagregado6) === 6) { //si
+  if (parseInt(PEPagregado6 || "") === 6) { //si
     pdf.circle(527, 316, 4, "FD");
   } else {  //no
     pdf.circle(569, 316, 4, "FD");
   }
 
-  if (parseInt(PEPagregado7) === 7) { //si
-    pdf.circle(527, 332, 4, "FD");
+  if (parseInt(PEPagregado7 || "") === 7) { //si
+    pdf.circle(527, 341, 4, "FD");
   } else {  //no
-    pdf.circle(569, 332, 4, "FD");
+    pdf.circle(569, 341, 4, "FD");
+  }
+
+  if (parseInt(PEPagregado8 || "") === 8) { //si
+    pdf.circle(527, 367, 4, "FD");
+  } else {  //no
+    pdf.circle(569, 367, 4, "FD");
+  }
+
+  if (parseInt(PEPagregado9 || "") === 9) { //si
+    pdf.circle(527, 392, 4, "FD");
+  } else {  //no
+    pdf.circle(569, 392, 4, "FD");
   }
 
   pdf.addPage();
@@ -1247,14 +1303,56 @@ async function generatePDF( //datos que se generaran el el PDF
 
   pdf.addPage();
 
-  const image8 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0008.jpg"); //Página 7 PDF
+  const image8 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0008.jpg"); //Página 8 PDF
 
   pdf.addImage(image8, "PNG", 0, 0, 600, 800);
 
-  if (parseInt(declaroInversionista ) === 0) { //Ser
-    pdf.circle(100, 100, 4, "FD");
+  if (parseInt(declaroInversionista) === 0) { //Ser
+    pdf.circle(82, 98, 4, "FD");
   } else {  //No ser
-    pdf.circle(200, 200, 4, "FD");
+    pdf.circle(145, 98, 4, "FD");
+  }
+
+
+  if (parseInt(AreaPregunta1) === 0) {
+    pdf.circle(464, 364, 7, "FD");
+  } else {
+    pdf.circle(515, 366, 7, "FD");
+  } AreaPregunta2
+
+  if (parseInt(AreaPregunta2) === 2) {
+    pdf.circle(464, 393, 7, "FD");
+  } else {
+    pdf.circle(515, 393, 7, "FD");
+  }
+
+  if (parseInt(AreaPregunta3) === 4) {
+    pdf.circle(464, 430, 7, "FD");
+  } else {
+    pdf.circle(515, 430, 7, "FD");
+  }
+
+
+  pdf.addPage();
+
+  const image9 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0009.jpg"); //Página 9 PDF
+
+  pdf.addImage(image9, "PNG", 0, 0, 600, 800);
+
+  pdf.text(razon, 212, 92);  //(x,y) x = izq/derecha  y = altura
+  pdf.text(rut, 212, 112);
+  pdf.text(fechaConstCRS, 212, 130);
+  pdf.text(nacionalidadCRS, 212, 148);
+
+  const dateCRS = new Date(); //Conseguir la Fecha actual en el formato Chileno
+  const formattedDateCRS = dateCRS.toLocaleDateString("es-CL");
+  pdf.text(formattedDateCRS, 212, 165);
+
+
+  if (parseInt(residenciaFiscalPregunta) === 0) {
+    pdf.circle(245, 195, 4, "FD");
+  } else {
+    pdf.circle(330, 195, 4, "FD");
   }
 
   pdf.save("Formulario Ficha de Cliente Persona Jurídica.pdf"); // nombre con el cual se descarga el PDF

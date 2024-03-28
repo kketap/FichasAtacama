@@ -818,9 +818,10 @@
                             <br>
                             <br>
                             <hr>
-                            <h2>¿Desea agregar clientes PEP?</h2> <!--15-->
+                            <h2>¿Desea agregar clientes PEP? (Máximo 9)</h2> <!--15-->
                             <br>
                             <br>
+
                             <div class="row-md-9">
                                 <button type="button" class="btn btn-outline-primary mb-4"
                                     id="agregarClientesPEP">Agregar clientes PEP
@@ -831,20 +832,20 @@
                                     <input type="text" id="rutPEP" class="form-control">
 
                                     <div class="input-group-text">
-                                        <label for="PEPsi" style="padding-right: 10px;">Si</label>
+                                        <label for="PEPsi" style="padding-right: 5px;">Si</label>
                                         <input name="PEPagregado" id="PEPsi" class="form-check-input mt-1" type="radio"
                                             value="0">
                                     </div>
 
                                     <div class="input-group-text">
-                                        <label for="PEPno" style="padding-right: 10px;">No</label>
+                                        <label for="PEPno" style="padding-right: 5px;">No</label>
                                         <input name="PEPagregado" id="PEPno" class="form-check-input mt-1" type="radio"
                                             value="1">
                                     </div>
                                 </div>
                                 <div id="clientesPEPContainer">
                                 </div>
-                                <br>
+
                             </div>
                             <br>
                             <br>
@@ -930,13 +931,51 @@
                             </div>
                             <br>
                             <br>
+                            <hr>
+                            <h2>Definición de Inversionista Calificado : </h2>
+                            <br>
+                            <br>
+                            <div class="row mb-3">
+                                <p id="texto6" class="texto-completo6">
+                                    El suscrito, en su calidad de Inversionista Calificado de acuerdo con lo establecido
+                                    en el numeral 8° de la Sección II de la Norma de Carácter General
+                                    No. 216 de 2008 impartida por la ...
+                                    <span class="texto-adicional6">
+                                        Comisión para el Mercado Financiero (CMF), bajo juramento viene en declarar su
+                                        intención expresa de participar
+                                        e invertir en el mercado financiero a través de instrumentos con condiciones y
+                                        requisitos específicos, entre los cuales se encuentran a título
+                                        meramente ejemplar y enunciativo; valores de oferta pública de emisores
+                                        nacionales y/o extranjeros, cuotas de fondos de inversión; contratos de
+                                        derivados celebrados en Chile o en el extranjero con el propósito de cubrir el
+                                        riesgo de fluctuaciones de tasas, precios y tipos de cambio de los
+                                        activos administrados, contratos sobre productos agropecuarios que se transen en
+                                        bolsas de productos nacionales, facturas que sean adquiridas en
+                                        centros bursátiles nacionales que cuenten con autorización para transar este
+                                        tipo de activos, notas estructuradas, contrato de préstamo de valores
+                                        y cualesquiera otro instrumento financiero que pudiera desarrollarse en el
+                                        futuro.
+                                        Asimismo, declara expresamente que entiende a cabalidad y acepta todos los
+                                        riesgos propios de los mercados especiales y sus instrumentos y que
+                                        cumplen con los requisitos establecidos en la referida Norma de Carácter General
+                                        para ser considerado como Inversionista Calificado. A mayor
+                                        abundamiento y a fin de precisarlo previamente referido, declara que:
+                                    </span>
+                                </p>
+                                <button type="button" id="alternarTexto6" class="btn btn-outline-primary mb-4">Mostrar
+                                    Definición</button>
+                            </div>
+                            <br>
+                            <br>
                             <br>
                             <hr>
+                            <br>
                             <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
                             <br>
                             <br>
+                            <br>
                             <div class="col-md-9">
-                                <div class="input-group">
+                                <div class="input-group text-center">
                                     <div class="input-group-text">
                                         <label style="padding-right: 10px;">Declaro ser</label>
                                         <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
@@ -947,15 +986,161 @@
                                         <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
                                             value="1" id="declaroInversionNoSer">
                                     </div>
-                                    <input type="text" readonly class="form-control"
-                                        placeholder="Inversionista Calificado">
+                                    <input type="text" readonly class="form-control" value="Inversionista Calificado"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                                 </div>
                             </div>
-                        </div>
+                            <br>
+                            <br>
+                            <br>
+                            <hr>
+                            <br>
+                            <h2>Actividades : </h2> <!--15-->
+                            <br>
+                            <br>
+                            <br>
 
+                            <div class="row-md-9">
+                                <div class="input-group md-6">
+
+                                    <textarea name="AreaPregunta1" id="AreaPregunta1" cols="70" rows="3" readonly>¿Cuenta con inversiones financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero, por un monto igual o superior a 2.000 Unidades de Fomento?
+                                    </textarea>
+
+                                    <div class="input-group-text">
+                                        <label for="pregunta1Si" style="padding-right: 5px;">Si</label>
+                                        <input name="AreaPregunta1" id="pregunta1Si" class="form-check-input mt-1"
+                                            type="radio" value="0">
+                                    </div>
+
+                                    <div class="input-group-text">
+                                        <label for="pregunta1No" style="padding-right: 5px;">No</label>
+                                        <input name="AreaPregunta1" id="pregunta1No" class="form-check-input mt-1"
+                                            type="radio" value="1">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="input-group md-6">
+
+                                        <textarea name="AreaPregunta2" id="AreaPregunta2" cols="70" rows="2" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
+                                        </textarea>
+
+                                        <div class="input-group-text">
+                                            <label for="pregunta2Si" style="padding-right: 5px;">Si</label>
+                                            <input name="AreaPregunta2" id="pregunta2Si" class="form-check-input mt-1"
+                                                type="radio" value="2">
+                                        </div>
+
+                                        <div class="input-group-text">
+                                            <label for="pregunta2No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta2" id="pregunta2No" class="form-check-input mt-1"
+                                                type="radio" value="3">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="input-group md-6">
+
+                                        <textarea name="AreaPregunta3" id="AreaPregunta3" cols="70" rows="3" readonly>¿Ha realizado transacciones en el mercado de valores por un monto individual igual o superior a 1.000 Unidades de Fomento y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos 4 trimestres?
+                                        </textarea>
+
+                                        <div class="input-group-text">
+                                            <label for="pregunta3Si" style="padding-right: 5px;">Si</label>
+                                            <input name="AreaPregunta3" id="pregunta3Si" class="form-check-input mt-1"
+                                                type="radio" value="4">
+                                        </div>
+
+                                        <div class="input-group-text">
+                                            <label for="pregunta3No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta3" id="pregunta3No" class="form-check-input mt-1"
+                                                type="radio" value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <hr>
+                            <br>
+                            <h2>DECLARACIÓN CRS PERSONA JURÍDICA : </h2> <!--15-->
+                            <br>
+                            <br>
+                            <br>
+                            <div class="row-md-6">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Razón Social </th>
+                                            <td><input type="text" id="razon" style="width: 380px;"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">RUT</th>
+                                            <td><input type="text" id="rut" style="width: 380px;"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fecha de Constitución</th>
+                                            <td><input type="date" id="fechaConstCRS" style="width: 380px;"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Nacionalidad, Lugar de Constitución </th>
+                                            <td><input type="text" id="nacionalidadCRS" style="width: 380px;"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fecha de Declaración </th>
+                                            <td>
+                                                <span id="fechaCRS" class="form-control"
+                                                    style="font-weight: bold; font-size: large;"></span>
+
+                                                <script> // Obtener la fecha actual
+                                                    const fechaCRSSpan = document.getElementById("fechaCRS");
+                                                    const dateCRS = new Date();
+                                                    const formattedDateCRS = dateCRS.toLocaleDateString("es-CL");
+                                                    fechaCRSSpan.textContent = formattedDateCRS;
+                                                </script>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="row-md-9">
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="¿Tiene Residencia Fiscal en el extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <label style="padding-right: 10px;">Si</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input mt-1"
+                                            type="radio" value="0" id="residenciaFiscalSi">
+                                    </div>
+                                    <div class="input-group-text">
+                                        <label style="padding-right: 10px;">No</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input mt-1"
+                                            type="radio" value="1" id="residenciaFiscalNo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!--último div-->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                         <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                    </div>
                 </form>
-
             </div>
         </div>
     </div>
