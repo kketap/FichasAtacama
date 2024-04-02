@@ -122,4 +122,24 @@ document.addEventListener('DOMContentLoaded', function () {
   limpiarBtn.addEventListener('click', function () {
     contexto.clearRect(0, 0, canvas.width, canvas.height);
   })
-}) 
+});
+
+
+/*var clic = 1;
+function divAuto(){ 
+   if(clic==1){
+   document.getElementById("respuestaExtranjSi").style.height = "100px";
+   clic = clic + 1;
+   } else{
+    document.getElementById("respuestaExtranjSi").style.height = "0px";      
+    clic = 1;
+   }   
+}; */
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("accionistasBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    document.getElementById("accionistas").style.display = "block";
+  });
+});
+

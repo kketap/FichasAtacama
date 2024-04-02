@@ -321,7 +321,7 @@ window.addEventListener("load", async () => {
       : null;
 
 
-    let opcionMedios = document.querySelector("input[name='opcionMedios']:checked") ? document.querySelector("input[name='opcionMedios']:checked").value : null;
+    let opcionMedios = document.querySelector("input[name='opcionMedios']:checked") ? document.getElementById("opcionMedios").value : null;
     let inputMediosCorreo = document.getElementById("inputMediosCorreo") ? document.getElementById("inputMediosCorreo").value : null;
 
     let opcionRelacionNatuAAM = document.querySelector("input[name='opcionRelacionNatuAAM']:checked") ? document.querySelector("input[name='opcionRelacionNatuAAM']:checked").value : null;
@@ -426,6 +426,8 @@ window.addEventListener("load", async () => {
     let nacionalidadCRS = document.getElementById("nacionalidadCRS").value;
 
     let residenciaFiscalPregunta = document.querySelector("input[name='residenciaFiscalPregunta']:checked") ? document.querySelector("input[name='residenciaFiscalPregunta']:checked").value : null;
+
+    let nomBenef = document.getElementById("nomBenef").value;
 
     await generatePDF( //Pasandole los datos al PDF
       razon,
@@ -654,6 +656,7 @@ window.addEventListener("load", async () => {
       nacionalidadCRS,
 
       residenciaFiscalPregunta,
+      nomBenef,
 
     );
   });
@@ -879,6 +882,8 @@ async function generatePDF( //datos que se generaran el el PDF
 
   residenciaFiscalPregunta,
 
+  nomBenef,
+
 ) {
 
   const image1 = await loadImage("(Ficha Persona Jurídica) (1) (6)_page-0001.jpg"); //Página 1
@@ -1042,7 +1047,7 @@ async function generatePDF( //datos que se generaran el el PDF
   pdf.addImage(image3, "PNG", 0, 0, 600, 800);
 
 
-  if (parseInt(opcionMedios) === 0) {
+  if (parseInt(opcionMedios || "") === 0) {
     pdf.circle(175, 85, 4, "FD");
   } else {
     pdf.circle(175, 102, 4, "FD");
@@ -1354,6 +1359,9 @@ async function generatePDF( //datos que se generaran el el PDF
   } else {
     pdf.circle(330, 195, 4, "FD");
   }
+
+
+  pdf.text(nomBenef, 212, 92);
 
   pdf.save("Formulario Ficha de Cliente Persona Jurídica.pdf"); // nombre con el cual se descarga el PDF
 }
