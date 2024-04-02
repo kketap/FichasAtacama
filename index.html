@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- libreria bootstrap -->
+
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
@@ -28,7 +29,9 @@
                     <nav class="navbar navbar-expand-lg bg-body-tertiary">
                         <ul>
                             <li><a href="index.html">Ficha Cliente Jurídica</a></li>
-                            <li><a href="#accionistas" id="accionistasBtn">Accionistas</a></li>
+                            <li><a href="#accionistas" class="nav-link" id="accionistasBtn">Accionistas</a></li>
+                            <li><a href="#benefFinales" class="nav-link" id="benefFinalesBtn">Beneficiarios Finales</a>
+                            </li>
                         </ul>
                     </nav>
                 </header>
@@ -119,8 +122,9 @@
                             </div>
                             <br>
                             <br>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarGerenteBtn"> Agregar
-                                Otro Accionista
+                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
+                                Agregar
+                                Accionistas
                             </button>
                             <div id="camposAccionista"></div>
                             <br>
@@ -130,28 +134,30 @@
                         <br>
                         <br>
                         <br>
-                        <div id="benfFinales" style="display:none;"> <!-- Arreglo , display , nav-->
+                        <div id="benefFinales" style="display:none;">
                             <hr>
                             <h2>Beneficiarios Finales</h2>
                             <div class="col-md-6">
-                                <label for="razonAccio" class="form-label">Razón Social</label>
-                                <input type="text" name="razonAccio" placeholder="Razón Social" class="form-control"
-                                    id="razonAccio">
+                                <label for="nomBenef" class="form-label">Nombre Completo</label>
+                                <input type="text" name="nomBenef" placeholder="Nombre Completo" class="form-control"
+                                    id="nomBenef">
                             </div>
                             <div class="col-md-6">
-                                <label for="rutAccio" class="form-label">RUT</label>
-                                <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
+                                <label for="rutBenef" class="form-label">RUT</label>
+                                <input type="text" name="rutBenef" placeholder="Razón Social" class="form-control"
+                                    id="rutBenef">
                             </div>
                             <div class="col-md-6">
-                                <label for="rutAccio" class="form-label">RUT</label>
-                                <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
+                                <label for="direccionBenef" class="form-label">Dirección</label>
+                                <input type="text" name="direccionBenef" placeholder="Dirección" class="form-control"
+                                    id="direccionBenef">
                             </div>
                             <br>
                             <br>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarGerenteBtn"> Agregar
-                                Otro Accionista
+                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
+                                Beneficiarios
                             </button>
-                            <div id="camposAccionista"></div>
+                            <div id="camposBenefFinales"></div>
                             <br>
                             <br>
                         </div>
@@ -913,7 +919,6 @@
                             </div>
                             <div id="clientesPEPContainer">
                             </div>
-
                         </div>
                         <br>
                         <br>
@@ -1038,36 +1043,10 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
-                        <br>
-                        <br>
-                        <br>
-                        <div class="col-md-9">
-                            <div class="input-group text-center">
-                                <div class="input-group-text">
-                                    <label style="padding-right: 10px;">Declaro ser</label>
-                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
-                                        value="0" id="declaroInversionSer">
-                                </div>
-                                <div class="input-group-text">
-                                    <label style="padding-right: 10px;">No ser</label>
-                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
-                                        value="1" id="declaroInversionNoSer">
-                                </div>
-                                <input type="text" readonly class="form-control" value="Inversionista Calificado"
-                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <hr>
-                        <br>
                         <h2>Actividades : </h2> <!--15-->
                         <br>
                         <br>
                         <br>
-
                         <div class="row-md-9">
                             <div class="input-group md-6">
 
@@ -1128,7 +1107,31 @@
                             </div>
                             <br>
                             <br>
-
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-9">
+                            <div class="input-group text-center">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Declaro ser</label>
+                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
+                                        value="0" id="declaroInversionSer" disabled>
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No ser</label>
+                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
+                                        value="1" id="declaroInversionNoSer" disabled>
+                                </div>
+                                <input type="text" readonly class="form-control" value="Inversionista Calificado"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
                         </div>
                         <br>
                         <br>

@@ -125,21 +125,89 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/*var clic = 1;
-function divAuto(){ 
-   if(clic==1){
-   document.getElementById("respuestaExtranjSi").style.height = "100px";
-   clic = clic + 1;
-   } else{
-    document.getElementById("respuestaExtranjSi").style.height = "0px";      
-    clic = 1;
-   }   
-}; */
-
 document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () { //hacer aparecer la opcion "Accionistas" a traves de un indice
   document.getElementById("accionistasBtn").addEventListener("click", function (event) {
-    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    event.preventDefault();
     document.getElementById("accionistas").style.display = "block";
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () { //hacer aparecer la opcion "Benefiaciarios Finales " a traves de un indice
+  document.getElementById("benefFinalesBtn").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("benefFinales").style.display = "block";
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () { //en actividades si selecciona "si" en una de estas, se selecciona automatic el "declaro ser"
+  document.getElementById("pregunta1Si").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = true;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("pregunta2Si").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = true;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("pregunta3Si").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = true;
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () { //lo mismo pero con la opción "no"
+  document.getElementById("pregunta1No").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = false;
+      document.getElementById("declaroInversionNoSer").checked = true;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("pregunta2No").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = false;
+      document.getElementById("declaroInversionNoSer").checked = true;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("pregunta3No").addEventListener("change", function () {
+    if (this.checked) {
+      document.getElementById("declaroInversionSer").checked = false;
+      document.getElementById("declaroInversionNoSer").checked = true;
+    }
+  });
+});

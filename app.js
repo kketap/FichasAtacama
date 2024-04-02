@@ -427,7 +427,7 @@ window.addEventListener("load", async () => {
 
     let residenciaFiscalPregunta = document.querySelector("input[name='residenciaFiscalPregunta']:checked") ? document.querySelector("input[name='residenciaFiscalPregunta']:checked").value : null;
 
-    let nomBenef = document.getElementById("nomBenef").value;
+   
 
     await generatePDF( //Pasandole los datos al PDF
       razon,
@@ -656,7 +656,7 @@ window.addEventListener("load", async () => {
       nacionalidadCRS,
 
       residenciaFiscalPregunta,
-      nomBenef,
+     
 
     );
   });
@@ -882,7 +882,7 @@ async function generatePDF( //datos que se generaran el el PDF
 
   residenciaFiscalPregunta,
 
-  nomBenef,
+
 
 ) {
 
@@ -1361,7 +1361,7 @@ async function generatePDF( //datos que se generaran el el PDF
   }
 
 
-  pdf.text(nomBenef, 212, 92);
+
 
   pdf.save("Formulario Ficha de Cliente Persona Jurídica.pdf"); // nombre con el cual se descarga el PDF
 }
