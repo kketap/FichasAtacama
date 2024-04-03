@@ -12,7 +12,7 @@
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-    <!-- libreria para la firma por canvasl -->
+    <!-- libreria para la firma por canvas -->
 
     <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
     <script src="arreglos.js"></script> <!-- funciones de campos-->
@@ -22,83 +22,106 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#infoEmpresa">Información de Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-top: 20px;" class="nav-link active" href="#accionistas"
+                            id="accionistasBtn">Accionistas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#benefFinales" id="benefFinalesBtn">Beneficiarios Finales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#otraInfo">Otra Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-top: 20px;" class="nav-link active" href="#declaracion">Declaraciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
     <div class="container mt-4">
         <div class="col">
             <div class="col-md-8 offset-md-2">
-                <header>
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <ul>
-                            <li><a href="index.html">Ficha Cliente Jurídica</a></li>
-                            <li><a href="#accionistas" class="nav-link" id="accionistasBtn">Accionistas</a></li>
-                            <li><a href="#benefFinales" class="nav-link" id="benefFinalesBtn">Beneficiarios Finales</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
                 <h1 style="text-align: center;">Formulario Ficha de Cliente Persona Jurídica</h1>
                 <hr>
                 <form id="form">
-
                     <div class="row mb-3">
-                        <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
-                        <br>
-                        <br>
-                        <div class="col-md-6"> <!-- Razón Social -->
-                            <label for="razon" class="form-label">Razón Social</label>
-                            <input type="text" oninput="increaseWidth()" name="razon" placeholder="Razón Social"
-                                class="form-control" id="razon">
-                        </div>
+                        <div class="row mb-3" id="infoEmpresa">
+                            <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
+                            <br>
+                            <br>
+                            <div class="col-md-6"> <!-- Razón Social -->
+                                <label for="razon" class="form-label">Razón Social</label>
+                                <input type="text" oninput="increaseWidth()" name="razon" placeholder="Razón Social"
+                                    class="form-control" id="razon">
+                            </div>
 
-                        <div class="col-md-6">
-                            <label for="rut" class="form-label">RUT</label>
-                            <input type="text" name="rut" placeholder="RUT" class="form-control" id="rut">
+                            <div class="col-md-6">
+                                <label for="rut" class="form-label">RUT</label>
+                                <input type="text" name="rut" placeholder="RUT" class="form-control" id="rut">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="nomFantasia" class="form-label">Nombre de Fantasía</label>
-                            <input type="text" name="nomFantasia" placeholder="Nombre de Fantasía" class="form-control"
-                                id="nomFantasia">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomFantasia" class="form-label">Nombre de Fantasía</label>
+                                <input type="text" name="nomFantasia" placeholder="Nombre de Fantasía"
+                                    class="form-control" id="nomFantasia">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="giro" class="form-label">Giro o Actividad</label>
-                            <input type="text" name="giro" placeholder="Giro o Actividad" class="form-control"
-                                id="giro">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="giro" class="form-label">Giro o Actividad</label>
+                                <input type="text" name="giro" placeholder="Giro o Actividad" class="form-control"
+                                    id="giro">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="residencia" class="form-label">País de Residencia</label>
-                            <input type="text" name="residencia" placeholder="País de Residencia" class="form-control"
-                                id="residencia">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="residencia" class="form-label">País de Residencia</label>
+                                <input type="text" name="residencia" placeholder="País de Residencia"
+                                    class="form-control" id="residencia">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" name="direccion" placeholder="Dirección" class="form-control"
-                                id="direccion">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" name="direccion" placeholder="Dirección" class="form-control"
+                                    id="direccion">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="comuna" class="form-label">Comuna</label>
-                            <input type="text" name="comuna" placeholder="Comuna" class="form-control" id="comuna">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="comuna" class="form-label">Comuna</label>
+                                <input type="text" name="comuna" placeholder="Comuna" class="form-control" id="comuna">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="correo" class="form-label">Correo Electrónico</label>
-                            <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control"
-                                id="correo">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="correo" class="form-label">Correo Electrónico</label>
+                                <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control"
+                                    id="correo">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="telefono1" class="form-label">Teléfono 1</label>
-                            <input type="tel" name="telefono1" placeholder="Teléfono 1" class="form-control"
-                                id="telefono1" maxlength="20">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono1" class="form-label">Teléfono 1</label>
+                                <input type="tel" name="telefono1" placeholder="Teléfono 1" class="form-control"
+                                    id="telefono1" maxlength="20">
 
-                        </div>
-                        <div class="col-md-6">
-                            <label for="telefono2" class="form-label">Teléfono 2</label>
-                            <input type="tel" name="telefono2" placeholder="Teléfono 2" class="form-control"
-                                id="telefono2">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono2" class="form-label">Teléfono 2</label>
+                                <input type="tel" name="telefono2" placeholder="Teléfono 2" class="form-control"
+                                    id="telefono2">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
                         </div>
                         <br>
                         <br>
@@ -107,24 +130,35 @@
                         <div id="accionistas" style="display:none;">
                             <hr>
                             <h2>Accionistas</h2>
+                            <br>
                             <div class="col-md-6">
                                 <label for="razonAccio" class="form-label">Razón Social</label>
                                 <input type="text" name="razonAccio" placeholder="Razón Social" class="form-control"
                                     id="razonAccio">
                             </div>
+                            <br>
                             <div class="col-md-6">
                                 <label for="rutAccio" class="form-label">RUT</label>
                                 <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
                             </div>
+                            <br>
                             <div class="col-md-6">
-                                <label for="rutAccio" class="form-label">RUT</label>
-                                <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
+                                <h4>¿Es el accionista beneficiario final?</h4>
+                                <br>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="0"
+                                    id="benefSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="1"
+                                    id="benefNo">
                             </div>
                             <br>
                             <br>
                             <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
                                 Agregar
-                                Accionistas
+                                Accionistas (Máximo 5)
                             </button>
                             <div id="camposAccionista"></div>
                             <br>
@@ -137,25 +171,40 @@
                         <div id="benefFinales" style="display:none;">
                             <hr>
                             <h2>Beneficiarios Finales</h2>
+                            <br>
                             <div class="col-md-6">
                                 <label for="nomBenef" class="form-label">Nombre Completo</label>
                                 <input type="text" name="nomBenef" placeholder="Nombre Completo" class="form-control"
                                     id="nomBenef">
                             </div>
+                            <br>
                             <div class="col-md-6">
                                 <label for="rutBenef" class="form-label">RUT</label>
-                                <input type="text" name="rutBenef" placeholder="Razón Social" class="form-control"
-                                    id="rutBenef">
+                                <input type="text" name="rutBenef" placeholder="RUT" class="form-control" id="rutBenef">
                             </div>
+                            <br>
                             <div class="col-md-6">
                                 <label for="direccionBenef" class="form-label">Dirección</label>
                                 <input type="text" name="direccionBenef" placeholder="Dirección" class="form-control"
                                     id="direccionBenef">
                             </div>
                             <br>
+                            <div class="col-md-6">
+                                <h4>¿Es el beneficiario considerado PEP?</h4>
+                                <br>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="benefPEP" class="form-check-input mt-1" type="radio" value="0"
+                                    id="benefPEPSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="benefPEP" class="form-check-input mt-1" type="radio" value="1"
+                                    id="benefPEPNo">
+                            </div>
+                            <br>
                             <br>
                             <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
-                                Beneficiarios
+                                Beneficiarios (Máximo 5)
                             </button>
                             <div id="camposBenefFinales"></div>
                             <br>
@@ -350,7 +399,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Medios para Instruir</h2>
+                        <h2 id="otraInfo">Medios para Instruir</h2>
                         <br>
                         <h4>Seleccione 1 opción</h4> <!-- 5 -->
                         <br>
@@ -734,55 +783,13 @@
                                         <label for="inputActCliente" class="form-label">Otros : </label>
                                         <input type="text" class="form-control" id="inputActCliente">
                                     </div>
-
                                 </div>
                                 <br>
                             </div>
                         </div>
                         <br>
-                        <br>
-                        <br>
-                        <br>
                         <hr>
-                        <h2>Pie de Firma</h2> <!-- 12 -->
-                        <br>
-                        <br>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="nombreGerente" class="form-label">Nombre completo</label>
-                                <input type="text" class="form-control" id="nombreGerente">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="rutGerente" class="form-label">RUT</label>
-                                <input type="text" class="form-control" id="rutGerente">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nomCargo" class="form-label">Nombre del Cargo</label>
-                                <input type="text" class="form-control" id="nomCargo">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="fecha" class="form-label">Fecha</label>
-                                <span id="fecha" class="form-control"></span>
-
-                                <script> // Obtener la fecha actual
-                                    const fechaSpan = document.getElementById("fecha");
-                                    const date = new Date();
-                                    const formattedDate = date.toLocaleDateString("es-CL");
-                                    fechaSpan.textContent = formattedDate;
-                                </script>
-                            </div>
-                            <span class="d-block pb-2">Firma digital aqui</span>
-                            <div class="signature mb-2" style="width: 100%; height: 200px;">
-                                <canvas id="signature-canvas"
-                                    style="border: 1px dashed red; width: 100%; height: 200px;"></canvas>
-                                <br>
-                            </div>
-                            <button id="limpiarFirma" class="btn btn-outline-primary mb-4" type="button">
-                                Limpiar Firma</button>
-                        </div>
-                        <br>
-                        <hr>
-                        <h2>DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
+                        <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
                         <br>
                         <br>
                         <div class="row mb-3">
@@ -969,7 +976,7 @@
                                     <br>
                                     <br>
                                     4-Declaro que, hasta esta fecha, no he sido condenado (a), ni me encuentro
-                                    en algún proceso judicial por delitos relativos al L avado de Activos,
+                                    en algún proceso judicial por delitos relativos al Lavado de Activos,
                                     Financiamiento del Terrorismo, Delitos de Cohecho, Negociación incompatible,
                                     corrupción entre privados, Apropiación indebida y Administración
                                     Desleal. Además, declaro mi compromiso de mantener tal condición durante
@@ -1206,31 +1213,80 @@
                                 </div>
                             </div>
                             <br>
-                            <br>
                         </div>
-                        <!--
-                            <div id="auto" onclick="divAuto()">
-                                Si eligio la opción "Si", pulse aquí
-                            </div>
-                            <div id="respuestaExtranjSi">
-                                <label for="respuestaSiPais">País: </label>
-                                <input name="respuestaExtranj" type="text">
-                                <br>
-                                <label for="respuestaSiTax">Tax ID:</label>
-                                <input name="respuestaExtranj" type="text">
-                            </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div> -->
-                        <br>
-                        <br>
-                        <br>
-                        <br>
 
-                        <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
-                    </div><!--último div-->
+                        <div class="row-md-6" id="respuestaSi" style="display: none;">
+                            <h4>Si responde "Si", favor responda lo siguiente:</h4>
+                            <div class="row">
+                                <div class="col-md-6 pais-tax1">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscal" class="form-label">País</label>
+                                        <input type="text" name="paisFiscal" placeholder="País" class="form-control"
+                                            id="paisFiscal">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxID" class="form-label">Tax ID</label>
+                                        <input type="text" name="taxID" placeholder="Tax ID" class="form-control"
+                                            id="taxID">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pais-tax2">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscal2" class="form-label">País (2)</label>
+                                        <input type="text" name="paisFiscal2" placeholder="País (2)"
+                                            class="form-control" id="paisFiscal2">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxID2" class="form-label">Tax ID (2)</label>
+                                        <input type="text" name="taxID2" placeholder="Tax ID (2)" class="form-control"
+                                            id="taxID2">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-group text-center preguntaA">
+                                <input type="text" readonly class="form-control"
+                                    value="A-¿La sociedad es una institución financiera?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Si</label>
+                                    <input name="preguntaA" class="form-check-input mt-1" type="radio" value="0"
+                                        id="preguntaASi">
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No</label>
+                                    <input name="preguntaA" class="form-check-input mt-1" type="radio" value="1"
+                                        id="preguntaANo">
+                                </div>
+                            </div>
+                            <div class="input-group text-center preguntaB">
+                                <input type="text" readonly class="form-control"
+                                    value="B-¿Es la sociedad una institución Financiera exenta?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Si</label>
+                                    <input name="preguntaB" class="form-check-input mt-1" type="radio" value="0"
+                                        id="preguntaBSi">
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No</label>
+                                    <input name="preguntaB" class="form-check-input mt-1" type="radio" value="1"
+                                        id="preguntaBNo">
+                                </div>
+                            </div>
+                            <div class="row-md-9">
+                                <div class="input-group" id="DivpqPreguntaB" style="display: none;">
+                                    <span class="input-group-text">Indique el porque esta exenta :</span>
+                                    <input type="text" id="pqPreguntaB" class="form-control">
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                        </div><!--último div-->
                 </form>
             </div>
         </div>

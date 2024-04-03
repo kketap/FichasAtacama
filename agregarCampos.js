@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () { //agregar cta corrie
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { //agregar PEPS
   const agregarClientesPEPBtn = document.getElementById('agregarClientesPEP');
   const clientesPEPContainer = document.getElementById('clientesPEPContainer');
 
@@ -283,5 +283,104 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Agregar el nuevo cliente PEP al contenedor de clientes PEP
     clientesPEPContainer.appendChild(nuevoClienteContainer);
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () { //agregar Acciones
+  const agregarAccionistas = document.getElementById('agregarAccionistasBtn');
+  const camposAccionista = document.getElementById('camposAccionista');
+
+  let clienteIndex = 2; // Índice para identificar los clientes PEP
+
+  agregarAccionistas.addEventListener('click', function () {
+    const nuevoAccionista = `
+    <div class="col-md-6">
+    <label for="razonAccio${clienteIndex}" class="form-label">Razón Social(${clienteIndex})</label>
+    <input type="text" name="razonAccio${clienteIndex}" placeholder="Razón Social(${clienteIndex})" class="form-control"
+        id="razonAccio${clienteIndex}">
+</div>
+<br>
+<div class="col-md-6">
+    <label for="rutAccio${clienteIndex}" class="form-label">RUT(${clienteIndex})</label>
+    <input type="text" name="rutAccio${clienteIndex}" placeholder="RUT(${clienteIndex})" class="form-control" id="rutAccio${clienteIndex}">
+</div>
+<br>
+<div class="col-md-6">
+    <h4>¿Es el accionista (${clienteIndex}) beneficiario final?</h4>
+    <br>
+    <label style="padding-right: 19px;">Si</label>
+    <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="0"
+        id="benefSi${clienteIndex}">
+</div>
+<div class="col-md-6">
+    <label style="padding-right: 10px;">No</label>
+    <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="1"
+        id="benefNo${clienteIndex}">
+</div>
+<br>
+<br>
+        `;
+    const nuevoClienteContainer = document.createElement('div');
+    nuevoClienteContainer.innerHTML = nuevoAccionista;
+
+    // Incrementar el índice para identificar los nuevos clientes PEP
+    clienteIndex++;
+
+    // Agregar el nuevo cliente PEP al contenedor de clientes PEP
+    camposAccionista.appendChild(nuevoClienteContainer);
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () { //agregar Beneficiarios
+  const agregarBenef = document.getElementById('agregarBenef');
+  const camposBenefFinales = document.getElementById('camposBenefFinales');
+
+  let clienteIndex = 2; // Índice para identificar los clientes PEP
+
+  agregarBenef.addEventListener('click', function () {
+    const nuevoBenef = `
+    <div class="col-md-6">
+    <label for="nomBenef${clienteIndex}" class="form-label">Nombre Completo(${clienteIndex})</label>
+    <input type="text" name="nomBenef${clienteIndex}" placeholder="Nombre Completo(${clienteIndex})" class="form-control"
+        id="nomBenef${clienteIndex}">
+</div>
+<br>
+<div class="col-md-6">
+    <label for="rutBenef${clienteIndex}" class="form-label">RUT(${clienteIndex})</label>
+    <input type="text" name="rutBenef${clienteIndex}" placeholder="RUT(${clienteIndex})" class="form-control"
+        id="rutBenef${clienteIndex}">
+</div>
+<br>
+<div class="col-md-6">
+    <label for="direccionBenef${clienteIndex}" class="form-label">Dirección(${clienteIndex})</label>
+    <input type="text" name="direccionBenef${clienteIndex}" placeholder="Dirección(${clienteIndex})" class="form-control"
+        id="direccionBenef${clienteIndex}">
+</div>
+<br>
+<div class="col-md-6">
+    <h4>¿Es el beneficiario (${clienteIndex}) considerado PEP?</h4>
+    <br>
+    <label style="padding-right: 19px;">Si</label>
+    <input name="benefPEP" class="form-check-input mt-1" type="radio" value="0"
+        id="benefPEPSi${clienteIndex}">
+</div>
+<div class="col-md-6">
+    <label style="padding-right: 10px;">No</label>
+    <input name="benefPEP" class="form-check-input mt-1" type="radio" value="1"
+        id="benefPEPNo${clienteIndex}">
+</div>
+<br>
+<br>
+        `;
+    const nuevoClienteContainer = document.createElement('div');
+    nuevoClienteContainer.innerHTML = nuevoBenef;
+
+    // Incrementar el índice para identificar los nuevos clientes PEP
+    clienteIndex++;
+
+    // Agregar el nuevo cliente PEP al contenedor de clientes PEP
+    camposBenefFinales.appendChild(nuevoClienteContainer);
   });
 });

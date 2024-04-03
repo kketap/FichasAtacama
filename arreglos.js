@@ -114,36 +114,7 @@ document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar m√
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const canvas = document.getElementById('signature-canvas');
-  const contexto = canvas.getContext('2d');
-  const limpiarBtn = document.getElementById('limpiarFirma');
 
-  limpiarBtn.addEventListener('click', function () {
-    contexto.clearRect(0, 0, canvas.width, canvas.height);
-  })
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".nav-link");
-
-  links.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        const offsetTop = targetElement.offsetTop;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth"
-        });
-      }
-    });
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function () { //hacer aparecer la opcion "Accionistas" a traves de un indice
   document.getElementById("accionistasBtn").addEventListener("click", function (event) {
@@ -209,5 +180,26 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("declaroInversionSer").checked = false;
       document.getElementById("declaroInversionNoSer").checked = true;
     }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () { //mostrar contenido si se responde "si" y ocultarlo si se elige "no"
+  document.getElementById("residenciaFiscalSi").addEventListener("click", function () {
+    document.getElementById("respuestaSi").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("residenciaFiscalNo").addEventListener("click", function () {
+    document.getElementById("respuestaSi").style.display = "none";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () { //mostrar contenido si se responde "si" y ocultarlo si se elige "no"
+  document.getElementById("preguntaBSi").addEventListener("click", function () {
+    document.getElementById("DivpqPreguntaB").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("preguntaBNo").addEventListener("click", function () {
+    document.getElementById("DivpqPreguntaB").style.display = "none";
   });
 });

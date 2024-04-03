@@ -1,5 +1,21 @@
+body {
+  zoom: 90%;
+}
+
+.nav-item {
+  margin-left: 15px;
+}
+
+.navbar {
+  font-size: 200%;
+}
+
 .razon {
   width: 10ch;
+}
+
+h1 {
+  text-align: end;
 }
 
 .texto-adicional {
@@ -28,6 +44,7 @@
 
 p {
   font-size: 115%;
+  text-align: justify;
 }
 
 .row {
@@ -72,41 +89,8 @@ tr {
   border: solid;
 }
 
-.navbar {
-  font-size:250%;
+.pais-tax1,
+.pais-tax2 {
+  display: inline-block;
+  vertical-align: top;
 }
-
-/*
-#auto{
-	padding: 10px;
-	background: orange;
-	width: 95px;
-	cursor: pointer;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	box-shadow: 0px 0px 1px #000;
-	display: inline-block;
-}
-
-#auto:hover{
-	opacity: .8;
-}
-
-#respuestaExtranjSi{
-	width: 100%;
-	margin: auto;
-	height: 0px;
-	background: #000;
-	box-shadow: 10px 10px 3px #D8D8D8;
-	transition: height .4s;
-  color:white;
-  text-align: center;
-}
-#auto:hover{
-	opacity: .8;
-}
-#auto:hover + #respuestaExtranjSi{
-	height: 100px;
-}
-
-*/
