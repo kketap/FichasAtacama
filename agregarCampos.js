@@ -296,30 +296,38 @@ document.addEventListener('DOMContentLoaded', function () { //agregar Acciones
   agregarAccionistas.addEventListener('click', function () {
     const nuevoAccionista = `
     <div class="col-md-6">
-    <label for="razonAccio${clienteIndex}" class="form-label">Razón Social(${clienteIndex})</label>
-    <input type="text" name="razonAccio${clienteIndex}" placeholder="Razón Social(${clienteIndex})" class="form-control"
-        id="razonAccio${clienteIndex}">
-</div>
-<br>
-<div class="col-md-6">
-    <label for="rutAccio${clienteIndex}" class="form-label">RUT(${clienteIndex})</label>
-    <input type="text" name="rutAccio${clienteIndex}" placeholder="RUT(${clienteIndex})" class="form-control" id="rutAccio${clienteIndex}">
-</div>
-<br>
-<div class="col-md-6">
-    <h4>¿Es el accionista (${clienteIndex}) beneficiario final?</h4>
-    <br>
-    <label style="padding-right: 19px;">Si</label>
-    <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="0"
-        id="benefSi${clienteIndex}">
-</div>
-<div class="col-md-6">
-    <label style="padding-right: 10px;">No</label>
-    <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="1"
-        id="benefNo${clienteIndex}">
-</div>
-<br>
-<br>
+                            <label for="razonAccio${clienteIndex}" class="form-label">Razón Social</label>
+                            <input type="text" name="razonAccio${clienteIndex}" placeholder="Razón Social" class="form-control"
+                                id="razonAccio${clienteIndex}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio${clienteIndex}" class="form-label">RUT</label>
+                            <input type="text" name="rutAccio${clienteIndex}" placeholder="RUT" class="form-control" id="rutAccio${clienteIndex}">
+                        </div>
+                        <br>
+                        <div class="input-group text-center residenciaFiscal">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (${clienteIndex}) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi${clienteIndex}">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo${clienteIndex}">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+            
         `;
     const nuevoClienteContainer = document.createElement('div');
     nuevoClienteContainer.innerHTML = nuevoAccionista;
@@ -342,37 +350,40 @@ document.addEventListener('DOMContentLoaded', function () { //agregar Beneficiar
   agregarBenef.addEventListener('click', function () {
     const nuevoBenef = `
     <div class="col-md-6">
-    <label for="nomBenef${clienteIndex}" class="form-label">Nombre Completo(${clienteIndex})</label>
-    <input type="text" name="nomBenef${clienteIndex}" placeholder="Nombre Completo(${clienteIndex})" class="form-control"
-        id="nomBenef${clienteIndex}">
-</div>
-<br>
-<div class="col-md-6">
-    <label for="rutBenef${clienteIndex}" class="form-label">RUT(${clienteIndex})</label>
-    <input type="text" name="rutBenef${clienteIndex}" placeholder="RUT(${clienteIndex})" class="form-control"
-        id="rutBenef${clienteIndex}">
-</div>
-<br>
-<div class="col-md-6">
-    <label for="direccionBenef${clienteIndex}" class="form-label">Dirección(${clienteIndex})</label>
-    <input type="text" name="direccionBenef${clienteIndex}" placeholder="Dirección(${clienteIndex})" class="form-control"
-        id="direccionBenef${clienteIndex}">
-</div>
-<br>
-<div class="col-md-6">
-    <h4>¿Es el beneficiario (${clienteIndex}) considerado PEP?</h4>
-    <br>
-    <label style="padding-right: 19px;">Si</label>
-    <input name="benefPEP" class="form-check-input mt-1" type="radio" value="0"
-        id="benefPEPSi${clienteIndex}">
-</div>
-<div class="col-md-6">
-    <label style="padding-right: 10px;">No</label>
-    <input name="benefPEP" class="form-check-input mt-1" type="radio" value="1"
-        id="benefPEPNo${clienteIndex}">
-</div>
-<br>
-<br>
+                            <label for="nomBenef${clienteIndex}" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomBenef${clienteIndex}" placeholder="Nombre Completo" class="form-control"
+                                id="nomBenef${clienteIndex}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutBenef${clienteIndex}" class="form-label">RUT</label>
+                            <input type="text" name="rutBenef${clienteIndex}" placeholder="RUT" class="form-control" id="rutBenef${clienteIndex}">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="direccionBenef${clienteIndex}" class="form-label">Dirección</label>
+                            <input type="text" name="direccionBenef${clienteIndex}" placeholder="Dirección" class="form-control"
+                                id="direccionBenef${clienteIndex}">
+                        </div>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el beneficiario final (${clienteIndex}) considerado PEP?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio"
+                                        value="0" id="benefPEPSi${clienteIndex}">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio"
+                                        value="1" id="benefPEPNo${clienteIndex}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
         `;
     const nuevoClienteContainer = document.createElement('div');
     nuevoClienteContainer.innerHTML = nuevoBenef;

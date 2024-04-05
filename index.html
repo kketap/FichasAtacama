@@ -7,6 +7,8 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- libreria bootstrap -->
 
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
@@ -22,29 +24,29 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#infoEmpresa">Información de Empresa</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                            Ficha de Cliente Persona Jurídica
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#infoEmpresa">Información Empresa</a></li>
+                            <li><a class="dropdown-item" href="#accionistas">Accionistas</a></li>
+                            <li><a class="dropdown-item" href="#beneficiariosFinales">Beneficiarios Finales</a></li>
+                            <li><a class="dropdown-item" href="#otraInfo">Otra Información</a></li>
+                            <li><a class="dropdown-item" href="#declaracion">Declaración</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a style="margin-top: 20px;" class="nav-link active" href="#accionistas"
-                            id="accionistasBtn">Accionistas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#benefFinales" id="benefFinalesBtn">Beneficiarios Finales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#otraInfo">Otra Información</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="margin-top: 20px;" class="nav-link active" href="#declaracion">Declaraciones</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                            Ficha de Cliente Persona Normal
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Información</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -54,7 +56,7 @@
     <div class="container mt-4">
         <div class="col">
             <div class="col-md-8 offset-md-2">
-                <h1 style="text-align: center;">Formulario Ficha de Cliente Persona Jurídica</h1>
+                <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Jurídica</h1>
                 <hr>
                 <form id="form">
                     <div class="row mb-3">
@@ -127,90 +129,97 @@
                         <br>
                         <br>
                         <br>
-                        <div id="accionistas" style="display:none;">
-                            <hr>
-                            <h2>Accionistas</h2>
-                            <br>
-                            <div class="col-md-6">
-                                <label for="razonAccio" class="form-label">Razón Social</label>
-                                <input type="text" name="razonAccio" placeholder="Razón Social" class="form-control"
-                                    id="razonAccio">
-                            </div>
-                            <br>
-                            <div class="col-md-6">
-                                <label for="rutAccio" class="form-label">RUT</label>
-                                <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
-                            </div>
-                            <br>
-                            <div class="col-md-6">
-                                <h4>¿Es el accionista beneficiario final?</h4>
-                                <br>
-                                <label style="padding-right: 19px;">Si</label>
-                                <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="0"
-                                    id="benefSi">
-                            </div>
-                            <div class="col-md-6">
-                                <label style="padding-right: 10px;">No</label>
-                                <input name="benefPregunta" class="form-check-input mt-1" type="radio" value="1"
-                                    id="benefNo">
-                            </div>
-                            <br>
-                            <br>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
-                                Agregar
-                                Accionistas (Máximo 5)
-                            </button>
-                            <div id="camposAccionista"></div>
-                            <br>
-                            <br>
+                        <hr>
+                        <h2 id="accionistas">Accionistas</h2>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social</label>
+                            <input type="text" name="razonAccio" placeholder="Razón Social" class="form-control"
+                                id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT</label>
+                            <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
                         </div>
                         <br>
                         <br>
                         <br>
                         <br>
-                        <div id="benefFinales" style="display:none;">
-                            <hr>
-                            <h2>Beneficiarios Finales</h2>
-                            <br>
-                            <div class="col-md-6">
-                                <label for="nomBenef" class="form-label">Nombre Completo</label>
-                                <input type="text" name="nomBenef" placeholder="Nombre Completo" class="form-control"
-                                    id="nomBenef">
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
                             </div>
-                            <br>
-                            <div class="col-md-6">
-                                <label for="rutBenef" class="form-label">RUT</label>
-                                <input type="text" name="rutBenef" placeholder="RUT" class="form-control" id="rutBenef">
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
                             </div>
-                            <br>
-                            <div class="col-md-6">
-                                <label for="direccionBenef" class="form-label">Dirección</label>
-                                <input type="text" name="direccionBenef" placeholder="Dirección" class="form-control"
-                                    id="direccionBenef">
-                            </div>
-                            <br>
-                            <div class="col-md-6">
-                                <h4>¿Es el beneficiario considerado PEP?</h4>
-                                <br>
-                                <label style="padding-right: 19px;">Si</label>
-                                <input name="benefPEP" class="form-check-input mt-1" type="radio" value="0"
-                                    id="benefPEPSi">
-                            </div>
-                            <div class="col-md-6">
-                                <label style="padding-right: 10px;">No</label>
-                                <input name="benefPEP" class="form-check-input mt-1" type="radio" value="1"
-                                    id="benefPEPNo">
-                            </div>
-                            <br>
-                            <br>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
-                                Beneficiarios (Máximo 5)
-                            </button>
-                            <div id="camposBenefFinales"></div>
-                            <br>
-                            <br>
+
+                        </div>
+                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+                        <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
+                            Agregar Accionistas (Máximo 5)
+                        </button>
+                        <div id="camposAccionista"></div>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2 id="beneficiariosFinales">Beneficiarios Finales</h2>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomBenef" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomBenef" placeholder="Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutBenef" class="form-label">RUT</label>
+                            <input type="text" name="rutBenef" placeholder="RUT" class="form-control" id="rutBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección</label>
+                            <input type="text" name="direccionBenef" placeholder="Dirección" class="form-control"
+                                id="direccionBenef">
                         </div>
                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el beneficiario final considerado PEP?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio" value="0"
+                                        id="benefPEPSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio" value="1"
+                                        id="benefPEPNo">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+                        <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
+                            Beneficiarios (Máximo 5) </button>
+                        <div id="camposBenefFinales"></div>
                         <br>
                         <br>
                         <br>
@@ -694,99 +703,34 @@
                         <hr>
                         <h2>Actividades del Cliente</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 11 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="mb-2">
+                            <select class="form-select" name="actClientes" id="opcionActCliente">
+                                <option value="" disabled>Seleccione 1 opción</option>
+                                <option value="0">Casino-Juego</option>
+                                <option value="1">Notaría</option>
+                                <option value="2">Agencia de viajes </option>
+                                <option value="3">Inv. Turísticas </option>
+                                <option value="4">Construcción </option>
+                                <option value="5">Inv. De Empresas </option>
+                                <option value="6">Automotoras </option>
+                                <option value="7">Casas de Cambio </option>
+                                <option value="8">Conservador de Bienes Raíces </option>
+                                <option value="9">Agentes de Aduana </option>
+                                <option value="10">Agentes de Aduana </option>
+                                <option value="11">Otros (completar) </option>
+                            </select>
+                            <br>
                             <div class="col-md-9">
-
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="casinoActCliente" value="0">
-                                    <label for="casinoActCliente" class="form-check-label">Casino-Juego</label>
+                                <div>
+                                    <label for="inputActCliente" class="form-label">Otros : </label>
+                                    <input type="text" class="form-control" id="inputActCliente">
                                 </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="notariaActCliente" value="1">
-                                    <label for="notariaActCliente" class="form-check-label">Notaría</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="agVieajesActCliente" value="2">
-                                    <label for="agVieajesActCliente" class="form-check-label">Agencia de
-                                        viajes</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="invTuristicasActCliente" value="3">
-                                    <label for="invTuristicasActCliente" class="form-check-label">Inv.
-                                        Turísticas</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="construActCliente" value="4">
-                                    <label for="construActCliente" class="form-check-label">Construcción</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="invEmpresasActCliente" value="5">
-                                    <label for="automotorasActCliente" class="form-check-label">Inv. De
-                                        Empresas</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="automotorasActCliente" value="6">
-                                    <label for="automotorasActCliente" class="form-check-label">Automotoras</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="casasCambioActCliente" value="7">
-                                    <label for="casasCambioActCliente" class="form-check-label">Casas de
-                                        Cambio</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="raicesActCliente" value="8">
-                                    <label for="raicesActCliente" class="form-check-label">Conservador de Bienes
-                                        Raíces</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="aduanaActCliente" value="9">
-                                    <label for="aduanaActCliente" class="form-check-label">Agentes de Aduana</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="lucroActCliente" value="10">
-                                    <label for="lucroActCliente" class="form-check-label">Act. Sin Fines de
-                                        Lucro</label>
-                                </div>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" name="opcionActCliente" class="form-check-input"
-                                        id="otrosActCliente" value="11">
-                                    <label for="otrosActCliente" class="form-check-label">Otros (completar)</label>
-                                </div>
-                                <br>
-                                <div class="col-md-9">
-                                    <div>
-                                        <label for="inputActCliente" class="form-label">Otros : </label>
-                                        <input type="text" class="form-control" id="inputActCliente">
-                                    </div>
-                                </div>
-                                <br>
                             </div>
+                            <br>
                         </div>
+
                         <br>
                         <hr>
                         <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
@@ -1057,58 +1001,67 @@
                         <div class="row-md-9">
                             <div class="input-group md-6">
 
-                                <textarea name="AreaPregunta1" id="AreaPregunta1" cols="70" rows="3" readonly>¿Cuenta con inversiones financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero, por un monto igual o superior a 2.000 Unidades de Fomento?
+                                <textarea name="AreaPregunta1" id="AreaPregunta1" cols="60" rows="3" readonly>¿Cuenta con inversiones financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero, por un monto igual o superior a 2.000 Unidades de Fomento?
                                     </textarea>
 
                                 <div class="input-group-text">
-                                    <label for="pregunta1Si" style="padding-right: 5px;">Si</label>
-                                    <input name="AreaPregunta1" id="pregunta1Si" class="form-check-input mt-1"
-                                        type="radio" value="0">
+                                    <div class="form-check form-check-inline">
+                                        <label for="pregunta1Si" style="padding-right: 5px;">Si</label>
+                                        <input name="AreaPregunta1" id="pregunta1Si" class="form-check-input"
+                                            type="radio" value="0">
+                                    </div>
                                 </div>
 
                                 <div class="input-group-text">
-                                    <label for="pregunta1No" style="padding-right: 5px;">No</label>
-                                    <input name="AreaPregunta1" id="pregunta1No" class="form-check-input mt-1"
-                                        type="radio" value="1">
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class="input-group md-6">
-
-                                    <textarea name="AreaPregunta2" id="AreaPregunta2" cols="70" rows="2" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
-                                        </textarea>
-
-                                    <div class="input-group-text">
-                                        <label for="pregunta2Si" style="padding-right: 5px;">Si</label>
-                                        <input name="AreaPregunta2" id="pregunta2Si" class="form-check-input mt-1"
-                                            type="radio" value="2">
-                                    </div>
-
-                                    <div class="input-group-text">
-                                        <label for="pregunta2No" style="padding-right: 5px;">No</label>
-                                        <input name="AreaPregunta2" id="pregunta2No" class="form-check-input mt-1"
-                                            type="radio" value="3">
+                                    <div class="form-check form-check-inline">
+                                        <label for="pregunta1No" style="padding-right: 5px;">No</label>
+                                        <input name="AreaPregunta1" id="pregunta1No" class="form-check-input"
+                                            type="radio" value="1">
                                     </div>
                                 </div>
                                 <br>
                                 <br>
                                 <br>
                                 <div class="input-group md-6">
-
-                                    <textarea name="AreaPregunta3" id="AreaPregunta3" cols="70" rows="3" readonly>¿Ha realizado transacciones en el mercado de valores por un monto individual igual o superior a 1.000 Unidades de Fomento y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos 4 trimestres?
+                                    <textarea name="AreaPregunta2" id="AreaPregunta2" cols="60" rows="3" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
                                         </textarea>
 
                                     <div class="input-group-text">
-                                        <label for="pregunta3Si" style="padding-right: 5px;">Si</label>
-                                        <input name="AreaPregunta3" id="pregunta3Si" class="form-check-input mt-1"
-                                            type="radio" value="4">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta2Si" style="padding-right: 5px;">Si</label>
+                                            <input name="AreaPregunta2" id="pregunta2Si" class="form-check-input"
+                                                type="radio" value="2">
+                                        </div>
                                     </div>
 
                                     <div class="input-group-text">
-                                        <label for="pregunta3No" style="padding-right: 5px;">No</label>
-                                        <input name="AreaPregunta3" id="pregunta3No" class="form-check-input mt-1"
-                                            type="radio" value="5">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta2No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta2" id="pregunta2No" class="form-check-input"
+                                                type="radio" value="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group md-6">
+                                    <textarea name="AreaPregunta3" id="AreaPregunta3" cols="60" rows="4" readonly>¿Ha realizado transacciones en el mercado de valores por un monto individual igual o superior a 1.000 Unidades de Fomento y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos 4 trimestres?
+                                        </textarea>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta3Si" style="padding-right: 10px;">Si</label>
+                                            <input name="AreaPregunta3" id="pregunta3Si" class="form-check-input"
+                                                type="radio" value="4">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta3No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta3" id="pregunta3No" class="form-check-input"
+                                                type="radio" value="5">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1124,17 +1077,21 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-9">
-                            <div class="input-group text-center">
+                        <div class="row-md-9 align-items-center">
+                            <div class="input-group md-6">
                                 <div class="input-group-text">
-                                    <label style="padding-right: 10px;">Declaro ser</label>
-                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
-                                        value="0" id="declaroInversionSer" disabled>
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 5px;">Declaro ser</label>
+                                        <input name="declaroInversionista" class="form-check-input" type="radio"
+                                            value="0" id="declaroInversionSer" disabled>
+                                    </div>
                                 </div>
                                 <div class="input-group-text">
-                                    <label style="padding-right: 10px;">No ser</label>
-                                    <input name="declaroInversionista" class="form-check-input mt-1" type="radio"
-                                        value="1" id="declaroInversionNoSer" disabled>
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 5px;">No ser</label>
+                                        <input name="declaroInversionista" class="form-check-input" type="radio"
+                                            value="1" id="declaroInversionNoSer" disabled>
+                                    </div>
                                 </div>
                                 <input type="text" readonly class="form-control" value="Inversionista Calificado"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
@@ -1197,25 +1154,29 @@
                         <div class="row-md-9">
                             <br>
                             <br>
-                            <div class="input-group text-center residenciaFiscal">
+                            <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
                                     value="¿Tiene Residencia Fiscal en el extranjero?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                                 <div class="input-group-text">
-                                    <label style="padding-right: 10px;">Si</label>
-                                    <input name="residenciaFiscalPregunta" class="form-check-input mt-1" type="radio"
-                                        value="0" id="residenciaFiscalSi">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 10px;">Si</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input" type="radio"
+                                            value="0" id="residenciaFiscalSi">
+                                    </div>
                                 </div>
                                 <div class="input-group-text">
-                                    <label style="padding-right: 10px;">No</label>
-                                    <input name="residenciaFiscalPregunta" class="form-check-input mt-1" type="radio"
-                                        value="1" id="residenciaFiscalNo">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 10px;">No</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input" type="radio"
+                                            value="1" id="residenciaFiscalNo">
+                                    </div>
                                 </div>
                             </div>
                             <br>
                         </div>
 
-                        <div class="row-md-6" id="respuestaSi" style="display: none;">
+                        <div id="respuestaSi" style="display: none;">
                             <h4>Si responde "Si", favor responda lo siguiente:</h4>
                             <div class="row">
                                 <div class="col-md-6 pais-tax1">
@@ -1247,12 +1208,14 @@
                             <br>
                             <div class="input-group text-center preguntaA">
                                 <input type="text" readonly class="form-control"
-                                    value="A-¿La sociedad es una institución financiera?"
+                                    value="A- ¿La sociedad es una institución financiera?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                                 <div class="input-group-text">
+
                                     <label style="padding-right: 10px;">Si</label>
                                     <input name="preguntaA" class="form-check-input mt-1" type="radio" value="0"
                                         id="preguntaASi">
+
                                 </div>
                                 <div class="input-group-text">
                                     <label style="padding-right: 10px;">No</label>
@@ -1262,7 +1225,7 @@
                             </div>
                             <div class="input-group text-center preguntaB">
                                 <input type="text" readonly class="form-control"
-                                    value="B-¿Es la sociedad una institución Financiera exenta?"
+                                    value="B- ¿Es la sociedad una institución Financiera exenta?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                                 <div class="input-group-text">
                                     <label style="padding-right: 10px;">Si</label>
@@ -1275,18 +1238,341 @@
                                         id="preguntaBNo">
                                 </div>
                             </div>
-                            <div class="row-md-9">
-                                <div class="input-group" id="DivpqPreguntaB" style="display: none;">
-                                    <span class="input-group-text">Indique el porque esta exenta :</span>
+                            <div class="col-md-6" id="DivpqPreguntaB" style="display: none;">
+                                <div class="input-group">
+                                    <label class="input-group-text">Indique el porqué está exenta:</label>
                                     <input type="text" id="pqPreguntaB" class="form-control">
+                                </div>
+                            </div>
+                            <div class="input-group text-center preguntaB">
+                                <input type="text" readonly class="form-control"
+                                    value="C- A continuación, debe completar la información de los socios o accionistas."
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                            <hr>
+                            <h2>Socio Uno</h2>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6 pais-tax1">
+                                    <div class="col-md-12">
+                                        <label for="nomCompletoSocio" class="form-label">Nombre Completo</label>
+                                        <input type="text" name="declaracionSocios" placeholder="Nombre Completo"
+                                            class="form-control" id="nomCompletoSocio">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="razonSocio" class="form-label">Razón Social</label>
+                                        <input type="text" name="declaracionSocios" placeholder="Razón Social"
+                                            class="form-control" id="razonSocio">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pais-tax2">
+                                    <div class="col-md-12">
+                                        <label for="nacionalidadSocio" class="form-label">Nacionalidad o País de
+                                            Constitución</label>
+                                        <input type="text" name="declaracionSocios"
+                                            placeholder="Nacionalidad o País de Constitución" class="form-control"
+                                            id="nacionalidadSocio">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="direccionSocio" class="form-label">Dirección</label>
+                                        <input type="text" name="declaracionSocios" placeholder="Dirección"
+                                            class="form-control" id="direccionSocio">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6 pais-tax1">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscalSocio1" class="form-label">País</label>
+                                        <input type="text" name="paisFiscalSocio" placeholder="País"
+                                            class="form-control" id="paisFiscalSocio1">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxIDSocio" class="form-label">Tax ID</label>
+                                        <input type="text" name="taxIDSocio" placeholder="Tax ID" class="form-control"
+                                            id="taxIDSocio">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pais-tax2">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscal2Socio" class="form-label">País (2)</label>
+                                        <input type="text" name="paisFiscal2Socio" placeholder="País (2)"
+                                            class="form-control" id="paisFiscal2Socio">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxID2Socio" class="form-label">Tax ID (2)</label>
+                                        <input type="text" name="taxID2Socio" placeholder="Tax ID (2)"
+                                            class="form-control" id="taxID2Socio">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <h4>¿Tiene Residencia Fiscal en el Extranjero?</h4>
+                                <br>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="residenciaSocioPregunta" class="form-check-input mt-1" type="radio"
+                                    value="0" id="residenciaSocioSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="residenciaSocioPregunta" class="form-check-input mt-1" type="radio"
+                                    value="1" id="residenciaSocioNo">
+                            </div>
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarSocios">
+                                Agregar
+                                Socios (Máximo 7)
+                            </button>
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Declaraciones del Cliente : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row mb-3">
+                            <p id="texto7" class="texto-completo7">
+                                <span class="texto-adicional7">
+                                    1.1. Haber sido informado por la administradora respecto de las normas CRS
+                                    (Common Reporting Standard), norma internacional sobre intercambio
+                                    de información automática de cuentas financieras, cuyo objeto es combatir la
+                                    evasión fiscal internacional, a través de la cooperación entre las
+                                    administraciones tributarias de los distintos Estados participantes de la misma.
+                                    Con fecha 01 de junio de 2011, Chile suscribió CRS, obligándose a
+                                    efectuar el primer intercambio de información a partir del 01 de julio de 2017.
+                                    En este contexto, bajo CRS y otras normas complementarias dictadas
+                                    respecto de ella, AAM S.A. Administradora de Activos (en adelante La
+                                    Administradora) se encuentra obligada a realizar, entre otras, las siguientes
+                                    actuaciones: (i) identificar dentro de su cartera de clientes a aquellos que
+                                    sean residentes fiscales de un país extranjero; (ii) proporcionar a la
+                                    autoridad tributaria del país correspondiente, directamente o a través de otras
+                                    autoridades chilenas o extranjeras, información de identificación
+                                    personal sobre los contribuyentes que mantengan residencia fiscal en cualquier
+                                    país extranjero, así como sobre las cuentas corrientes bancarias y
+                                    demás cuentas financieras, u otros activos de que éstos sean titulares, o de las
+                                    operaciones bancarias o financieras que ejecuten, incluyéndose en
+                                    dicha información toda aquella sometida a secreto o reserva bancaria bajo la
+                                    legislación chilena.
+                                    <br>
+                                    <br>
+                                    1.2. En consideración a lo expuesto, por este acto el Cliente, representado se
+                                    obliga a entregar a la administradora la siguiente información: (i)
+                                    aquella que la administradora le solicite con el objeto de dar cumplimiento a
+                                    las normas CRS, o a la normativa que cualquier otro país haya
+                                    implementado para evitar la evasión tributaria de sus contribuyentes en el
+                                    extranjero; y (ii) toda la información que la administradora le solicite
+                                    con el objeto de cumplir un requerimiento de entrega de información efectuado
+                                    por la autoridad tributaria local o extranjera bajo CRS o respecto
+                                    de cualquier normativa extranjera que tenga por objeto evitar la evasión
+                                    tributaria de sus contribuyentes.
+                                    <br>
+                                    <br>
+                                    1.3. En virtud de lo expuesto, el cliente autoriza expresamente a la
+                                    administradora para entregar al Servicio de Impuestos Internos de Chile o a las
+                                    autoridades tributarias extranjeras correspondientes, ya sea directamente o a
+                                    través de otras autoridades locales o extranjeras, según corresponda
+                                    bajo CRS o bajo cualquier otra norma extranjera que tenga por objeto evitar la
+                                    evasión tributaria de sus contribuyentes, la siguiente información:
+                                    (i) información personal, incluyendo, pero no limitada a, su nombre,
+                                    nacionalidad, dirección, número de identificación tributario; (ii) el número
+                                    de sus cuentas corrientes bancarias u otras cuentas financieras que mantenga en
+                                    la administradora, así como sus respectivos movimientos y
+                                    saldos, incluyéndose toda aquella información sometida a secreto o sujeta a
+                                    reserva bancaria bajo la legislación chilena; y (iii) toda otra
+                                    información requerida por la autoridad tributaria extranjera correspondiente,
+                                    directamente o a través de las autoridades locales o extranjeras
+                                    que correspondan bajo CRS y respecto de cualquier normativa extranjera que tenga
+                                    por objeto evitar la evasión tributaria de sus contribuyentes
+                                    en el extranjero, ya sean éstas de carácter personal, relativa a los activos de
+                                    su propiedad, a sus operaciones bancarias o financieras o de
+                                    cualquier otra naturaleza, comprendiéndose en dicha información incluso toda
+                                    aquella sometida a secreto o reserva bancaria bajo la legislación
+                                    chilena.
+                                    <br>
+                                    <br>
+                                    1.4. Conjuntamente con lo anterior, se obliga a informar a la administradora
+                                    respecto de cualquier cambio de estado o circunstancias que tenga
+                                    lugar en el futuro, en virtud del cual pase a tener residencia fiscal en un país
+                                    extranjero, dentro del plazo de 5 días hábiles contados de la fecha
+                                    en que tenga lugar el referido cambio.
+                                    <br>
+                                    <br>
+                                    1.5. Que, a su leal saber y entender, toda la información y todos los datos
+                                    proporcionados a la administradora contenidos en la presente
+                                    declaración son precisos, correctos y completos.
+                                    <br>
+                                    <br>
+                                    El Decreto Nº 418 de fecha 3 de abril de 2017 del Ministerio de Hacienda de la
+                                    República de Chile que contiene la normativa CRS (Common Reporting
+                                    Standard) obliga, a partir del 1º de Julio del año 2017, a todas y cada una de
+                                    las entidades financieras chilenas a requerir a sus clientes ciertas
+                                    informaciones, con el objetivo de determinar si son personas con residencia
+                                    tributaria en el extranjero, todo ello al alero de la Convención sobre
+                                    Asistencia Administrativa Mutua en Materia Tributaria que suscribieron distintos
+                                    estados, entre éstos, Chile.
+                                    <br>
+                                    <br>
+                                    Se considera que son residentes fiscales de países o jurisdicciones
+                                    participantes, entre otros:
+                                    <br>
+                                    -Los residentes fiscales de países que firmaron el Convenio;
+                                    <br>
+                                    -Las personas o entidades que son consideradas residente para efectos
+                                    tributarios de otra jurisdicción, de acuerdo a la ley aplicable en
+                                    dicha jurisdicción;
+                                    <br>
+                                    -Las entidades (personas jurídicas), en que más del 50% de sus ingresos
+                                    provengan de inversiones y actividades financieras y que tengan
+                                    al menos un accionista o beneficiario real, considerado contribuyente de una
+                                    jurisdicción participante, con participación accionaria mayor
+                                    o igual al 20% en dicha entidad; y,
+                                    <br>
+                                    -Entidades o instituciones financieras que están constituidas en un país o
+                                    jurisdicción no participante, pero que uno de los socios es
+                                    residente fiscal de un país o jurisdicción participante.
+                                </span>
+                            </p>
+                            <button type="button" id="alternarTexto7" class="btn btn-outline-primary mb-4">Mostrar
+                                Definición</button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Antecedentes de La persona jurídica que realiza la presente declaración : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row-md-9">
+                            <br>
+                            <br>
+                            <div class="input-group text-center residenciaFiscal">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene usted Residencia Tributaria fuera de Chile?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Si</label>
+                                    <input name="residenciaTributariaPregunta" class="form-check-input mt-1"
+                                        type="radio" value="0" id="residenciaTributariaSi">
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No</label>
+                                    <input name="residenciaTributariaPregunta" class="form-check-input mt-1"
+                                        type="radio" value="1" id="residenciaTributariaNo">
                                 </div>
                             </div>
                             <br>
                             <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row mb-3">
+                            <p id="texto8" class="texto-completo8">
+                                <span class="texto-adicional8">
+                                    La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga, a
+                                    partir del 1º de Julio del año 2014, a todos y cada una de las
+                                    entidades financieras chilenas a requerir a sus clientes ciertas informaciones, con
+                                    el objetivo de determinar si son o no contribuyentes en Estados
+                                    Unidos de América (US ENTITY).
+                                    <br>
+                                    <br>
+                                    Se entiende por US ENTITY :
+                                    <br>
+                                    a-Toda aquella entidad que tiene residencia tributaria en Estados Unidos.
+                                    <br>
+                                    b-Es controlada en más de un 10%, directa o indirectamente, por personas o entidades
+                                    Estados Unidenses , afectas al impuesto en ese país.
+                                </span>
+                            </p>
+                            <button type="button" id="alternarTexto8" class="btn btn-outline-primary mb-4">Mostrar
+                                Definición</button>
+                        </div>
+                        <div class="row-md-6">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Razón Social </th>
+                                        <td><input type="text" id="razon" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">RUT</th>
+                                        <td><input type="text" id="rut" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fecha de Constitución</th>
+                                        <td><input type="date" id="fechaConstUSS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nacionalidad, Lugar de Constitución </th>
+                                        <td><input type="text" id="nacionalidadUSS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fecha de Declaración </th>
+                                        <td>
+                                            <span id="fechaUSS" class="form-control"
+                                                style="font-weight: bold; font-size: large;"></span>
+
+                                            <script> // Obtener la fecha actual
+                                                const fechaUSS = document.getElementById("fechaUSS");
+                                                const dateUSS = new Date();
+                                                const formattedDateUSS = dateUSS.toLocaleDateString("es-CL");
+                                                fechaUSS.textContent = formattedDateUSS;
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <br>
                             <br>
-                            <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
-                        </div><!--último div-->
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Sección 1 : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row-md-6">
+                            <h4>A. La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva (passive NFFE ante la Ley FATCA)</h4>
+                            <br>
+                            <label style="padding-right: 19px;">Si</label>
+                            <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaSeccion1Si">
+                        </div>
+                        <div class="col-md-6">
+                            <label style="padding-right: 10px;">No</label>
+                            <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaSeccion1No">
+                        </div>
+                        <br>
+                        <br>
+                        <div id="respuestaFATCASi" style="display: none;">
+                            <h4>Si la respuesta es SI, responda las siguientes preguntas:</h4>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                    </div>
                 </form>
             </div>
         </div>

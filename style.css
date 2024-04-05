@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  font-size: 200%;
+  font-size: 180%;
 }
 
 .razon {
@@ -42,6 +42,14 @@ h1 {
   display: none;
 }
 
+.texto-adicional7 {
+  display: none;
+}
+
+.texto-adicional8 {
+  display: none;
+}
+
 p {
   font-size: 115%;
   text-align: justify;
@@ -54,9 +62,12 @@ p {
 textarea {
   background-color: #dddddd;
   color: #3e3232;
-  padding: 1em;
-  border-radius: 10px;
-  border: 2px solid;
+  padding: 0.75em;
+  /* Reducido el padding */
+  border-radius: 5px;
+  /* Reducido el border-radius */
+  border: 1px solid #ccc;
+  /* Reducido el grosor del borde */
   outline: none;
   font-family: "Heebo", sans-serif;
   font-weight: 500;

@@ -6,6 +6,7 @@ function increaseWidth(x) {  //incrementar el tamaño de input a medida que se e
   }
 }
 
+
 document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto
   const botonAlternar = document.getElementById('alternarTexto');
   const texto = document.getElementById('texto');
@@ -114,19 +115,39 @@ document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar m�
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto2
+  const botonAlternar = document.getElementById('alternarTexto7');
+  const texto = document.getElementById('texto7');
+  const textoAdicional = texto.querySelector('.texto-adicional7');
 
-
-document.addEventListener("DOMContentLoaded", function () { //hacer aparecer la opcion "Accionistas" a traves de un indice
-  document.getElementById("accionistasBtn").addEventListener("click", function (event) {
-    event.preventDefault();
-    document.getElementById("accionistas").style.display = "block";
+  botonAlternar.addEventListener('click', function () {
+    if (texto.classList.contains('texto-completo7')) {
+      texto.classList.remove('texto-completo7');
+      textoAdicional.style.display = 'inline'; // Mostrar texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+    } else {
+      texto.classList.add('texto-completo7');
+      textoAdicional.style.display = 'none'; // Ocultar texto adicional
+      botonAlternar.textContent = 'Mostrar Definición' // Cambiar texto del botón
+    }
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () { //hacer aparecer la opcion "Benefiaciarios Finales " a traves de un indice
-  document.getElementById("benefFinalesBtn").addEventListener("click", function (event) {
-    event.preventDefault();
-    document.getElementById("benefFinales").style.display = "block";
+document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto2
+  const botonAlternar = document.getElementById('alternarTexto8');
+  const texto = document.getElementById('texto8');
+  const textoAdicional = texto.querySelector('.texto-adicional8');
+
+  botonAlternar.addEventListener('click', function () {
+    if (texto.classList.contains('texto-completo8')) {
+      texto.classList.remove('texto-completo8');
+      textoAdicional.style.display = 'inline'; // Mostrar texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+    } else {
+      texto.classList.add('texto-completo8');
+      textoAdicional.style.display = 'none'; // Ocultar texto adicional
+      botonAlternar.textContent = 'Mostrar Definición' // Cambiar texto del botón
+    }
   });
 });
 
@@ -201,5 +222,16 @@ document.addEventListener("DOMContentLoaded", function () { //mostrar contenido 
 
   document.getElementById("preguntaBNo").addEventListener("click", function () {
     document.getElementById("DivpqPreguntaB").style.display = "none";
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () { //mostrar contenido si se responde "si" y ocultarlo si se elige "no"
+  document.getElementById("preguntaSeccion1Si").addEventListener("click", function () {
+    document.getElementById("respuestaFATCASi").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("preguntaSeccion1No").addEventListener("click", function () {
+    document.getElementById("respuestaFATCASi").style.display = "none";
   });
 });

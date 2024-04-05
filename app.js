@@ -17,14 +17,11 @@ function loadImage(url) {
   });
 }
 
-let signaturePad = null;
+
 
 window.addEventListener("load", async () => {
 
-  const canvas = document.querySelector("canvas");
-  canvas.height = canvas.offsetHeight;
-  canvas.width = canvas.offsetWidth;
-  signaturePad = new SignaturePad(canvas, {});
+
 
   const form = document.querySelector('#form');
 
@@ -357,11 +354,11 @@ window.addEventListener("load", async () => {
     let opcionPatrimonio = document.querySelector("input[name='opcionPatrimonio']:checked") ? document.querySelector("input[name='opcionPatrimonio']:checked").value : null;
 
 
-    let opcionActCliente = document.querySelector("input[name='opcionActCliente']:checked") ? document.querySelector("input[name='opcionActCliente']:checked").value : null;
+    let opcionActCliente = document.getElementById("opcionActCliente") ? document.getElementById("opcionActCliente").value : null;
     let inputActCliente = document.getElementById("inputActCliente") ? document.getElementById("inputActCliente").value : null;
 
 
-    let nomCargo = document.getElementById("nomCargo").value;
+
 
 
     let opcionClientePEP = document.querySelector("input[name='opcionClientePEP']:checked") ? document.querySelector("input[name='opcionClientePEP']:checked").value : null;
@@ -427,7 +424,7 @@ window.addEventListener("load", async () => {
 
     let residenciaFiscalPregunta = document.querySelector("input[name='residenciaFiscalPregunta']:checked") ? document.querySelector("input[name='residenciaFiscalPregunta']:checked").value : null;
 
-   
+
 
     await generatePDF( //Pasandole los datos al PDF
       razon,
@@ -595,7 +592,7 @@ window.addEventListener("load", async () => {
       opcionActCliente,
       inputActCliente,
 
-      nomCargo,
+
 
       opcionClientePEP,
 
@@ -656,7 +653,7 @@ window.addEventListener("load", async () => {
       nacionalidadCRS,
 
       residenciaFiscalPregunta,
-     
+
 
     );
   });
@@ -827,7 +824,7 @@ async function generatePDF( //datos que se generaran el el PDF
   opcionActCliente,
   inputActCliente,
 
-  nomCargo,
+
 
   opcionClientePEP,
 
@@ -1180,22 +1177,6 @@ async function generatePDF( //datos que se generaran el el PDF
   }
 
   //1
-  const signatureImage = signaturePad.toDataURL();
-
-  pdf.addImage(signatureImage, 'PNG', 50, 410, 300, 60);
-
-  pdf.text(nombreGerente, 120, 340);
-  pdf.text(rutGerente, 120, 360);
-  pdf.text(nomCargo, 120, 378);
-
-  pdf.setFontSize(10);
-  const date2 = new Date(); //Conseguir la Fecha actual en el formato Chileno
-  const formattedDate2 = date2.toLocaleDateString("es-CL");
-  pdf.text(formattedDate, 120, 400);
-
-  const signatureImagen = signaturePad.toDataURL();
-
-  pdf.addImage(signatureImagen, 'PNG', 50, 410, 300, 60);
 
 
   pdf.addPage();
