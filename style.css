@@ -50,6 +50,10 @@ h1 {
   display: none;
 }
 
+.texto-adicional9 {
+  display: none;
+}
+
 p {
   font-size: 115%;
   text-align: justify;

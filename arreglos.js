@@ -151,6 +151,24 @@ document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar m�
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () { //funcion Mostrar más texto2
+  const botonAlternar = document.getElementById('alternarTexto9');
+  const texto = document.getElementById('texto9');
+  const textoAdicional = texto.querySelector('.texto-adicional9');
+
+  botonAlternar.addEventListener('click', function () {
+    if (texto.classList.contains('texto-completo9')) {
+      texto.classList.remove('texto-completo9');
+      textoAdicional.style.display = 'inline'; // Mostrar texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+    } else {
+      texto.classList.add('texto-completo9');
+      textoAdicional.style.display = 'none'; // Ocultar texto adicional
+      botonAlternar.textContent = 'Mostrar Definición' // Cambiar texto del botón
+    }
+  });
+});
+
 
 document.addEventListener("DOMContentLoaded", function () { //en actividades si selecciona "si" en una de estas, se selecciona automatic el "declaro ser"
   document.getElementById("pregunta1Si").addEventListener("change", function () {
@@ -233,5 +251,41 @@ document.addEventListener("DOMContentLoaded", function () { //mostrar contenido 
 
   document.getElementById("preguntaSeccion1No").addEventListener("click", function () {
     document.getElementById("respuestaFATCASi").style.display = "none";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () { //mostrar contenido si se responde "si" y ocultarlo si se elige "no"
+  document.getElementById("sociedadClienteUSSi").addEventListener("click", function () {
+    document.getElementById("respuestaSociedadClienteUSSi").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("sociedadClienteUSNo").addEventListener("click", function () {
+    document.getElementById("respuestaSociedadClienteUSSi").style.display = "none";
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Agregar un event listener al botón o a algún evento que desencadene la acción
+  // Supongamos que tienes un botón con el id "mostrarDatosBtn" que se utilizará para recuperar los datos y mostrarlos
+  document.getElementById('mostrarDatosAccionistas').addEventListener('click', function () {
+    // Obtener los valores ingresados por el usuario
+    const nombreCompleto = document.getElementById('nomCompletoAccio').value;
+    const rut = document.getElementById('rutAccio').value;
+
+    // Crear un nuevo elemento para mostrar los datos recuperados
+    const datosAccionistasRecuperados = document.getElementById('datosAccionistasRecuperados');
+    datosAccionistasRecuperados.innerHTML = ''; // Limpiar cualquier contenido anterior
+
+    // Crear elementos para mostrar los datos
+    const nombreCompletoP = document.createElement('p');
+    nombreCompletoP.textContent = 'Nombre Completo: ' + nombreCompleto;
+
+    const rutP = document.createElement('p');
+    rutP.textContent = 'RUT: ' + rut;
+
+    // Agregar los elementos al div de datos recuperados
+    datosAccionistasRecuperados.appendChild(nombreCompletoP);
+    datosAccionistasRecuperados.appendChild(rutP);
   });
 });

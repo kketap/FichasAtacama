@@ -69,24 +69,26 @@
                                 <input type="text" oninput="increaseWidth()" name="razon" placeholder="Razón Social"
                                     class="form-control" id="razon">
                             </div>
-
                             <div class="col-md-6">
                                 <label for="rut" class="form-label">RUT</label>
                                 <input type="text" name="rut" placeholder="RUT" class="form-control" id="rut">
-
                             </div>
+                            <br>
+                            <br>
+                            <br>
                             <div class="col-md-6">
                                 <label for="nomFantasia" class="form-label">Nombre de Fantasía</label>
                                 <input type="text" name="nomFantasia" placeholder="Nombre de Fantasía"
                                     class="form-control" id="nomFantasia">
-
                             </div>
                             <div class="col-md-6">
                                 <label for="giro" class="form-label">Giro o Actividad</label>
                                 <input type="text" name="giro" placeholder="Giro o Actividad" class="form-control"
                                     id="giro">
-
                             </div>
+                            <br>
+                            <br>
+                            <br>
                             <div class="col-md-6">
                                 <label for="residencia" class="form-label">País de Residencia</label>
                                 <input type="text" name="residencia" placeholder="País de Residencia"
@@ -97,8 +99,10 @@
                                 <label for="direccion" class="form-label">Dirección</label>
                                 <input type="text" name="direccion" placeholder="Dirección" class="form-control"
                                     id="direccion">
-
                             </div>
+                            <br>
+                            <br>
+                            <br>
                             <div class="col-md-6">
                                 <label for="comuna" class="form-label">Comuna</label>
                                 <input type="text" name="comuna" placeholder="Comuna" class="form-control" id="comuna">
@@ -108,8 +112,10 @@
                                 <label for="correo" class="form-label">Correo Electrónico</label>
                                 <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control"
                                     id="correo">
-
                             </div>
+                            <br>
+                            <br>
+                            <br>
                             <div class="col-md-6">
                                 <label for="telefono1" class="form-label">Teléfono 1</label>
                                 <input type="tel" name="telefono1" placeholder="Teléfono 1" class="form-control"
@@ -139,11 +145,39 @@
                                 id="razonAccio">
                         </div>
                         <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomCompletoAccio" placeholder="Nombre Completo"
+                                class="form-control" id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
                             <label for="rutAccio" class="form-label">RUT</label>
                             <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutAccio">
                         </div>
                         <br>
                         <br>
+                        <br>
+                        <br>
+                        <h4 style="text-decoration: underline;">Se entiende como Beneficiario Final : </h4>
+                        <br>
+                        <p id="texto9" class="texto-completo9">
+                            <span class="texto-adicional9">
+                                Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que finalmente
+                                posee, directa o indirectamente, a través
+                                de sociedades u otros mecanismos, una participación igual o mayor al 10% del capital o
+                                de los derechos a voto de una persona
+                                jurídica determinada. Asimismo, se entenderá como Beneficiario Final a la(s) persona(s)
+                                natural(es) que, sin perjuicio de poseer
+                                directa o indirectamente una participación inferior al 10% del capital o de los derechos
+                                a voto de una persona jurídica, a través
+                                de sociedades u otros mecanismos, ejerce el control efectivo de la persona o estructura
+                                jurídica.
+                            </span>
+                        </p>
+                        <button type="button" id="alternarTexto9" class="btn btn-outline-primary mb-4">Mostrar
+                            Definición de Beneficiario Final</button>
                         <br>
                         <br>
                         <div class="input-group text-center">
@@ -165,7 +199,6 @@
                                         value="1" id="accionistaBenefNo">
                                 </div>
                             </div>
-
                         </div>
                         <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
@@ -187,36 +220,22 @@
                             <label for="rutBenef" class="form-label">RUT</label>
                             <input type="text" name="rutBenef" placeholder="RUT" class="form-control" id="rutBenef">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="direccionBenef" class="form-label">Dirección</label>
                             <input type="text" name="direccionBenef" placeholder="Dirección" class="form-control"
                                 id="direccionBenef">
                         </div>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="input-group text-center">
-                            <input type="text" readonly class="form-control"
-                                value="¿Es el beneficiario final considerado PEP?"
-                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
-                            <div class="input-group-text">
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
-                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio" value="0"
-                                        id="benefPEPSi">
-                                </div>
-                            </div>
-                            <div class="input-group-text">
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
-                                    <input name="preguntaBenefPEP" class="form-check-input" type="radio" value="1"
-                                        id="benefPEPNo">
-                                </div>
-                            </div>
-
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación</label>
+                            <input type="number" name="porcentajeBenef" placeholder="%" class="form-control"
+                                id="porcentajeBenef" value="10" min="10" max="100">
                         </div>
-                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+                        <div class="mb-4"></div>
+                        <!-- Espacio entre el último div y el botón  min="10" max="100" minlength="2" maxlength="3"-->
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
                             Beneficiarios (Máximo 5) </button>
                         <div id="camposBenefFinales"></div>
@@ -224,6 +243,7 @@
                         <br>
                         <br>
                         <hr>
+                        <br>
                         <h2>Identificación del Gerente o Representante Legal</h2> <!-- 2 -->
                         <br>
                         <br>
@@ -236,17 +256,22 @@
                             <label for="rutGerente" class="form-label">RUT</label>
                             <input type="text" name="rutGerente" placeholder="RUT" class="form-control" id="rutGerente">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="nacionalidadGerente" class="form-label">Nacionalidad</label>
                             <input type="text" name="nacionalidadGerente" placeholder="Nacionalidad"
                                 class="form-control" id="nacionalidadGerente">
                         </div>
-
                         <div class="col-md-6">
                             <label for="correoGerente" class="form-label">Correo Electrónico</label>
                             <input type="email" name="correoGerente" placeholder="Correo Electrónico"
                                 class="form-control" id="correoGerente">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="direccionGerente" class="form-label">Dirección</label>
                             <input type="text" name="direccionGerente" placeholder="Dirección" class="form-control"
@@ -257,6 +282,9 @@
                             <input type="text" name="comunaGerente" placeholder="Comuna" class="form-control"
                                 id="comunaGerente">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="estadoCivilGerente" class="form-label">Estado Civil</label>
                             <input type="text" name="estadoCivilGerente" placeholder="Estado Civil" class="form-control"
@@ -267,6 +295,9 @@
                             <input type="tel" name="telefono1Gerente" placeholder="Teléfono 1" class="form-control"
                                 id="telefono1Gerente">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="telefono2Gerente" class="form-label">Telefóno 2</label>
                             <input type="tel" name="telefono2Gerente" placeholder="Telefóno 2" class="form-control"
@@ -298,6 +329,9 @@
                             <input type="text" name="rutApoderado" placeholder="RUT" class="form-control"
                                 id="rutApoderado">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="nacionalidadApoderado" class="form-label">Nacionalidad</label>
                             <input type="text" name="nacionalidadApoderado" placeholder="Nacionalidad"
@@ -308,6 +342,9 @@
                             <input type="email" name="correoApoderado" placeholder="Correo Electrónico"
                                 class="form-control" id="correoApoderado">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="direccionApoderado" class="form-label">Dirección</label>
                             <input type="text" name="direccionApoderado" placeholder="Dirección" class="form-control"
@@ -318,6 +355,9 @@
                             <input type="text" name="comunaApoderado" placeholder="Comuna" class="form-control"
                                 id="comunaApoderado">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="estadoCivilApoderado" class="form-label">Estado Civil</label>
                             <input type="text" name="estadoCivilApoderado" placeholder="Estado Civil"
@@ -328,6 +368,9 @@
                             <input type="tel" name="telefono1Apoderado" placeholder="Telefóno 1" class="form-control"
                                 id="telefono1Apoderado">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="telefono2Apoderado" class="form-label">Telefóno 2</label>
                             <input type="tel" name="telefono2Apoderado" placeholder="Telefóno 2" class="form-control"
@@ -359,6 +402,9 @@
                             <label for="rutAAM" class="form-label">RUT</label>
                             <input type="text" name="rutAAM" placeholder="RUT" class="form-control" id="rutAAM">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="nacionalidadAAM" class="form-label">Nacionalidad</label>
                             <input type="text" name="nacionalidadAAM" placeholder="Nacionalidad" class="form-control"
@@ -369,6 +415,9 @@
                             <input type="email" name="correoAAM" placeholder="Correo Electrónico" class="form-control"
                                 id="correoAAM">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="direccionAAM" class="form-label">Dirección</label>
                             <input type="text" name="direccionAAM" placeholder="Dirección" class="form-control"
@@ -379,6 +428,9 @@
                             <input type="text" name="comunaAAM" placeholder="Comuna" class="form-control"
                                 id="comunaAAM">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="estadoCivilAAM" class="form-label">Estado Civil</label>
                             <input type="text" name="estadoCivilAAM" placeholder="Estado Civil" class="form-control"
@@ -389,6 +441,9 @@
                             <input type="tel" name="telefono1AAM" placeholder="Telefóno 1" class="form-control"
                                 id="telefono1AAM">
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6">
                             <label for="telefono2AAM" class="form-label">Telefóno 2</label>
                             <input type="tel" name="telefono2AAM" placeholder="Telefóno 2" class="form-control"
@@ -607,6 +662,63 @@
                         <br>
                         <br>
                         <br>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
+                        <br>
+                        <br>
+                        <div class="row mb-3">
+                            <p id="texto4" class="texto-completo4">
+                                1-Todo abono efectuado a AAM S.A. Administradora de Activos será mediante
+                                transferencia electrónica o
+                                <span class="texto-adicional4">
+                                    deposito con cheque de bancos según
+                                    lo establecido en las políticas de aceptación de fondos, esto con el fin de
+                                    no aceptar dineros en efectivo que provengan de actividades ilícitas.
+                                    <br>
+                                    <br>
+                                    2-Los activos o dineros que han sido o serán abonados o depositados a
+                                    cualquier cuenta no provienen, directa ni indirectamente, de actividades
+                                    ilícitas, y dicho abono o depósito no constituye uno de los delitos
+                                    contemplados en el artículo 27 de la Ley 19.913, o la que la sustituya o
+                                    reemplace.
+                                    <br>
+                                    <br>
+                                    3-Los fondos no han sido y no serán abonados o depositados, directa o
+                                    indirectamente, por o a través de las siguientes personas (las “personas
+                                    prohibidas”),jurisdicciones y/o países:
+                                    <br>
+                                    a. Terroristas u organizaciones terroristas, incluyendo aquellas personas o
+                                    entidades indicadas en la lista en idioma inglés denominada “List
+                                    of Specially Designated Nationals and Bloqued Persons” emitida por la OFAC
+                                    del Departamento del Tesoro del Gobierno de los Estados
+                                    Unidos (“Treasury Department Office Of Foreign Assets Control”).
+                                    <br>
+                                    b. Banco Pantalla. (Banco sin presencia física.)
+                                    <br>
+                                    c. Persona natural listada en alguna resolución del Consejo de Seguridad de
+                                    las Naciones Unidas.
+                                    <br>
+                                    d. Países o jurisdicciones que se encuentran bajo proceso de seguimiento del
+                                    Grupo de Acción Financiera Internacional (GAFI).
+                                    <br>
+                                    <br>
+                                    4-Declaro que, hasta esta fecha, no he sido condenado (a), ni me encuentro
+                                    en algún proceso judicial por delitos relativos al Lavado de Activos,
+                                    Financiamiento del Terrorismo, Delitos de Cohecho, Negociación incompatible,
+                                    corrupción entre privados, Apropiación indebida y Administración
+                                    Desleal. Además, declaro mi compromiso de mantener tal condición durante
+                                    toda la vigencia de la relación comercial con AAM S.A. Administradora
+                                    de Activos, obligándonos a no incurrir o desarrollar, en caso alguno, ningún
+                                    tipo de actividad o conducta asociada a dichos delitos.
+                                </span>
+                            </p>
+                            <button type="button" id="alternarTexto4" class="btn btn-outline-primary mb-4">Mostrar
+                                Definición</button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                         <hr>
                         <h2>Nivel de Renta</h2>
@@ -739,7 +851,7 @@
                         <div class="row mb-3">
                             <p id="texto" class="texto-completo">
                                 Se define como Personas Expuestas Políticamente (PEP) a los chilenos o extranjeros
-                                que desempeñan o hayan desempeñado funciones públicas destacadas en un país ... ,
+                                que desempeñan o hayan desempeñado funciones públicas destacadas en un país,
                                 <span class="texto-adicional">
                                     hasta a lo menos un año de finalizado el ejercicio
                                     de esta. Se incluyen a sus cónyuges, sus parientes hasta el segundo grado de
@@ -752,7 +864,7 @@
                                 Definición</button>
                             <br>
                             <hr>
-                            <h2>Se entiende como Sociedades o Entidades Expuestas Políticamente (PEP): ...</h2>
+                            <h2>Se entiende como Sociedades o Entidades Expuestas Políticamente (PEP):</h2>
                             <p id="texto2" class="texto-completo2">
                                 <span class="texto-adicional2">
                                     - Las que hayan sido creadas por personas que ostentan la calidad de PEP, y que
@@ -777,7 +889,6 @@
                             <h2>Funciones y Personas que son consideradas como PEP:</h2>
                             <p id="texto3" class="texto-completo3">
                                 <span class="texto-adicional3">
-
                                     Funciones públicas: Comprenden en esta categoría a jefes de Estado o de un
                                     Gobierno, políticos de alta jerarquía, funcionarios gubernamentales, judiciales
                                     o militares de alta jerarquía y altos ejecutivos de empresas estatales.
@@ -828,17 +939,23 @@
                         <h2>¿Es usted cliente PEP?</h2> <!--14-->
                         <br>
                         <br>
+                        <br>
                         <div class="col-md-9">
                             <div class="form-check form-check-inline">
-                                <input type="radio" name="opcionClientePEP" class="form-check-input" id="clientePEPsi"
-                                    value="0">
-                                <label for="clientePEPsi" class="form-check-label">Si</label>
+                                <input type="radio" name="opcionClientePEP" class="form-check-input mt-2"
+                                    id="clientePEPsi" value="0">
+                                <label style="font-weight:bolder; text-decoration: underline; font-size: larger;"
+                                    for="clientePEPsi" class="form-check-label">Si</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="radio" name="opcionClientePEP" class="form-check-input" id="clientePEPno"
-                                    value="1">
-                                <label for="clientePEPno" class="form-check-label">No</label>
+                                <input type="radio" name="opcionClientePEP" class="form-check-input mt-2"
+                                    id="clientePEPno" value="1">
+                                <label style="font-weight:bolder; text-decoration: underline; font-size: larger;"
+                                    for="clientePEPno" class="form-check-label">No</label>
                             </div>
+                            <br>
+                            <br>
+                            <br>
                         </div>
                         <br>
                         <br>
@@ -846,16 +963,16 @@
                         <h2>¿Desea agregar clientes PEP? (Máximo 9)</h2> <!--15-->
                         <br>
                         <br>
-
                         <div class="row-md-9">
+
+                            <button type="button" id="mostrarDatosAccionistas">recuperar</button>
                             <button type="button" class="btn btn-outline-primary mb-4" id="agregarClientesPEP">Agregar
                                 clientes PEP
                             </button>
                             <div class="input-group md-6">
-                                <span class="input-group-text">Nombre Completo y RUT</span>
-                                <input type="text" id="nombreCompletoPEP" class="form-control">
-                                <input type="text" id="rutPEP" class="form-control">
-
+                                <div id="datosAccionistasRecuperados">
+                                </div>
+                                
                                 <div class="input-group-text">
                                     <label for="PEPsi" style="padding-right: 5px;">Si</label>
                                     <input name="PEPagregado" id="PEPsi" class="form-check-input mt-1" type="radio"
@@ -870,67 +987,7 @@
                             </div>
                             <div id="clientesPEPContainer">
                             </div>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <hr>
-                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
-                        <br>
-                        <br>
-                        <div class="row mb-3">
-
-                            <p id="texto4" class="texto-completo4">
-                                1-Todo abono efectuado a AAM S.A. Administradora de Activos será mediante
-                                transferencia electrónica o ..
-                                ,
-                                <span class="texto-adicional4">
-                                    deposito con cheque de bancos según
-                                    lo establecido en las políticas de aceptación de fondos, esto con el fin de
-                                    no aceptar dineros en efectivo que provengan de actividades ilícitas.
-                                    <br>
-                                    <br>
-                                    2-Los activos o dineros que han sido o serán abonados o depositados a
-                                    cualquier cuenta no provienen, directa ni indirectamente, de actividades
-                                    ilícitas, y dicho abono o depósito no constituye uno de los delitos
-                                    contemplados en el artículo 27 de la Ley 19.913, o la que la sustituya o
-                                    reemplace.
-                                    <br>
-                                    <br>
-                                    3-Los fondos no han sido y no serán abonados o depositados, directa o
-                                    indirectamente, por o a través de las siguientes personas (las “personas
-                                    prohibidas”),jurisdicciones y/o países:
-                                    <br>
-                                    a. Terroristas u organizaciones terroristas, incluyendo aquellas personas o
-                                    entidades indicadas en la lista en idioma inglés denominada “List
-                                    of Specially Designated Nationals and Bloqued Persons” emitida por la OFAC
-                                    del Departamento del Tesoro del Gobierno de los Estados
-                                    Unidos (“Treasury Department Office Of Foreign Assets Control”).
-                                    <br>
-                                    b. Banco Pantalla. (Banco sin presencia física.)
-                                    <br>
-                                    c. Persona natural listada en alguna resolución del Consejo de Seguridad de
-                                    las Naciones Unidas.
-                                    <br>
-                                    d. Países o jurisdicciones que se encuentran bajo proceso de seguimiento del
-                                    Grupo de Acción Financiera Internacional (GAFI).
-                                    <br>
-                                    <br>
-                                    4-Declaro que, hasta esta fecha, no he sido condenado (a), ni me encuentro
-                                    en algún proceso judicial por delitos relativos al Lavado de Activos,
-                                    Financiamiento del Terrorismo, Delitos de Cohecho, Negociación incompatible,
-                                    corrupción entre privados, Apropiación indebida y Administración
-                                    Desleal. Además, declaro mi compromiso de mantener tal condición durante
-                                    toda la vigencia de la relación comercial con AAM S.A. Administradora
-                                    de Activos, obligándonos a no incurrir o desarrollar, en caso alguno, ningún
-                                    tipo de actividad o conducta asociada a dichos delitos.
-                                </span>
-                            </p>
-                            <button type="button" id="alternarTexto4" class="btn btn-outline-primary mb-4">Mostrar
-                                Definición</button>
+                            <br>
                         </div>
                         <br>
                         <br>
@@ -941,12 +998,12 @@
                         <br>
                         <div class="row mb-3">
                             <p id="texto5" class="texto-completo5">
-                                AAM S.A. Administradora de Activos como sujeto obligado y ...
+                                AAM S.A. Administradora de Activos como sujeto obligado y
                                 <span class="texto-adicional5">
                                     con el fin de mantener los registros en conformidad a lo establecido en el
                                     artículo 5° de la Ley N° 19.913, mantendrá el registro de la información
                                     en formato digital, proporcionando una copia al cliente en caso de
-                                    que este l o requiera y exprese mediante el correo electrónico descrito
+                                    que este lo requiera y exprese mediante el correo electrónico descrito
                                     en los antecedentes personales.
                                 </span>
                             </p>
@@ -963,7 +1020,7 @@
                             <p id="texto6" class="texto-completo6">
                                 El suscrito, en su calidad de Inversionista Calificado de acuerdo con lo establecido
                                 en el numeral 8° de la Sección II de la Norma de Carácter General
-                                No. 216 de 2008 impartida por la ...
+                                No. 216 de 2008 impartida por la
                                 <span class="texto-adicional6">
                                     Comisión para el Mercado Financiero (CMF), bajo juramento viene en declarar su
                                     intención expresa de participar
@@ -1000,10 +1057,8 @@
                         <br>
                         <div class="row-md-9">
                             <div class="input-group md-6">
-
                                 <textarea name="AreaPregunta1" id="AreaPregunta1" cols="60" rows="3" readonly>¿Cuenta con inversiones financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero, por un monto igual o superior a 2.000 Unidades de Fomento?
                                     </textarea>
-
                                 <div class="input-group-text">
                                     <div class="form-check form-check-inline">
                                         <label for="pregunta1Si" style="padding-right: 5px;">Si</label>
@@ -1023,7 +1078,7 @@
                                 <br>
                                 <br>
                                 <div class="input-group md-6">
-                                    <textarea name="AreaPregunta2" id="AreaPregunta2" cols="60" rows="3" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
+                                    <textarea name="AreaPregunta2" id="AreaPregunta2" cols="60" rows="2" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
                                         </textarea>
 
                                     <div class="input-group-text">
@@ -1050,7 +1105,7 @@
                                         </textarea>
                                     <div class="input-group-text">
                                         <div class="form-check form-check-inline">
-                                            <label for="pregunta3Si" style="padding-right: 10px;">Si</label>
+                                            <label for="pregunta3Si" style="padding-right: 5px;">Si</label>
                                             <input name="AreaPregunta3" id="pregunta3Si" class="form-check-input"
                                                 type="radio" value="4">
                                         </div>
@@ -1181,24 +1236,26 @@
                             <div class="row">
                                 <div class="col-md-6 pais-tax1">
                                     <div class="col-md-12">
-                                        <label for="paisFiscal" class="form-label">País</label>
+                                        <label for="paisFiscal" class="form-label">País de domicilio tributario</label>
                                         <input type="text" name="paisFiscal" placeholder="País" class="form-control"
                                             id="paisFiscal">
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="taxID" class="form-label">Tax ID</label>
+                                        <label for="taxID" class="form-label">Tax ID de domicilio tributario</label>
                                         <input type="text" name="taxID" placeholder="Tax ID" class="form-control"
                                             id="taxID">
                                     </div>
                                 </div>
                                 <div class="col-md-6 pais-tax2">
                                     <div class="col-md-12">
-                                        <label for="paisFiscal2" class="form-label">País (2)</label>
+                                        <label for="paisFiscal2" class="form-label">País (2) de domicilio
+                                            tributario</label>
                                         <input type="text" name="paisFiscal2" placeholder="País (2)"
                                             class="form-control" id="paisFiscal2">
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="taxID2" class="form-label">Tax ID (2)</label>
+                                        <label for="taxID2" class="form-label">Tax ID (2) de domicilio
+                                            tributario</label>
                                         <input type="text" name="taxID2" placeholder="Tax ID (2)" class="form-control"
                                             id="taxID2">
                                     </div>
@@ -1447,35 +1504,6 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>Antecedentes de La persona jurídica que realiza la presente declaración : </h2> <!--15-->
-                        <br>
-                        <br>
-                        <div class="row-md-9">
-                            <br>
-                            <br>
-                            <div class="input-group text-center residenciaFiscal">
-                                <input type="text" readonly class="form-control"
-                                    value="¿Tiene usted Residencia Tributaria fuera de Chile?"
-                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
-                                <div class="input-group-text">
-                                    <label style="padding-right: 10px;">Si</label>
-                                    <input name="residenciaTributariaPregunta" class="form-check-input mt-1"
-                                        type="radio" value="0" id="residenciaTributariaSi">
-                                </div>
-                                <div class="input-group-text">
-                                    <label style="padding-right: 10px;">No</label>
-                                    <input name="residenciaTributariaPregunta" class="form-check-input mt-1"
-                                        type="radio" value="1" id="residenciaTributariaNo">
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <hr>
-                        <br>
                         <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
                         <br>
                         <br>
@@ -1500,48 +1528,6 @@
                             <button type="button" id="alternarTexto8" class="btn btn-outline-primary mb-4">Mostrar
                                 Definición</button>
                         </div>
-                        <div class="row-md-6">
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Razón Social </th>
-                                        <td><input type="text" id="razon" style="width: 380px;"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">RUT</th>
-                                        <td><input type="text" id="rut" style="width: 380px;"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha de Constitución</th>
-                                        <td><input type="date" id="fechaConstUSS" style="width: 380px;"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Nacionalidad, Lugar de Constitución </th>
-                                        <td><input type="text" id="nacionalidadUSS" style="width: 380px;"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Fecha de Declaración </th>
-                                        <td>
-                                            <span id="fechaUSS" class="form-control"
-                                                style="font-weight: bold; font-size: large;"></span>
-
-                                            <script> // Obtener la fecha actual
-                                                const fechaUSS = document.getElementById("fechaUSS");
-                                                const dateUSS = new Date();
-                                                const formattedDateUSS = dateUSS.toLocaleDateString("es-CL");
-                                                fechaUSS.textContent = formattedDateUSS;
-                                            </script>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                            <br>
-                        </div>
                         <br>
                         <br>
                         <br>
@@ -1551,7 +1537,8 @@
                         <br>
                         <br>
                         <div class="row-md-6">
-                            <h4>A. La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva (passive NFFE ante la Ley FATCA)</h4>
+                            <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva (passive
+                                NFFE ante la Ley FATCA)</h4>
                             <br>
                             <label style="padding-right: 19px;">Si</label>
                             <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="0"
@@ -1565,14 +1552,86 @@
                         <br>
                         <br>
                         <div id="respuestaFATCASi" style="display: none;">
-                            <h4>Si la respuesta es SI, responda las siguientes preguntas:</h4>
-
+                            <h4 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, responda
+                                las siguientes preguntas:</h4>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>A. La Sociedad Cliente fue constituida en los Estados unidos de América</h5>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="preguntaSeccion1ABC" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1ASi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1ABC" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1ANo">
+                            </div>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>B. La Sociedad Cliente tiene algún socio, beneficiario final o accionista persona
+                                    natural directo o indirecto que individual o conjuntamente
+                                    posean el 10% o más de la propiedad o control de la Sociedad</h5>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="preguntaSeccion1B" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1BSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1B" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1BNo">
+                            </div>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>C. La Sociedad Cliente tiene residencia tributaria en los Estados Unidos de América.
+                                </h5>
+                                <label style="padding-right: 19px;">Si</label>
+                                <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1CSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1CNo">
+                            </div>
+                            <br>
+                            <br>
                         </div>
                         <br>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control" value="¿Es la sociedad cliente US ENTITY?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="sociedadClienteUSPregunta" class="form-check-input" type="radio"
+                                        value="0" id="sociedadClienteUSSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="sociedadClienteUSPregunta" class="form-check-input" type="radio"
+                                        value="1" id="sociedadClienteUSNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="respuestaSociedadClienteUSSi" style="display: none;">
+                            <br>
+                            <h5 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, , Usted
+                                puede
+                                ingresar su número de identificación tributaria estadounidense (TIN) : </h5>
+                            <br>
+                            <div class="input-group md-6">
+                                <span class="input-group-text">Número de Identificación Tributaria estadounidense
+                                    (TIN)</span>
+                                <input type="text" id="tin" class="form-control">
+                            </div>
+                        </div>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
                 </form>
             </div>
         </div>
