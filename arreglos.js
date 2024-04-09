@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () { //Cambiar a modo osc
     document.body.classList.toggle('dark');
 
     if (checked == true) {
-      labelToggle.innerHTML = '<i class="fa-solid fa-sun"></i>'; 
+      labelToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     } else {
-      labelToggle.innerHTML = '<i class="fa-solid fa-moon"></i>'; 
+      labelToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
   });
 });
@@ -282,26 +282,47 @@ document.addEventListener("DOMContentLoaded", function () { //mostrar contenido 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Agregar un event listener al botón o a algún evento que desencadene la acción
-  // Supongamos que tienes un botón con el id "mostrarDatosBtn" que se utilizará para recuperar los datos y mostrarlos
   document.getElementById('mostrarDatosAccionistas').addEventListener('click', function () {
-    // Obtener los valores ingresados por el usuario
-    const nombreCompleto = document.getElementById('nomCompletoAccio').value;
-    const rut = document.getElementById('rutAccio').value;
-
-    // Crear un nuevo elemento para mostrar los datos recuperados
     const datosAccionistasRecuperados = document.getElementById('datosAccionistasRecuperados');
     datosAccionistasRecuperados.innerHTML = ''; // Limpiar cualquier contenido anterior
 
-    // Crear elementos para mostrar los datos
-    const nombreCompletoP = document.createElement('p');
-    nombreCompletoP.textContent = 'Nombre Completo: ' + nombreCompleto;
+    function crearPreguntaClientePEP(numeroAccionista) {
+      const preguntaClientePEP = document.createElement('h5');
+      preguntaClientePEP.textContent = '¿Es Cliente PEP?';
 
-    const rutP = document.createElement('p');
-    rutP.textContent = 'RUT: ' + rut;
+      const divClientePEP = document.createElement('div');
+      divClientePEP.className = 'input-group text-center';
 
-    // Agregar los elementos al div de datos recuperados
-    datosAccionistasRecuperados.appendChild(nombreCompletoP);
-    datosAccionistasRecuperados.appendChild(rutP);
+      const divSi = document.createElement('div');
+      divSi.className = 'form-check form-check-inline';
+      divSi.innerHTML = '<label style="padding-right: 10px;">Si</label> <input name="residenciaFiscalPregunta" class="form-check-input" type="radio" value="0" id="residenciaFiscalSi' + numeroAccionista + '">';
+
+      const divNo = document.createElement('div');
+      divNo.className = 'form-check form-check-inline';
+      divNo.innerHTML = '<label style="padding-right: 10px;">No</label> <input name="residenciaFiscalPregunta" class="form-check-input" type="radio" value="1" id="residenciaFiscalNo' + numeroAccionista + '">';
+
+      divClientePEP.appendChild(divSi);
+      divClientePEP.appendChild(divNo);
+
+      return [preguntaClientePEP, divClientePEP];
+    }
+
+    const accionistas = [
+      { nombre: document.getElementById('nomCompletoAccio').value, rut: document.getElementById('rutAccio').value },
+      { nombre: document.getElementById('nomCompletoAccio2').value, rut: document.getElementById('rutAccio2').value }
+    ];
+
+    accionistas.forEach(function (accionista, index) {
+      const datosAccionista = document.createElement('p');
+      datosAccionista.textContent = 'Nombre Completo Accionista (' + (index + 1) + ') : ' + accionista.nombre + 'RUT Accionista (' + (index + 1) + ') :' + accionista.rut;
+
+      const [preguntaClientePEP, divClientePEP] = crearPreguntaClientePEP(index + 1);
+
+      datosAccionista.appendChild(preguntaClientePEP);
+      datosAccionista.appendChild(divClientePEP);
+
+      datosAccionistasRecuperados.appendChild(datosAccionista);
+    });
   });
 });
+

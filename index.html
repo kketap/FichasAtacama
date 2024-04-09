@@ -25,6 +25,7 @@
     <script src="agregarCampos.js"></script> <!-- funciones para agregar campos-->
 
     <link rel="stylesheet" href="style.css"> <!-- CSS-->
+    <link rel="stylesheet" href="modoOscuro.css">
 </head>
 
 <body>
@@ -971,28 +972,17 @@
                         <br>
                         <br>
                         <div class="row-md-9">
-
-                            <button type="button" id="mostrarDatosAccionistas">recuperar</button>
+                            <button type="button" class="btn btn-outline-primary mb-4"
+                                id="mostrarDatosAccionistas">Recuperar</button>
                             <button type="button" class="btn btn-outline-primary mb-4" id="agregarClientesPEP">Agregar
                                 clientes PEP
                             </button>
-                            <div class="input-group md-6">
+                            <div class="row-md-9">
+                                <br>
                                 <div id="datosAccionistasRecuperados">
+                                    <!-- Contenido del div aquí -->
                                 </div>
-
-                                <div class="input-group-text">
-                                    <label for="PEPsi" style="padding-right: 5px;">Si</label>
-                                    <input name="PEPagregado" id="PEPsi" class="form-check-input mt-1" type="radio"
-                                        value="0">
-                                </div>
-
-                                <div class="input-group-text">
-                                    <label for="PEPno" style="padding-right: 5px;">No</label>
-                                    <input name="PEPagregado" id="PEPno" class="form-check-input mt-1" type="radio"
-                                        value="1">
-                                </div>
-                            </div>
-                            <div id="clientesPEPContainer">
+                                <br>
                             </div>
                             <br>
                         </div>
