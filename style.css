@@ -1,13 +1,73 @@
 body {
   zoom: 90%;
+  font-family:Arial, Helvetica, sans-serif;
+  transition: all 1s ease;
 }
 
+#labelToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+#toggle {
+  display: none;
+}
+
+.dark {
+  background-color: #101011;
+  color: hwb(0 90% 8%);
+  transition: all 1s ease;
+}
+
+.dark input {
+  background-color: #010101;
+  color:hwb(0 90% 8%); ;
+}
+
+.dark .input-group-text .form-check-input[type="radio"] {
+  background-color: grey;
+}
+
+.dark .form-check-input[type="radio"] {
+  background-color: rgb(116, 114, 126);
+}
+
+.dark .form-check-input[type="radio"]:checked {
+  background-color: rgb(9, 44, 198);
+}
+
+.dark .input-group .form-control {
+  background-color: #010101;
+  color:hwb(0 90% 8%); ;
+}
+
+.dark .input-group-text {
+  background-color: rgb(142, 139, 139);
+  color:hwb(0 90% 8%); ;
+}
+
+.dark .table-bordered {
+  background-color: #010101;
+  color:hwb(0 90% 8%); ;
+}
+
+.dark .table input[type="text"],
+.table input[type="number"] {
+  border-color: white;
+}
+
+ 
 .nav-item {
   margin-left: 15px;
 }
 
 .navbar {
-  font-size: 180%;
+  font-size: 120%;
+  display: flex;
+  position: fixed;
 }
 
 .razon {
@@ -108,4 +168,16 @@ tr {
 .pais-tax2 {
   display: inline-block;
   vertical-align: top;
+}
+
+.input-group-text .form-check-input[type="radio"] {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.form-check-input[type="radio"] {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
 }
