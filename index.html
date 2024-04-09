@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--libreria para el icon de la luna-->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,8 +19,6 @@
 
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-    <!-- libreria para la firma por canvas -->
 
     <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
     <script src="arreglos.js"></script> <!-- funciones de campos-->
@@ -53,14 +57,17 @@
         </div>
     </nav>
     <br>
+    <br>
     <div class="container mt-4">
+        <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
+        <input type="checkbox" id="toggle"> <!--Cambiar a modo oscuro-->
         <div class="col">
             <div class="col-md-8 offset-md-2">
                 <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Jurídica</h1>
-                <hr>
+                <hr id="infoEmpresa">
                 <form id="form">
                     <div class="row mb-3">
-                        <div class="row mb-3" id="infoEmpresa">
+                        <div class="row mb-3">
                             <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
                             <br>
                             <br>
@@ -135,8 +142,8 @@
                         <br>
                         <br>
                         <br>
-                        <hr>
-                        <h2 id="accionistas">Accionistas</h2>
+                        <hr id="accionistas">
+                        <h2>Accionistas</h2>
                         <br>
                         <br>
                         <div class="col-md-6">
@@ -972,7 +979,7 @@
                             <div class="input-group md-6">
                                 <div id="datosAccionistasRecuperados">
                                 </div>
-                                
+
                                 <div class="input-group-text">
                                     <label for="PEPsi" style="padding-right: 5px;">Si</label>
                                     <input name="PEPagregado" id="PEPsi" class="form-check-input mt-1" type="radio"
@@ -1263,7 +1270,7 @@
                             </div>
                             <br>
                             <br>
-                            <div class="input-group text-center preguntaA">
+                            <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
                                     value="A- ¿La sociedad es una institución financiera?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
@@ -1280,7 +1287,7 @@
                                         id="preguntaANo">
                                 </div>
                             </div>
-                            <div class="input-group text-center preguntaB">
+                            <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
                                     value="B- ¿Es la sociedad una institución Financiera exenta?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
@@ -1301,7 +1308,7 @@
                                     <input type="text" id="pqPreguntaB" class="form-control">
                                 </div>
                             </div>
-                            <div class="input-group text-center preguntaB">
+                            <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
                                     value="C- A continuación, debe completar la información de los socios o accionistas."
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
@@ -1540,7 +1547,7 @@
                             <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva (passive
                                 NFFE ante la Ley FATCA)</h4>
                             <br>
-                            <label style="padding-right: 19px;">Si</label>
+                            <label style="padding-right: 17px;">Si</label>
                             <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="0"
                                 id="preguntaSeccion1Si">
                         </div>
@@ -1557,7 +1564,7 @@
                             <br>
                             <div class="row-md-6">
                                 <h5>A. La Sociedad Cliente fue constituida en los Estados unidos de América</h5>
-                                <label style="padding-right: 19px;">Si</label>
+                                <label style="padding-right: 17px;">Si</label>
                                 <input name="preguntaSeccion1ABC" class="form-check-input mt-1" type="radio" value="0"
                                     id="preguntaSeccion1ASi">
                             </div>
@@ -1571,7 +1578,7 @@
                                 <h5>B. La Sociedad Cliente tiene algún socio, beneficiario final o accionista persona
                                     natural directo o indirecto que individual o conjuntamente
                                     posean el 10% o más de la propiedad o control de la Sociedad</h5>
-                                <label style="padding-right: 19px;">Si</label>
+                                <label style="padding-right: 17px;">Si</label>
                                 <input name="preguntaSeccion1B" class="form-check-input mt-1" type="radio" value="0"
                                     id="preguntaSeccion1BSi">
                             </div>
@@ -1584,7 +1591,7 @@
                             <div class="row-md-6">
                                 <h5>C. La Sociedad Cliente tiene residencia tributaria en los Estados Unidos de América.
                                 </h5>
-                                <label style="padding-right: 19px;">Si</label>
+                                <label style="padding-right: 17px;">Si</label>
                                 <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="0"
                                     id="preguntaSeccion1CSi">
                             </div>
