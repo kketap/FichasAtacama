@@ -45,6 +45,7 @@
                             <li><a class="dropdown-item" href="#beneficiariosFinales">Beneficiarios Finales</a></li>
                             <li><a class="dropdown-item" href="#otraInfo">Otra Información</a></li>
                             <li><a class="dropdown-item" href="#declaracion">Declaración</a></li>
+                            <li><a class="dropdown-item" href="#generarPDF">Generar PDF</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -979,7 +980,7 @@
                                 id="mostrarDatosAccionistas">Recuperar Datos de Accionistas</button>
                             <button type="button" class="btn btn-outline-primary mb-4"
                                 id="mostrarDatosBeneficiarios">Recuperar Datos de Beneficiarios</button>
-                            <div class="row-md-6" id="recuperarDatos">
+                            <div class="row-md-6" id="recuperarDatosPEP">
                                 <br>
                                 <h5 style="font-weight: bold;">Accionistas Recuperados : </h5>
                                 <br>
@@ -1314,84 +1315,29 @@
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                             <hr>
-                            <h2>Socio Uno</h2>
+                            <h2>Identificar Residencia Fiscal</h2> <!--15-->
                             <br>
-                            <div class="row">
-                                <div class="col-md-6 pais-tax1">
-                                    <div class="col-md-12">
-                                        <label for="nomCompletoSocio" class="form-label">Nombre Completo</label>
-                                        <input type="text" name="declaracionSocios" placeholder="Nombre Completo"
-                                            class="form-control" id="nomCompletoSocio">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="razonSocio" class="form-label">Razón Social</label>
-                                        <input type="text" name="declaracionSocios" placeholder="Razón Social"
-                                            class="form-control" id="razonSocio">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pais-tax2">
-                                    <div class="col-md-12">
-                                        <label for="nacionalidadSocio" class="form-label">Nacionalidad o País de
-                                            Constitución</label>
-                                        <input type="text" name="declaracionSocios"
-                                            placeholder="Nacionalidad o País de Constitución" class="form-control"
-                                            id="nacionalidadSocio">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="direccionSocio" class="form-label">Dirección</label>
-                                        <input type="text" name="declaracionSocios" placeholder="Dirección"
-                                            class="form-control" id="direccionSocio">
-                                    </div>
-                                </div>
+                            <div class="row-md-9">
+                                <button type="button" class="btn btn-outline-primary mb-4"
+                                    id="mostrarResidenciaAccio">Recuperar Datos de Accionistas</button>
+                                <button type="button" class="btn btn-outline-primary mb-4"
+                                    id="mostrarResidenciaBeneficiarios">Recuperar Datos de Beneficiarios</button>
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-6 pais-tax1">
-                                    <div class="col-md-12">
-                                        <label for="paisFiscalSocio1" class="form-label">País</label>
-                                        <input type="text" name="paisFiscalSocio" placeholder="País"
-                                            class="form-control" id="paisFiscalSocio1">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="taxIDSocio" class="form-label">Tax ID</label>
-                                        <input type="text" name="taxIDSocio" placeholder="Tax ID" class="form-control"
-                                            id="taxIDSocio">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pais-tax2">
-                                    <div class="col-md-12">
-                                        <label for="paisFiscal2Socio" class="form-label">País (2)</label>
-                                        <input type="text" name="paisFiscal2Socio" placeholder="País (2)"
-                                            class="form-control" id="paisFiscal2Socio">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="taxID2Socio" class="form-label">Tax ID (2)</label>
-                                        <input type="text" name="taxID2Socio" placeholder="Tax ID (2)"
-                                            class="form-control" id="taxID2Socio">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-md-6">
-                                <h4>¿Tiene Residencia Fiscal en el Extranjero?</h4>
+                            <div class="row-md-6" id="datosResidencia">
                                 <br>
-                                <label style="padding-right: 19px;">Si</label>
-                                <input name="residenciaSocioPregunta" class="form-check-input mt-1" type="radio"
-                                    value="0" id="residenciaSocioSi">
+                                <h5 style="font-weight: bold;">Accionistas Recuperados : </h5>
+                                <br>
+                                <div id="datosResidenciaAccioRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
+                                <br>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales Recuperados : </h5>
+                                <div id="datosResidenciaBenefRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label style="padding-right: 10px;">No</label>
-                                <input name="residenciaSocioPregunta" class="form-check-input mt-1" type="radio"
-                                    value="1" id="residenciaSocioNo">
-                            </div>
-                            <br>
-                            <br>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarSocios">
-                                Agregar
-                                Socios (Máximo 7)
-                            </button>
-                            <br>
-                            <br>
                         </div>
                         <br>
                         <br>
@@ -1517,9 +1463,11 @@
                         <div class="row mb-3">
                             <p id="texto8" class="texto-completo8">
                                 <span class="texto-adicional8">
-                                    La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga, a
+                                    La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga,
+                                    a
                                     partir del 1º de Julio del año 2014, a todos y cada una de las
-                                    entidades financieras chilenas a requerir a sus clientes ciertas informaciones, con
+                                    entidades financieras chilenas a requerir a sus clientes ciertas informaciones,
+                                    con
                                     el objetivo de determinar si son o no contribuyentes en Estados
                                     Unidos de América (US ENTITY).
                                     <br>
@@ -1528,7 +1476,8 @@
                                     <br>
                                     a-Toda aquella entidad que tiene residencia tributaria en Estados Unidos.
                                     <br>
-                                    b-Es controlada en más de un 10%, directa o indirectamente, por personas o entidades
+                                    b-Es controlada en más de un 10%, directa o indirectamente, por personas o
+                                    entidades
                                     Estados Unidenses , afectas al impuesto en ese país.
                                 </span>
                             </p>
@@ -1544,7 +1493,8 @@
                         <br>
                         <br>
                         <div class="row-md-6">
-                            <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva (passive
+                            <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva
+                                (passive
                                 NFFE ante la Ley FATCA)</h4>
                             <br>
                             <label style="padding-right: 17px;">Si</label>
@@ -1559,7 +1509,8 @@
                         <br>
                         <br>
                         <div id="respuestaFATCASi" style="display: none;">
-                            <h4 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, responda
+                            <h4 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI,
+                                responda
                                 las siguientes preguntas:</h4>
                             <br>
                             <div class="row-md-6">
@@ -1575,7 +1526,8 @@
                             </div>
                             <br>
                             <div class="row-md-6">
-                                <h5>B. La Sociedad Cliente tiene algún socio, beneficiario final o accionista persona
+                                <h5>B. La Sociedad Cliente tiene algún socio, beneficiario final o accionista
+                                    persona
                                     natural directo o indirecto que individual o conjuntamente
                                     posean el 10% o más de la propiedad o control de la Sociedad</h5>
                                 <label style="padding-right: 17px;">Si</label>
@@ -1589,7 +1541,8 @@
                             </div>
                             <br>
                             <div class="row-md-6">
-                                <h5>C. La Sociedad Cliente tiene residencia tributaria en los Estados Unidos de América.
+                                <h5>C. La Sociedad Cliente tiene residencia tributaria en los Estados Unidos de
+                                    América.
                                 </h5>
                                 <label style="padding-right: 17px;">Si</label>
                                 <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="0"
@@ -1624,7 +1577,8 @@
                         </div>
                         <div id="respuestaSociedadClienteUSSi" style="display: none;">
                             <br>
-                            <h5 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, , Usted
+                            <h5 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, ,
+                                Usted
                                 puede
                                 ingresar su número de identificación tributaria estadounidense (TIN) : </h5>
                             <br>
@@ -1638,7 +1592,7 @@
                     <br>
                     <br>
                     <br>
-                    <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                    <button id="generarPDF" type="submit" class="btn btn-primary mb-4">Generar PDF</button>
                 </form>
             </div>
         </div>
