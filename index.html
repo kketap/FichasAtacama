@@ -20,12 +20,14 @@
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
 
-    <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
-    <script src="arreglos.js"></script> <!-- funciones de campos-->
-    <script src="agregarCampos.js"></script> <!-- funciones para agregar campos-->
+    <script src="JavaScript/app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+    <script src="JavaScript/arreglos.js"></script> <!-- funciones de campos-->
+    <script src="JavaScript/agregarCampos.js"></script> <!-- funciones para agregar campos-->
+    <script src="JavaScript/mostrarDefinicion.js"></script>
+    <script src="JavaScript/recuperarDatos.js"></script>
 
-    <link rel="stylesheet" href="style.css"> <!-- CSS-->
-    <link rel="stylesheet" href="modoOscuro.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
+    <link rel="stylesheet" href="css/modoOscuro.css">
 </head>
 
 <body>
@@ -968,21 +970,29 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>¿Desea agregar clientes PEP? (Máximo 9)</h2> <!--15-->
+                        <h2>Identificar Clientes PEP</h2> <!--15-->
+                        <br>
                         <br>
                         <br>
                         <div class="row-md-9">
                             <button type="button" class="btn btn-outline-primary mb-4"
-                                id="mostrarDatosAccionistas">Recuperar</button>
-                            <button type="button" class="btn btn-outline-primary mb-4" id="agregarClientesPEP">Agregar
-                                clientes PEP
-                            </button>
-                            <div class="row-md-9">
+                                id="mostrarDatosAccionistas">Recuperar Datos de Accionistas</button>
+                            <button type="button" class="btn btn-outline-primary mb-4"
+                                id="mostrarDatosBeneficiarios">Recuperar Datos de Beneficiarios</button>
+                            <div class="row-md-6" id="recuperarDatos">
+                                <br>
+                                <h5 style="font-weight: bold;">Accionistas Recuperados : </h5>
                                 <br>
                                 <div id="datosAccionistasRecuperados">
                                     <!-- Contenido del div aquí -->
+                                    <br>
                                 </div>
                                 <br>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales Recuperados : </h5>
+                                <div id="datosBeneficiariosRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
                             </div>
                             <br>
                         </div>
