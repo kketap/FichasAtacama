@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex">
     <title>Ficha Persona Jurídica</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--libreria para el icon de la luna-->
+    <!--libreria para el icon de la luna y el sol-->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -23,13 +27,11 @@
     <script src="JavaScript/app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
     <script src="JavaScript/arreglos.js"></script> <!-- funciones de campos-->
     <script src="JavaScript/agregarCampos.js"></script> <!-- funciones para agregar campos-->
-    <script src="JavaScript/mostrarDefinicion.js"></script>
-    <script src="JavaScript/recuperarDatos.js"></script>
+    <script src="JavaScript/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
+    <script src="JavaScript/recuperarDatos.js"></script> <!-- Recuperar datos de Accionistas y Benef finales-->
 
     <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
-    <link rel="stylesheet" href="css/modoOscuro.css">
-
-
+    <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
 
 </head>
 
@@ -53,7 +55,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                            Ficha de Cliente Persona Normal
+                            Ficha de Cliente Persona Natural
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="fichaPersonaNormal.html">Información</a></li>
@@ -83,7 +85,7 @@
                                 <input type="text" oninput="increaseWidth()" name="razon" placeholder="Razón Social"
                                     class="form-control" id="razon">
                             </div>
-                            <div class="col-md-6">
+                            <div class=" col-md-6">
                                 <label for="rut" class="form-label">RUT</label>
                                 <input type="text" name="rut" placeholder="RUT" class="form-control" id="rut">
                             </div>
@@ -226,13 +228,13 @@
                         <br>
                         <br>
                         <div class="col-md-6">
-                            <label for="nomBenef" class="form-label">Nombre Completo</label>
-                            <input type="text" name="nomBenef" placeholder="Nombre Completo" class="form-control"
-                                id="nomBenef">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomCompletoAccio" placeholder="Nombre Completo"
+                                class="form-control" id="nomBenef">
                         </div>
                         <div class="col-md-6">
-                            <label for="rutBenef" class="form-label">RUT</label>
-                            <input type="text" name="rutBenef" placeholder="RUT" class="form-control" id="rutBenef">
+                            <label for="rutAccio" class="form-label">RUT</label>
+                            <input type="text" name="rutAccio" placeholder="RUT" class="form-control" id="rutBenef">
                         </div>
                         <br>
                         <br>
@@ -1590,6 +1592,55 @@
                                 <span class="input-group-text">Número de Identificación Tributaria estadounidense
                                     (TIN)</span>
                                 <input type="text" id="tin" class="form-control">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <br>
+                        <h2>Validar la Información : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div>
+                            <p>
+                                <span>
+                                    Declaro que las informaciones proporcionadas en este formulario son verdaderas,
+                                    válidas,
+                                    correctas y completas. Asimismo, declara estar en
+                                    conocimiento de que deben mantener actualizados estos antecedentes e informar de
+                                    ello a
+                                    AAM S.A. Administradora de Activos, incluida la
+                                    información proporcionada en este formulario, datos o circunstancias antes
+                                    indicadas, o
+                                    bien, la inclusión de nueva información, que cumpla con
+                                    las mismas condiciones. En caso de existir un cambio, en sus antecedentes o en las
+                                    declaraciones efectuadas en el presente formulario, daréaviso
+                                    a la administradora, dentro de los 30 días corridos siguientes a la modificación.
+                                    Asimismo, autorizo a que me sea requerida y me obligo desde ya
+                                    a enviar oportunamente toda documentación adicional que fuere necesario para
+                                    complementar este formulario y así dar cumplimiento a la
+                                    normativa FATCA.”
+                                </span>
+                            </p>
+                            <br>
+                            <div class="input-group text-center">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                        <input name="" class="form-check-input" type="radio" id="" disabled>
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                        <input name="" class="form-check-input" type="radio" id="">
+                                    </div>
+                                </div>
+                                <input type="text" readonly class="form-control"
+                                    value="He leído y confirmo la veracidad de la información"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                         </div>
                     </div>

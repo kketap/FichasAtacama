@@ -362,13 +362,13 @@ document.addEventListener('DOMContentLoaded', function () { //agregar Beneficiar
         const nuevoBenef = `
         <div class="row mb-3">
     <div class="col-md-6">
-                            <label for="nomBenef${clienteIndex}" class="form-label">Nombre Completo (${clienteIndex})</label>
-                            <input type="text" name="nomBenef${clienteIndex}" placeholder="Nombre Completo (${clienteIndex})" class="form-control"
+                            <label for="nomCompletoAccio${clienteIndex}" class="form-label">Nombre Completo (${clienteIndex})</label>
+                            <input type="text" name="nomCompletoAccio${clienteIndex}" placeholder="Nombre Completo (${clienteIndex})" class="form-control"
                                 id="nomBenef${clienteIndex}">
                         </div>
                         <div class="col-md-6">
-                            <label for="rutBenef${clienteIndex}" class="form-label">RUT (${clienteIndex})</label>
-                            <input type="text" name="rutBenef${clienteIndex}" placeholder="RUT (${clienteIndex})" class="form-control" id="rutBenef${clienteIndex}">
+                            <label for="rutAccio${clienteIndex}" class="form-label">RUT (${clienteIndex})</label>
+                            <input type="text" name="rutAccio${clienteIndex}" placeholder="RUT (${clienteIndex})" class="form-control" id="rutBenef${clienteIndex}">
                         </div>
                         <br>
                         <br>
