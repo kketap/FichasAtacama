@@ -358,56 +358,7 @@ window.addEventListener("load", async () => {
     let inputActCliente = document.getElementById("inputActCliente") ? document.getElementById("inputActCliente").value : null;
 
 
-
-
-
     let opcionClientePEP = document.querySelector("input[name='opcionClientePEP']:checked") ? document.querySelector("input[name='opcionClientePEP']:checked").value : null;
-
-
-    let rutPEP = document.getElementById("rutPEP") ? document.getElementById("rutPEP").value : null;
-    let nombreCompletoPEP = document.getElementById("nombreCompletoPEP") ? document.getElementById("nombreCompletoPEP").value : null;
-
-    let rutPEP2 = document.getElementById("rutPEP2") ? document.getElementById("rutPEP2").value : null;
-    let nombreCompletoPEP2 = document.getElementById("nombreCompletoPEP2") ? document.getElementById("nombreCompletoPEP2").value : null;
-
-    let rutPEP3 = document.getElementById("rutPEP3") ? document.getElementById("rutPEP3").value : null;
-    let nombreCompletoPEP3 = document.getElementById("nombreCompletoPEP3") ? document.getElementById("nombreCompletoPEP3").value : null;
-
-    let rutPEP4 = document.getElementById("rutPEP4") ? document.getElementById("rutPEP4").value : null;
-    let nombreCompletoPEP4 = document.getElementById("nombreCompletoPEP4") ? document.getElementById("nombreCompletoPEP4").value : null;
-
-    let rutPEP5 = document.getElementById("rutPEP5") ? document.getElementById("rutPEP5").value : null;
-    let nombreCompletoPEP5 = document.getElementById("nombreCompletoPEP5") ? document.getElementById("nombreCompletoPEP5").value : null;
-
-    let rutPEP6 = document.getElementById("rutPEP6") ? document.getElementById("rutPEP6").value : null;
-    let nombreCompletoPEP6 = document.getElementById("nombreCompletoPEP6") ? document.getElementById("nombreCompletoPEP6").value : null;
-
-    let rutPEP7 = document.getElementById("rutPEP7") ? document.getElementById("rutPEP7").value : null;
-    let nombreCompletoPEP7 = document.getElementById("nombreCompletoPEP7") ? document.getElementById("nombreCompletoPEP7").value : null;
-
-    let rutPEP8 = document.getElementById("rutPEP8") ? document.getElementById("rutPEP8").value : null;
-    let nombreCompletoPEP8 = document.getElementById("nombreCompletoPEP8") ? document.getElementById("nombreCompletoPEP8").value : null;
-
-    let rutPEP9 = document.getElementById("rutPEP9") ? document.getElementById("rutPEP9").value : null;
-    let nombreCompletoPEP9 = document.getElementById("nombreCompletoPEP9") ? document.getElementById("nombreCompletoPEP9").value : null;
-
-    let PEPagregado = document.querySelector("input[name='PEPagregado']:checked") ? document.querySelector("input[name='PEPagregado']:checked").value : null;
-
-    let PEPagregado2 = document.querySelector("input[name='PEPagregado2']:checked") ? document.querySelector("input[name='PEPagregado2']:checked").value : null;
-
-    let PEPagregado3 = document.querySelector("input[name='PEPagregado3']:checked") ? document.querySelector("input[name='PEPagregado3']:checked").value : null;
-
-    let PEPagregado4 = document.querySelector("input[name='PEPagregado4']:checked") ? document.querySelector("input[name='PEPagregado4']:checked").value : null;
-
-    let PEPagregado5 = document.querySelector("input[name='PEPagregado5']:checked") ? document.querySelector("input[name='PEPagregado5']:checked").value : null;
-
-    let PEPagregado6 = document.querySelector("input[name='PEPagregado6']:checked") ? document.querySelector("input[name='PEPagregado6']:checked").value : null;
-
-    let PEPagregado7 = document.querySelector("input[name='PEPagregado7']:checked") ? document.querySelector("input[name='PEPagregado7']:checked").value : null;
-
-    let PEPagregado8 = document.querySelector("input[name='PEPagregado8']:checked") ? document.querySelector("input[name='PEPagregado8']:checked").value : null;
-
-    let PEPagregado9 = document.querySelector("input[name='PEPagregado9']:checked") ? document.querySelector("input[name='PEPagregado9']:checked").value : null;
 
 
     let declaroInversionista = document.querySelector("input[name='declaroInversionista']:checked") ? document.querySelector("input[name='declaroInversionista']:checked").value : null;
@@ -592,55 +543,7 @@ window.addEventListener("load", async () => {
       opcionActCliente,
       inputActCliente,
 
-
-
       opcionClientePEP,
-
-      rutPEP,
-      nombreCompletoPEP,
-
-      rutPEP2,
-      nombreCompletoPEP2,
-
-      rutPEP3,
-      nombreCompletoPEP3,
-
-      rutPEP4,
-      nombreCompletoPEP4,
-
-      rutPEP5,
-      nombreCompletoPEP5,
-
-      rutPEP6,
-      nombreCompletoPEP6,
-
-      rutPEP7,
-      nombreCompletoPEP7,
-
-      rutPEP8,
-      nombreCompletoPEP8,
-
-      rutPEP9,
-      nombreCompletoPEP9,
-
-      PEPagregado,
-
-      PEPagregado2,
-
-      PEPagregado3,
-
-      PEPagregado4,
-
-      PEPagregado5,
-
-      PEPagregado6,
-
-      PEPagregado7,
-
-      PEPagregado8,
-
-      PEPagregado9,
-
 
       declaroInversionista,
 
@@ -824,48 +727,7 @@ async function generatePDF( //datos que se generaran el el PDF
   opcionActCliente,
   inputActCliente,
 
-
-
   opcionClientePEP,
-
-  rutPEP,
-  nombreCompletoPEP,
-
-  rutPEP2,
-  nombreCompletoPEP2,
-
-  rutPEP3,
-  nombreCompletoPEP3,
-
-  rutPEP4,
-  nombreCompletoPEP4,
-
-  rutPEP5,
-  nombreCompletoPEP5,
-
-  rutPEP6,
-  nombreCompletoPEP6,
-
-  rutPEP7,
-  nombreCompletoPEP7,
-
-  rutPEP8,
-  nombreCompletoPEP8,
-
-  rutPEP9,
-  nombreCompletoPEP9,
-
-
-  PEPagregado,
-  PEPagregado2,
-  PEPagregado3,
-  PEPagregado4,
-  PEPagregado5,
-  PEPagregado6,
-  PEPagregado7,
-  PEPagregado8,
-  PEPagregado9,
-
 
   declaroInversionista,
 
@@ -1199,87 +1061,6 @@ async function generatePDF( //datos que se generaran el el PDF
 
   pdf.setFontSize(11);
 
-  pdf.text(rutPEP, 338, 196);
-  pdf.text(nombreCompletoPEP, 165, 196);
-
-  pdf.text(rutPEP2 || "", 338, 223);
-  pdf.text(nombreCompletoPEP2 || "", 165, 223);
-
-  pdf.text(rutPEP3 || "", 338, 250);
-  pdf.text(nombreCompletoPEP3 || "", 165, 250);
-
-  pdf.text(rutPEP4 || "", 338, 273);
-  pdf.text(nombreCompletoPEP4 || "", 165, 273);
-
-  pdf.text(rutPEP5 || "", 338, 299);
-  pdf.text(nombreCompletoPEP5 || "", 165, 299);
-
-  pdf.text(rutPEP6 || "", 338, 323);
-  pdf.text(nombreCompletoPEP6 || "", 165, 323);
-
-  pdf.text(rutPEP7 || "", 338, 347);
-  pdf.text(nombreCompletoPEP7 || "", 165, 347);
-
-  pdf.text(rutPEP8 || "", 338, 371);
-  pdf.text(nombreCompletoPEP8 || "", 165, 371);
-
-  pdf.text(rutPEP9 || "", 338, 397);
-  pdf.text(nombreCompletoPEP9 || "", 165, 397);
-
-
-  if (parseInt(PEPagregado) === 0) { //si
-    pdf.circle(527, 189, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 189, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado2 || "") === 2) { //si
-    pdf.circle(527, 215, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 215, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado3 || "") === 3) { //si
-    pdf.circle(527, 240, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 240, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado4 || "") === 4) { //si
-    pdf.circle(527, 265, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 265, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado5 || "") === 5) { //si
-    pdf.circle(527, 290, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 290, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado6 || "") === 6) { //si
-    pdf.circle(527, 316, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 316, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado7 || "") === 7) { //si
-    pdf.circle(527, 341, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 341, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado8 || "") === 8) { //si
-    pdf.circle(527, 367, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 367, 4, "FD");
-  }
-
-  if (parseInt(PEPagregado9 || "") === 9) { //si
-    pdf.circle(527, 392, 4, "FD");
-  } else {  //no
-    pdf.circle(569, 392, 4, "FD");
-  }
 
   pdf.addPage();
 
@@ -1340,9 +1121,6 @@ async function generatePDF( //datos que se generaran el el PDF
   } else {
     pdf.circle(330, 195, 4, "FD");
   }
-
-
-
 
   pdf.save("Formulario Ficha de Cliente Persona Jurídica.pdf"); // nombre con el cual se descarga el PDF
 }

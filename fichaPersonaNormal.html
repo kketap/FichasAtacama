@@ -20,11 +20,8 @@
   <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
 
-  <script src="JavaScript/app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
-  <script src="JavaScript/arreglos.js"></script> <!-- funciones de campos-->
-  <script src="JavaScript/agregarCampos.js"></script> <!-- funciones para agregar campos-->
-  <script src="JavaScript/mostrarDefinicion.js"></script>
-  <script src="JavaScript/recuperarDatos.js"></script>
+  <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+  <script src="JS FichaPerNatu/agregarCamposPerNatu.js"></script>
 
   <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
   <link rel="stylesheet" href="css/modoOscuro.css">
@@ -69,158 +66,400 @@
     <input type="checkbox" id="toggle"> <!--Cambiar a modo oscuro-->
     <div class="col">
       <div class="col-md-8 offset-md-2">
-        <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Natural</h1>
+        <h1>Formulario Ficha de Cliente <br> Persona Natural</h1>
         <hr>
         <form id="form">
           <div class="row mb-3">
-            <div class="row mb-3">
-              <h2>Identificación del Cliente (Persona Natural)</h2> <!-- 1 -->
+            <h2>Identificación del Cliente (Persona Natural)</h2> <!-- 1 -->
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="nombreCompletoPerNatu" class="form-label">Nombres y Apellidos</label>
+              <input type="text" oninput="increaseWidth()" name="nombreCompletoPerNatu" placeholder="Nombre Completo"
+                class="form-control" id="nombreCompletoPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="rutPerNatu" class="form-label">RUT</label>
+              <input type="text" name="rutPerNatu" placeholder="RUT" class="form-control" id="rutPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="estCivilPerNatu" class="form-label">Estado Civil</label>
+              <select class="form-select" name="estCivilPerNatu" id="opcionEstCivilPerNatu">
+                <option value="" disabled>Seleccione 1 opción</option>
+                <option name="opcionEstCivilPerNatu" id="estCivilPerNatuSolter" value="0">Soltero(a)</option>
+                <option name="opcionEstCivilPerNatu" id="estCivilPerNatuCasado" value="1">Casado(a)</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="nacionalidadPerNatu" class="form-label">Nacionalidad</label>
+              <input type="text" name="nacionalidadPerNatu" placeholder="Nacionalidad" class="form-control"
+                id="nacionalidadPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="residenciaPerNatu" class="form-label">País de Residencia</label>
+              <input type="text" name="residenciaPerNatu" placeholder="País de Residencia" class="form-control"
+                id="residenciaPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="direccionPerNatu" class="form-label">Dirección</label>
+              <input type="text" name="direccionPerNatu" placeholder="Dirección" class="form-control"
+                id="direccionPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="comunaPerNatu" class="form-label">Comuna</label>
+              <input type="text" name="comunaPerNatu" placeholder="Comuna" class="form-control" id="comunaPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="correoPerNatu" class="form-label">Correo Electrónico</label>
+              <input type="email" name="correoPerNatu" placeholder="Correo Electrónico" class="form-control"
+                id="correoPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="profesionPerNatu" class="form-label">Profesión - ocupación</label>
+              <input type="text" name="profesionPerNatu" placeholder="Profesión - ocupación" class="form-control"
+                id="profesionPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="telefono1PerNatu" class="form-label">Teléfono 1</label>
+              <input type="tel" name="telefono1PerNatu" placeholder="Teléfono 1" class="form-control"
+                id="telefono1PerNatu" maxlength="20">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="telefono2PerNatu" class="form-label">Teléfono 2</label>
+              <input type="tel" name="telefono2PerNatu" placeholder="Teléfono 2" class="form-control"
+                id="telefono2PerNatu">
+            </div>
+            <br>
+            <div id="conyuge" style="display: none;">
               <br>
-              <br>
-              <div class="col-md-6">
-                <label for="nombreCompletoPerNatu" class="form-label">Nombres y Apellidos</label>
-                <input type="text" oninput="increaseWidth()" name="nombreCompletoPerNatu" placeholder="Nombre Completo"
-                  class="form-control" id="nombreCompletoPerNatu">
-              </div>
-              <div class="col-md-6">
-                <label for="rutPersoNatu" class="form-label">RUT</label>
-                <input type="text" name="rut" placeholder="RUT" class="form-control" id="rutPersoNatu">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-6">
-                <label for="estadoCevilPersoNatu" class="form-label">Estado Civil</label>
-                <input type="text" name="estadoCevilPersoNatu" placeholder="Estado Civil" class="form-control"
-                  id="estadoCevilPersoNatu">
-              </div>
-              <div class="col-md-6">
-                <label for="nacionalidadPersoNatu" class="form-label">Nacionalidad</label>
-                <input type="text" name="nacionalidadPersoNatu" placeholder="Nacionalidad" class="form-control"
-                  id="nacionalidadPersoNatu">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-6">
-                <label for="residenciaPersoNatu" class="form-label">País de Residencia</label>
-                <input type="text" name="residenciaPersoNatu" placeholder="País de Residencia" class="form-control"
-                  id="residenciaPersoNatu">
-              </div>
-              <div class="col-md-6">
-                <label for="direccionPersoNatu" class="form-label">Dirección</label>
-                <input type="text" name="direccionPersoNatu" placeholder="Dirección" class="form-control"
-                  id="direccionPersoNatu">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-6">
-                <label for="comunaPersoNatu" class="form-label">Comuna</label>
-                <input type="text" name="comunaPersoNatu" placeholder="Comuna" class="form-control"
-                  id="comunaPersoNatu">
-              </div>
-              <div class="col-md-6">
-                <label for="correo" class="form-label">Correo Electrónico</label>
-                <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control" id="correo">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-6">
-                <label for="profesionPersoNatu" class="form-label">Profesión - ocupación</label>
-                <input type="text" name="profesionPersoNatu" placeholder="Profesión - ocupación" class="form-control"
-                  id="profesionPersoNatu">
-              </div>
-              <div class="col-md-6">
-                <label for="telefono1" class="form-label">Teléfono 1</label>
-                <input type="tel" name="telefono1" placeholder="Teléfono 1" class="form-control" id="telefono1"
-                  maxlength="20">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-6">
-                <label for="telefono2" class="form-label">Teléfono 2</label>
-                <input type="tel" name="telefono2" placeholder="Teléfono 2" class="form-control" id="telefono2">
-              </div>
-              <br>
-              <br>
-              <br>
-              <div id="conyuge">
-                <div class="row mb-3">
-                  <h2>Identificación del cónyuge</h2> <!-- 1 -->
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="nombreCompletoPerNatu" class="form-label">Nombres y Apellidos</label>
-                    <input type="text" oninput="increaseWidth()" name="nombreCompletoPerNatu" placeholder="Nombre Completo"
-                      class="form-control" id="nombreCompletoPerNatu">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="rutPersoNatu" class="form-label">RUT</label>
-                    <input type="text" name="rut" placeholder="RUT" class="form-control" id="rutPersoNatu">
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="estadoCevilPersoNatu" class="form-label">Estado Civil</label>
-                    <input type="text" name="estadoCevilPersoNatu" placeholder="Estado Civil" class="form-control"
-                      id="estadoCevilPersoNatu">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nacionalidadPersoNatu" class="form-label">Nacionalidad</label>
-                    <input type="text" name="nacionalidadPersoNatu" placeholder="Nacionalidad" class="form-control"
-                      id="nacionalidadPersoNatu">
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="residenciaPersoNatu" class="form-label">País de Residencia</label>
-                    <input type="text" name="residenciaPersoNatu" placeholder="País de Residencia" class="form-control"
-                      id="residenciaPersoNatu">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="direccionPersoNatu" class="form-label">Dirección</label>
-                    <input type="text" name="direccionPersoNatu" placeholder="Dirección" class="form-control"
-                      id="direccionPersoNatu">
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="comunaPersoNatu" class="form-label">Comuna</label>
-                    <input type="text" name="comunaPersoNatu" placeholder="Comuna" class="form-control"
-                      id="comunaPersoNatu">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="correo" class="form-label">Correo Electrónico</label>
-                    <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control" id="correo">
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="profesionPersoNatu" class="form-label">Profesión - ocupación</label>
-                    <input type="text" name="profesionPersoNatu" placeholder="Profesión - ocupación" class="form-control"
-                      id="profesionPersoNatu">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="telefono1" class="form-label">Teléfono 1</label>
-                    <input type="tel" name="telefono1" placeholder="Teléfono 1" class="form-control" id="telefono1"
-                      maxlength="20">
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <div class="col-md-6">
-                    <label for="telefono2" class="form-label">Teléfono 2</label>
-                    <input type="tel" name="telefono2" placeholder="Teléfono 2" class="form-control" id="telefono2">
-                  </div>
+              <div class="row mb-3">
+                <br>
+                <hr>
+                <h2>Identificación del cónyuge</h2>
+                <br>
+                <br>
+                <h4>Al seleccionar la opción "Casado(a)", debe identificar al cónyuge.</h4>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="nombreCompletoConyu" class="form-label">Nombres y Apellidos</label>
+                  <input type="text" oninput="increaseWidth()" name="nombreCompletoConyu" placeholder="Nombre Completo"
+                    class="form-control" id="nombreCompletoConyu">
+                </div>
+                <div class="col-md-6">
+                  <label for="rutConyu" class="form-label">RUT</label>
+                  <input type="text" name="rutConyu" placeholder="RUT" class="form-control" id="rutConyu">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="estCivilConyu" class="form-label">Estado Civil</label>
+                  <select class="form-select" name="estCivilConyu" id="estCivilConyu">
+                    <option value="" disabled>Seleccione 1 opción</option>
+                    <option value="0">Soltero(a)</option>
+                    <option value="1">Casado(a)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="nacionalidadConyu" class="form-label">Nacionalidad</label>
+                  <input type="text" name="nacionalidadConyu" placeholder="Nacionalidad" class="form-control"
+                    id="nacionalidadConyu">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="residenciaConyu" class="form-label">País de Residencia</label>
+                  <input type="text" name="residenciaConyu" placeholder="País de Residencia" class="form-control"
+                    id="residenciaConyu">
+                </div>
+                <div class="col-md-6">
+                  <label for="direccionConyu" class="form-label">Dirección</label>
+                  <input type="text" name="direccionConyu" placeholder="Dirección" class="form-control"
+                    id="direccionConyu">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="comunaConyu" class="form-label">Comuna</label>
+                  <input type="text" name="comunaConyu" placeholder="Comuna" class="form-control" id="comunaConyu">
+                </div>
+                <div class="col-md-6">
+                  <label for="correoConyu" class="form-label">Correo Electrónico</label>
+                  <input type="email" name="correoConyu" placeholder="Correo Electrónico" class="form-control"
+                    id="correoConyu">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="profesionConyu" class="form-label">Profesión - ocupación</label>
+                  <input type="text" name="profesionConyu" placeholder="Profesión - ocupación" class="form-control"
+                    id="profesionConyu">
+                </div>
+                <div class="col-md-6">
+                  <label for="telefono1Conyu" class="form-label">Teléfono 1</label>
+                  <input type="tel" name="telefono1Conyu" placeholder="Teléfono 1" class="form-control"
+                    id="telefono1Conyu" maxlength="20">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="telefono2Conyu" class="form-label">Teléfono 2</label>
+                  <input type="tel" name="telefono2Conyu" placeholder="Teléfono 2" class="form-control"
+                    id="telefono2Conyu">
+                </div>
               </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Personas autorizadas para <br> dar órdenes a AAM S.A.</h2> <!-- 4 -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="nombreAAMPerNatu" class="form-label">Nombre Completo</label>
+              <input type="text" name="nombreAAMPerNatu" placeholder="Nombre Completo" class="form-control"
+                id="nombreAAMPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="rutAAMPerNatu" class="form-label">RUT</label>
+              <input type="text" name="rutAAMPerNatu" placeholder="RUT" class="form-control" id="rutAAMPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="nacionalidadAAMPerNatu" class="form-label">Nacionalidad</label>
+              <input type="text" name="nacionalidadAAMPerNatu" placeholder="Nacionalidad" class="form-control"
+                id="nacionalidadAAMPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="correoAAMPerNatu" class="form-label">Correo Electrónico</label>
+              <input type="email" name="correoAAMPerNatu" placeholder="Correo Electrónico" class="form-control"
+                id="correoAAMPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="direccionAAMPerNatu" class="form-label">Dirección</label>
+              <input type="text" name="direccionAAMPerNatu" placeholder="Dirección" class="form-control"
+                id="direccionAAMPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="comunaAAMPerNatu" class="form-label">Comuna</label>
+              <input type="text" name="comunaAAMPerNatu" placeholder="Comuna" class="form-control"
+                id="comunaAAMPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="estadoCivilAAMPerNatu" class="form-label">Estado Civil</label>
+              <input type="text" name="estadoCivilAAMPerNatu" placeholder="Estado Civil" class="form-control"
+                id="estadoCivilAAMPerNatu">
+            </div>
+            <div class="col-md-6">
+              <label for="telefonoAAMPerNatu" class="form-label">Telefóno</label>
+              <input type="tel" name="telefonoAAMPerNatu" placeholder="Telefóno" class="form-control"
+                id="telefonoAAMPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" class="btn btn-outline-primary mb-4" id="agregarAAMBtnPerNatu"> Agregar Personas
+              Autorizadas (Máximo 3)</button>
+            <br>
+            <div id="camposAAMPerNatu"> <!-- Aquí se agregan los campos AAM -->
+            </div>
+            <br>
+            <br>
+            <hr>
+            <h2 id="otraInfo">Medios para Instruir</h2>
+            <br>
+            <h4>Seleccione 1 opción</h4> <!-- 5 -->
+            <br>
+            <br>
+            <div class="col-md-3">
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionMediosPerNatu" class="form-check-input" id="instrEscritaPerNatu"
+                  value="0">
+                <label for="instrEscritaPerNatu" class="form-check-label">Solo Instrucciones
+                  Escritas</label>
+              </div>
+              <br>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionMediosPerNatu" class="form-check-input" id="mediosCorreoPerNatu"
+                  value="1">
+                <label for="mediosCorreoPerNatu" class="form-check-label">Correo</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="inputMediosCorreoPerNatu" class="form-label">Indicar Correo : </label>
+                <input type="email" class="form-control" id="inputMediosCorreoPerNatu">
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Relación Cliente con AAM S.A</h2>
+            <br>
+            <h4>Seleccione 1 opción</h4> <!-- 6 -->
+            <br>
+            <br>
+            <div class="col-md-3">
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input"
+                  id="opcionAccionistaPerNatu" value="0">
+                <label for="opcionAccionistaPerNatu" class="form-check-label">Accionista</label>
+              </div>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input" id="opcionDirectorPerNatu"
+                  value="1">
+                <label for="opcionDirectorPerNatu" class="form-check-label">Director</label>
+              </div>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input" id="opcionEmpleadorPerNatu"
+                  value="2">
+                <label for="opcionEmpleadorPerNatu" class="form-check-label">Empleado</label>
+              </div>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input"
+                  id="opcionNoRelacionadoPerNatu" value="3">
+                <label for="opcionNoRelacionadoPerNatu" class="form-check-label">No Relacionado</label>
+              </div>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input" id="opcionOtroPerNatu"
+                  value="4">
+                <label for="opcionOtroPerNatu" class="form-check-label">Otro (completar)</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <label for="inputRelacionAAMPerNatu" class="form-label">Comentario Otro : </label>
+                <input type="text" class="form-control" id="inputRelacionAAMPerNatu">
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Destino de Información al Cliente</h2>
+            <br>
+            <h4>Seleccione 1 opción</h4>
+            <br>
+            <br>
+            <div class="col-md-3">
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionInfoClientePerNatu" class="form-check-input" id="direcComercialPerNatu"
+                  value="0">
+                <label for="direcComercialPerNatu" class="form-check-label">Dirección Comercial</label>
+              </div>
+              <br>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionInfoClientePerNatu" class="form-check-input"
+                  id="correoInfoClientePerNatu" value="1">
+                <label for="correoInfoClientePerNatu" class="form-check-label">Correo Electrónico</label>
+              </div>
+              <br>
+              <br>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="opcionInfoClientePerNatu" class="form-check-input"
+                  id="noEnviarInfoClientePerNatu" value="2">
+                <label for="noEnviarInfoClientePerNatu" class="form-check-label">No Enviar
+                  Correspondencia</label>
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Cuentas Corrientes</h2> <!-- 8 -->
+            <br>
+            <br>
+            <br>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Moneda</th>
+                  <th scope="col">Banco</th>
+                  <th scope="col">Tipo de Cuenta</th>
+                  <th scope="col">N° de Cuenta</th>
+                  <th scope="col">Cuenta Principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">CLP</th>
+                  <td><input type="text" id="bancoCLP"></td>
+                  <td><input type="text" id="tipoCuentaCLP"></td>
+                  <td><input type="number" id="nCuentaCLP"></td>
+                  <td><input type="text" id="cuentaPrincipal"></td>
+                </tr>
+                <tr>
+                  <th scope="row">USS</th>
+                  <td><input type="text" id="bancoUSS"></td>
+                  <td><input type="text" id="tipoCuentaUSS"></td>
+                  <td><input type="number" id="nCuentaUSS"></td>
+                  <td><input type="text" id="cuentaPrincipal"></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-outline-primary mb-4" id="agregarCtasCorrientes">Agregar
+                otra
+                Cuenta Corriente</button>
+              <br>
+              <div id="camposCtasCorrientes"> <!-- Aquí se agrega la cuenta corriente-->
+              </div>
+            </div>
+          </div> <!--ultimo div-->
         </form>
       </div>
     </div>

@@ -19,10 +19,6 @@ body {
   width: 10ch;
 }
 
-h1 {
-  text-align: end;
-}
-
 .texto-adicional {
   display: none;
 }
@@ -58,6 +54,7 @@ h1 {
 .texto-adicional9 {
   display: none;
 }
+
 
 p {
   font-size: 115%;
@@ -129,4 +126,12 @@ tr {
 
 #recuperarDatos {
   text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
 }

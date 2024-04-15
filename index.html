@@ -24,11 +24,11 @@
     <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
 
-    <script src="JavaScript/app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
-    <script src="JavaScript/arreglos.js"></script> <!-- funciones de campos-->
-    <script src="JavaScript/agregarCampos.js"></script> <!-- funciones para agregar campos-->
-    <script src="JavaScript/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
-    <script src="JavaScript/recuperarDatos.js"></script> <!-- Recuperar datos de Accionistas y Benef finales-->
+    <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+    <script src="JS FichaJuridic/arreglos.js"></script> <!-- funciones de campos-->
+    <script src="JS FichaJuridic/agregarCampos.js"></script> <!-- funciones para agregar campos-->
+    <script src="JS FichaJuridic/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
+    <script src="JS FichaJuridic/recuperarDatos.js"></script> <!-- Recuperar datos de Accionistas y Benef finales-->
 
     <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
     <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
@@ -179,8 +179,10 @@
                         <h4 style="text-decoration: underline;">Se entiende como Beneficiario Final : </h4>
                         <br>
                         <p id="texto9" class="texto-completo9">
+                            Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que
+                            <span class="puntos-suspensivos9" id="puntos-suspensivos9">...</span>
                             <span class="texto-adicional9">
-                                Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que finalmente
+                                finalmente
                                 posee, directa o indirectamente, a través
                                 de sociedades u otros mecanismos, una participación igual o mayor al 10% del capital o
                                 de los derechos a voto de una persona
@@ -332,7 +334,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Apoderados (Máximo 7)</h2> <!-- 3 -->
+                        <h2>Apoderados</h2> <!-- 3 -->
                         <br>
                         <br>
                         <div class="col-md-6">
@@ -397,7 +399,7 @@
                         <br>
                         <br>
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarCampoBtn"> Agregar
-                            Apoderados</button>
+                            Apoderados (Máximo 7)</button>
                         <div id="campos">
                             <!-- Los Apoderados se agregan en este div -->
                         </div>
@@ -406,7 +408,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Otras personas autorizadas para dar órdenes a AAM S.A. (Máximo 3)</h2> <!-- 4 -->
+                        <h2>Otras personas autorizadas para dar órdenes a AAM S.A.</h2> <!-- 4 -->
                         <br>
                         <br>
                         <div class="col-md-6">
@@ -470,7 +472,7 @@
                         <br>
                         <br>
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarAAMBtn"> Agregar Personas
-                            Autorizadas</button>
+                            Autorizadas (Máximo 3)</button>
                         <br>
                         <div id="camposAAM"> <!-- Aquí se agregan los campos AAM -->
                         </div>
@@ -687,6 +689,7 @@
                             <p id="texto4" class="texto-completo4">
                                 1-Todo abono efectuado a AAM S.A. Administradora de Activos será mediante
                                 transferencia electrónica o
+                                <span class="puntos-suspensivos4" id="puntos-suspensivos4">...</span>
                                 <span class="texto-adicional4">
                                     deposito con cheque de bancos según
                                     lo establecido en las políticas de aceptación de fondos, esto con el fin de
@@ -846,7 +849,7 @@
                                 <option value="7">Casas de Cambio </option>
                                 <option value="8">Conservador de Bienes Raíces </option>
                                 <option value="9">Agentes de Aduana </option>
-                                <option value="10">Agentes de Aduana </option>
+                                <option value="10">Act. Sin Fines de Lucro </option>
                                 <option value="11">Otros (completar) </option>
                             </select>
                             <br>
@@ -868,6 +871,7 @@
                             <p id="texto" class="texto-completo">
                                 Se define como Personas Expuestas Políticamente (PEP) a los chilenos o extranjeros
                                 que desempeñan o hayan desempeñado funciones públicas destacadas en un país,
+                                <span class="puntos-suspensivos" id="puntos-suspensivos">...</span>
                                 <span class="texto-adicional">
                                     hasta a lo menos un año de finalizado el ejercicio
                                     de esta. Se incluyen a sus cónyuges, sus parientes hasta el segundo grado de
@@ -987,14 +991,14 @@
                                 id="mostrarDatosBeneficiarios">Recuperar Datos de Beneficiarios</button>
                             <div class="row-md-6" id="recuperarDatosPEP">
                                 <br>
-                                <h5 style="font-weight: bold;">Accionistas Recuperados : </h5>
+                                <h5 style="font-weight: bold;">Accionistas : </h5>
                                 <br>
                                 <div id="datosAccionistasRecuperados">
                                     <!-- Contenido del div aquí -->
                                     <br>
                                 </div>
                                 <br>
-                                <h5 style="font-weight: bold;">Beneficiarios Finales Recuperados : </h5>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
                                 <br>
                                 <div id="datosBeneficiariosRecuperados">
                                     <!-- Contenido del div aquí -->
@@ -1013,6 +1017,7 @@
                         <div class="row mb-3">
                             <p id="texto5" class="texto-completo5">
                                 AAM S.A. Administradora de Activos como sujeto obligado y
+                                <span class="puntos-suspensivos5" id="puntos-suspensivos5">...</span>
                                 <span class="texto-adicional5">
                                     con el fin de mantener los registros en conformidad a lo establecido en el
                                     artículo 5° de la Ley N° 19.913, mantendrá el registro de la información
@@ -1032,27 +1037,28 @@
                         <br>
                         <div class="row mb-3">
                             <p id="texto6" class="texto-completo6">
-                                El suscrito, en su calidad de Inversionista Calificado de acuerdo con lo establecido
-                                en el numeral 8° de la Sección II de la Norma de Carácter General
+                                El suscrito, en su calidad de Inversionista Calificado de acuerdo con lo establecido en
+                                el numeral 8° de la Sección II de la Norma de Carácter General
                                 No. 216 de 2008 impartida por la
+                                <span class="puntos-suspensivos6" id="puntos-suspensivos6">...</span>
                                 <span class="texto-adicional6">
                                     Comisión para el Mercado Financiero (CMF), bajo juramento viene en declarar su
                                     intención expresa de participar
                                     e invertir en el mercado financiero a través de instrumentos con condiciones y
                                     requisitos específicos, entre los cuales se encuentran a título
-                                    meramente ejemplar y enunciativo; valores de oferta pública de emisores
-                                    nacionales y/o extranjeros, cuotas de fondos de inversión; contratos de
+                                    meramente ejemplar y enunciativo; valores de oferta pública de emisores nacionales
+                                    y/o extranjeros, cuotas de fondos de inversión; contratos de
                                     derivados celebrados en Chile o en el extranjero con el propósito de cubrir el
                                     riesgo de fluctuaciones de tasas, precios y tipos de cambio de los
                                     activos administrados, contratos sobre productos agropecuarios que se transen en
                                     bolsas de productos nacionales, facturas que sean adquiridas en
-                                    centros bursátiles nacionales que cuenten con autorización para transar este
-                                    tipo de activos, notas estructuradas, contrato de préstamo de valores
-                                    y cualesquiera otro instrumento financiero que pudiera desarrollarse en el
-                                    futuro.
-                                    Asimismo, declara expresamente que entiende a cabalidad y acepta todos los
-                                    riesgos propios de los mercados especiales y sus instrumentos y que
-                                    cumplen con los requisitos establecidos en la referida Norma de Carácter General
+                                    centros bursátiles nacionales que cuenten con autorización para transar este tipo de
+                                    activos, notas estructuradas, contrato de préstamo de valores
+                                    y cualesquiera otro instrumento financiero que pudiera desarrollarse en el futuro.
+                                    <br>
+                                    Asimismo, declara expresamente que entiende a cabalidad y acepta todos los riesgos
+                                    propios de los mercados especiales y sus instrumentos y
+                                    que cumplen con los requisitos establecidos en la referida Norma de Carácter General
                                     para ser considerado como Inversionista Calificado. A mayor
                                     abundamiento y a fin de precisarlo previamente referido, declara que:
                                 </span>
@@ -1317,7 +1323,7 @@
                             </div>
                             <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
-                                    value="C- A continuación, debe completar la información de los socios o accionistas."
+                                    value="C- A continuación, debe completar la información de los accionistas y/o beneficiarios finales."
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                             <hr>
@@ -1331,14 +1337,14 @@
                             </div>
                             <div class="row-md-6" id="datosResidencia">
                                 <br>
-                                <h5 style="font-weight: bold;">Accionistas Recuperados : </h5>
+                                <h5 style="font-weight: bold;">Accionistas : </h5>
                                 <br>
                                 <div id="datosResidenciaAccioRecuperados">
                                     <!-- Contenido del div aquí -->
                                     <br>
                                 </div>
                                 <br>
-                                <h5 style="font-weight: bold;">Beneficiarios Finales Recuperados : </h5>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
                                 <div id="datosResidenciaBenefRecuperados">
                                     <!-- Contenido del div aquí -->
                                     <br>
@@ -1355,10 +1361,12 @@
                         <br>
                         <div class="row mb-3">
                             <p id="texto7" class="texto-completo7">
+                                1.1. Haber sido informado por la administradora respecto de las normas CRS
+                                (Common Reporting Standard), norma internacional sobre intercambio
+                                de información automática de
+                                <span class="puntos-suspensivos7" id="puntos-suspensivos7">...</span>
                                 <span class="texto-adicional7">
-                                    1.1. Haber sido informado por la administradora respecto de las normas CRS
-                                    (Common Reporting Standard), norma internacional sobre intercambio
-                                    de información automática de cuentas financieras, cuyo objeto es combatir la
+                                    cuentas financieras, cuyo objeto es combatir la
                                     evasión fiscal internacional, a través de la cooperación entre las
                                     administraciones tributarias de los distintos Estados participantes de la misma.
                                     Con fecha 01 de junio de 2011, Chile suscribió CRS, obligándose a
@@ -1468,10 +1476,12 @@
                         <br>
                         <div class="row mb-3">
                             <p id="texto8" class="texto-completo8">
+                                La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga,
+                                a
+                                partir del
+                                <span class="puntos-suspensivos8" id="puntos-suspensivos8">...</span>
                                 <span class="texto-adicional8">
-                                    La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga,
-                                    a
-                                    partir del 1º de Julio del año 2014, a todos y cada una de las
+                                    1º de Julio del año 2014, a todos y cada una de las
                                     entidades financieras chilenas a requerir a sus clientes ciertas informaciones,
                                     con
                                     el objetivo de determinar si son o no contribuyentes en Estados
@@ -1639,7 +1649,7 @@
                                     </div>
                                 </div>
                                 <input type="text" readonly class="form-control"
-                                    value="He leído y confirmo la veracidad de la información"
+                                    value="He leído y confirmo la veracidad de toda la información ingresada"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                         </div>
