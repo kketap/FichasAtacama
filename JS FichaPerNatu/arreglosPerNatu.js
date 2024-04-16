@@ -1,7 +1,7 @@
 //Persona normal 
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("estCivilPerNatu").addEventListener("change", function () {
+  document.getElementById("opcionEstCivilPerNatu").addEventListener("change", function () {
     var estadoCivil = this.value; // Obtener el valor seleccionado del select
     var conyugeDiv = document.getElementById("conyuge");
 

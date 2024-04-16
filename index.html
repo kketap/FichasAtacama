@@ -67,16 +67,16 @@
     </nav>
     <br>
     <br>
-    <div class="container mt-4">
+    <div class="container mt-3">
         <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
         <input type="checkbox" id="toggle"> <!--Cambiar a modo oscuro-->
         <div class="col">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-9 offset-md-2">
                 <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Jurídica</h1>
                 <hr id="infoEmpresa">
                 <form id="form">
-                    <div class="row mb-3">
-                        <div class="row mb-3">
+                    <div class="row mb-4">
+                        <div class="row mb-4">
                             <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
                             <br>
                             <br>
@@ -220,7 +220,7 @@
                         </div>
                         <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
-                            Agregar Accionistas (Máximo 5)
+                            Agregar Accionistas (Máximo 10)
                         </button>
                         <div id="camposAccionista"></div>
                         <br>
@@ -255,7 +255,7 @@
                         <div class="mb-4"></div>
                         <!-- Espacio entre el último div y el botón  min="10" max="100" minlength="2" maxlength="3"-->
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenef"> Agregar
-                            Beneficiarios (Máximo 5) </button>
+                            Beneficiarios (Máximo 10) </button>
                         <div id="camposBenefFinales"></div>
                         <br>
                         <br>
@@ -486,26 +486,42 @@
                         <h4>Seleccione 1 opción</h4> <!-- 5 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionMedios" class="form-check-input" id="instrEscrita"
                                         value="0">
-                                    <label for="instrEscrita" class="form-check-label">Solo Instrucciones
-                                        Escritas</label>
+                                    <label for="instrEscrita" class="form-check-label">Verbal</label>
                                 </div>
                                 <br>
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
                                         value="1">
-                                    <label for="mediosCorreo" class="form-check-label">Correo</label>
+                                    <label for="mediosCorreo" class="form-check-label">Verbal y Escrita</label>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div>
-                                    <label for="inputMediosCorreo" class="form-label">Indicar Correo : </label>
-                                    <input type="email" class="form-control" id="inputMediosCorreo">
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
+                                        value="2">
+                                    <label for="mediosCorreo" class="form-check-label">Solo Escrita</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
+                                        value="3">
+                                    <label for="mediosCorreo" class="form-check-label">Correo</label>
+                                    <br>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="inputMediosCorreo" class="form-label">Indicar Correo : </label>
+                                            <input type="email" class="form-control" id="inputMediosCorreo"
+                                                style="width: 300px;">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -519,8 +535,8 @@
                         <h4>Seleccione 1 opción</h4> <!-- 6 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionRelacionNatuAAM" class="form-check-input"
                                         id="invertirNatuAAM" value="0">
@@ -558,8 +574,8 @@
                         <h4>Seleccione 1 opción</h4> <!-- 6 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionRelacionAAM" class="form-check-input"
                                         id="opcionAccionista" value="0">
@@ -575,7 +591,7 @@
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionRelacionAAM" class="form-check-input"
                                         id="opcionEmpleador" value="2">
-                                    <label for="opcionEmpleador" class="form-check-label">Empleado</label>
+                                    <label for="opcionEmpleador" class="form-check-label">Trabajador</label>
                                 </div>
                                 <br>
                                 <div class="form-check form-check-inline">
@@ -607,8 +623,8 @@
                         <h4>Seleccione 1 opción</h4> <!-- 7 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionInfoCliente" class="form-check-input"
                                         id="direcComercial" value="0">
@@ -628,6 +644,24 @@
                                         id="noEnviarInfoCliente" value="2">
                                     <label for="noEnviarInfoCliente" class="form-check-label">No Enviar
                                         Correspondencia</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionInfoCliente" class="form-check-input"
+                                        id="noEnviarInfoCliente" value="3">
+                                    <label for="noEnviarInfoCliente" class="form-check-label">Agregar otra
+                                        dirección</label>
+                                    <br>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="inputMediosCorreo" class="form-label">Indicar otra dirección :
+                                            </label>
+                                            <input type="email" class="form-control" id="inputMediosCorreo"
+                                                style="width: 300px;">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -685,7 +719,7 @@
                         <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto4" class="texto-completo4">
                                 1-Todo abono efectuado a AAM S.A. Administradora de Activos será mediante
                                 transferencia electrónica o
@@ -745,8 +779,8 @@
                         <h4>Seleccione 1 opción</h4>
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check">
                                     <input type="radio" name="opcionNivelRenta" class="form-check-input"
                                         id="ceroUnoRenta" value="0">
@@ -792,8 +826,8 @@
                         <h4>Seleccione 1 opción</h4> <!-- 10 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
-                            <div class="col-md-3">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="opcionPatrimonio" class="form-check-input"
                                         id="ceroDiezPatrimonio" value="0">
@@ -853,7 +887,7 @@
                                 <option value="11">Otros (completar) </option>
                             </select>
                             <br>
-                            <div class="col-md-9">
+                            <div class="col-md-6">
                                 <div>
                                     <label for="inputActCliente" class="form-label">Otros : </label>
                                     <input type="text" class="form-control" id="inputActCliente">
@@ -867,7 +901,7 @@
                         <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto" class="texto-completo">
                                 Se define como Personas Expuestas Políticamente (PEP) a los chilenos o extranjeros
                                 que desempeñan o hayan desempeñado funciones públicas destacadas en un país,
@@ -912,7 +946,6 @@
                                     Funciones públicas: Comprenden en esta categoría a jefes de Estado o de un
                                     Gobierno, políticos de alta jerarquía, funcionarios gubernamentales, judiciales
                                     o militares de alta jerarquía y altos ejecutivos de empresas estatales.
-                                    <br>
                                     <br>
                                     Se califican PEP a las siguientes personas:
                                     <br>
@@ -960,7 +993,7 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-9">
+                        <div class="col-md-6">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="opcionClientePEP" class="form-check-input mt-2"
                                     id="clientePEPsi" value="0">
@@ -1014,7 +1047,7 @@
                         <h2>MANTENCIÓN DE REGISTROS : </h2> <!-- 17 -->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto5" class="texto-completo5">
                                 AAM S.A. Administradora de Activos como sujeto obligado y
                                 <span class="puntos-suspensivos5" id="puntos-suspensivos5">...</span>
@@ -1035,32 +1068,59 @@
                         <h2>Definición de Inversionista Calificado : </h2>
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto6" class="texto-completo6">
-                                El suscrito, en su calidad de Inversionista Calificado de acuerdo con lo establecido en
-                                el numeral 8° de la Sección II de la Norma de Carácter General
-                                No. 216 de 2008 impartida por la
+                                Serán considerados Inversionistas Calificados y, por ende, podrán participar en los
                                 <span class="puntos-suspensivos6" id="puntos-suspensivos6">...</span>
                                 <span class="texto-adicional6">
-                                    Comisión para el Mercado Financiero (CMF), bajo juramento viene en declarar su
-                                    intención expresa de participar
-                                    e invertir en el mercado financiero a través de instrumentos con condiciones y
-                                    requisitos específicos, entre los cuales se encuentran a título
-                                    meramente ejemplar y enunciativo; valores de oferta pública de emisores nacionales
-                                    y/o extranjeros, cuotas de fondos de inversión; contratos de
-                                    derivados celebrados en Chile o en el extranjero con el propósito de cubrir el
-                                    riesgo de fluctuaciones de tasas, precios y tipos de cambio de los
-                                    activos administrados, contratos sobre productos agropecuarios que se transen en
-                                    bolsas de productos nacionales, facturas que sean adquiridas en
-                                    centros bursátiles nacionales que cuenten con autorización para transar este tipo de
-                                    activos, notas estructuradas, contrato de préstamo de valores
-                                    y cualesquiera otro instrumento financiero que pudiera desarrollarse en el futuro.
+                                    mercados especiales establecidos por este Servicio y en las ofertas o colocaciones dirigidas a estos
+                                    inversionistas, las siguientes personas y entidades:
                                     <br>
-                                    Asimismo, declara expresamente que entiende a cabalidad y acepta todos los riesgos
-                                    propios de los mercados especiales y sus instrumentos y
-                                    que cumplen con los requisitos establecidos en la referida Norma de Carácter General
-                                    para ser considerado como Inversionista Calificado. A mayor
-                                    abundamiento y a fin de precisarlo previamente referido, declara que:
+                                    1. Inversionistas institucionales, entendiendo por tales aquéllos contenidos en la letra e. del
+                                    artículo 4 bis de la Ley Nº 18.045.
+                                    <br>
+                                    2. Bancos, sociedades financieras, compañías de seguros, entidades de reaseguro, intermediarios
+                                    de valores y administradoras de fondos, constituidos en el extranjero.
+                                    <br>
+                                    3. Corredores de bolsa y agentes de valores, cuando actúen por cuenta propia.
+                                    <br>
+                                    4. Corredores de bolsas de productos agropecuarios, cuando actúen por cuenta propia y la
+                                    inversión corresponda a productos de aquellos señalados en el artículo 5° de la Ley 19.220.
+                                    <br>
+                                    5. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten con inversiones
+                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero,
+                                    por un monto no inferior a 20.000 UF.
+                                    <br>
+                                    6. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten con inversiones
+                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero,
+                                    por un monto superior a 4.000 UF y que además cumplan con alguno de los siguientes
+                                    requisitos:
+                                    <br>
+                                    a.- Contar con un patrimonio contable igual o superior a 100.000 UF;
+                                    <br>
+                                    b.- Haber realizado transacciones en el mercado de valores por un monto individual superior a
+                                    U.F. 1.000 y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos
+                                    4 trimestres.
+                                    <br>
+                                    c.- Ser un profesional universitario con especialización en economía, administración o finanzas
+                                    o haber obtenido un post-grado universitario en tales áreas.
+                                    <br>
+                                    d.- Haber desempeñado, por a lo menos por dos años consecutivos, un cargo profesional en
+                                    mesas de dinero o en departamentos dedicados a realizar análisis financiero, asesorías
+                                    financieras, administración y gestión de recursos, vinculados a las decisiones de inversión
+                                    en un Inversionista Calificado.
+                                    <br>
+                                    e.- Que las decisiones de inversión sean adoptadas por un Inversionista Calificado de acuerdo
+                                    a las consideraciones de esta Norma, en virtud de un contrato de administración de cartera.
+                                    Esto, en la medida que la facultad para participar en los mercados especiales, ofertas y
+                                    colocaciones a que se refiere esta Norma haya quedado expresamente señalada en el
+                                    contrato de administración respectivo y que el Inversionista Calificado informe
+                                    mensualmente al cliente de las operaciones realizadas en virtud de dicha facultad.
+                                    <br>
+                                    f.- Ser una persona jurídica o entidad, nacional o extranjera, en que las decisiones de
+                                    inversión sean adoptadas por un Inversionista Calificado de acuerdo a las consideraciones
+                                    de esta Norma. 
+                                    
                                 </span>
                             </p>
                             <button type="button" id="alternarTexto6" class="btn btn-outline-primary mb-4">Mostrar
@@ -1359,7 +1419,7 @@
                         <h2>Declaraciones del Cliente : </h2> <!--15-->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto7" class="texto-completo7">
                                 1.1. Haber sido informado por la administradora respecto de las normas CRS
                                 (Common Reporting Standard), norma internacional sobre intercambio
@@ -1474,7 +1534,7 @@
                         <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
                         <br>
                         <br>
-                        <div class="row mb-3">
+                        <div class="row mb-4">
                             <p id="texto8" class="texto-completo8">
                                 La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga,
                                 a
@@ -1508,7 +1568,7 @@
                         <h2>Sección 1 : </h2> <!--15-->
                         <br>
                         <br>
-                        <div class="row-md-6">
+                        <div class="row-md-4">
                             <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva
                                 (passive
                                 NFFE ante la Ley FATCA)</h4>
