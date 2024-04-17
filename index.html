@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
 
     <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+    <script src="test.js"></script>
+
     <script src="JS FichaJuridic/arreglos.js"></script> <!-- funciones de campos-->
     <script src="JS FichaJuridic/agregarCampos.js"></script> <!-- funciones para agregar campos-->
     <script src="JS FichaJuridic/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
@@ -58,7 +60,8 @@
                             Ficha de Cliente Persona Natural
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="fichaPersonaNormal.html">Información</a></li>
+                            <li><a class="dropdown-item" href="fichaPersonaNormal.html">Formulario Ficha Persona
+                                    Natural</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -82,8 +85,8 @@
                             <br>
                             <div class="col-md-6"> <!-- Razón Social -->
                                 <label for="razon" class="form-label">Razón Social</label>
-                                <input type="text" oninput="increaseWidth()" name="razon" placeholder="Razón Social"
-                                    class="form-control" id="razon">
+                                <input type="text" name="razon" placeholder="Razón Social" class="form-control"
+                                    id="razon">
                             </div>
                             <div class=" col-md-6">
                                 <label for="rut" class="form-label">RUT</label>
@@ -146,6 +149,9 @@
                             <br>
                             <br>
                             <br>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Firmar</button>
                         </div>
                         <br>
                         <br>
@@ -689,13 +695,13 @@
                                         <th scope="row">CLP</th>
                                         <td><input type="text" id="bancoCLP"></td>
                                         <td><input type="text" id="tipoCuentaCLP"></td>
-                                        <td><input type="number" id="nCuentaCLP"></td>
+                                        <td><input type="text" id="nCuentaCLP"></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">USS</th>
                                         <td><input type="text" id="bancoUSS"></td>
                                         <td><input type="text" id="tipoCuentaUSS"></td>
-                                        <td><input type="number" id="nCuentaUSS"></td>
+                                        <td><input type="text" id="nCuentaUSS"></td>
                                     </tr>
                                 </tbody>
 
@@ -1073,54 +1079,74 @@
                                 Serán considerados Inversionistas Calificados y, por ende, podrán participar en los
                                 <span class="puntos-suspensivos6" id="puntos-suspensivos6">...</span>
                                 <span class="texto-adicional6">
-                                    mercados especiales establecidos por este Servicio y en las ofertas o colocaciones dirigidas a estos
+                                    mercados especiales establecidos por este Servicio y en las ofertas o colocaciones
+                                    dirigidas a estos
                                     inversionistas, las siguientes personas y entidades:
                                     <br>
-                                    1. Inversionistas institucionales, entendiendo por tales aquéllos contenidos en la letra e. del
+                                    1. Inversionistas institucionales, entendiendo por tales aquéllos contenidos en la
+                                    letra e. del
                                     artículo 4 bis de la Ley Nº 18.045.
                                     <br>
-                                    2. Bancos, sociedades financieras, compañías de seguros, entidades de reaseguro, intermediarios
+                                    2. Bancos, sociedades financieras, compañías de seguros, entidades de reaseguro,
+                                    intermediarios
                                     de valores y administradoras de fondos, constituidos en el extranjero.
                                     <br>
                                     3. Corredores de bolsa y agentes de valores, cuando actúen por cuenta propia.
                                     <br>
-                                    4. Corredores de bolsas de productos agropecuarios, cuando actúen por cuenta propia y la
-                                    inversión corresponda a productos de aquellos señalados en el artículo 5° de la Ley 19.220.
+                                    4. Corredores de bolsas de productos agropecuarios, cuando actúen por cuenta propia
+                                    y la
+                                    inversión corresponda a productos de aquellos señalados en el artículo 5° de la Ley
+                                    19.220.
                                     <br>
-                                    5. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten con inversiones
-                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero,
+                                    5. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten
+                                    con inversiones
+                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el
+                                    extranjero,
                                     por un monto no inferior a 20.000 UF.
                                     <br>
-                                    6. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten con inversiones
-                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero,
+                                    6. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten
+                                    con inversiones
+                                    financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el
+                                    extranjero,
                                     por un monto superior a 4.000 UF y que además cumplan con alguno de los siguientes
                                     requisitos:
                                     <br>
                                     a.- Contar con un patrimonio contable igual o superior a 100.000 UF;
                                     <br>
-                                    b.- Haber realizado transacciones en el mercado de valores por un monto individual superior a
-                                    U.F. 1.000 y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos
+                                    b.- Haber realizado transacciones en el mercado de valores por un monto individual
+                                    superior a
+                                    U.F. 1.000 y con una frecuencia mínima de 20 operaciones trimestrales, durante los
+                                    últimos
                                     4 trimestres.
                                     <br>
-                                    c.- Ser un profesional universitario con especialización en economía, administración o finanzas
+                                    c.- Ser un profesional universitario con especialización en economía, administración
+                                    o finanzas
                                     o haber obtenido un post-grado universitario en tales áreas.
                                     <br>
-                                    d.- Haber desempeñado, por a lo menos por dos años consecutivos, un cargo profesional en
-                                    mesas de dinero o en departamentos dedicados a realizar análisis financiero, asesorías
-                                    financieras, administración y gestión de recursos, vinculados a las decisiones de inversión
+                                    d.- Haber desempeñado, por a lo menos por dos años consecutivos, un cargo
+                                    profesional en
+                                    mesas de dinero o en departamentos dedicados a realizar análisis financiero,
+                                    asesorías
+                                    financieras, administración y gestión de recursos, vinculados a las decisiones de
+                                    inversión
                                     en un Inversionista Calificado.
                                     <br>
-                                    e.- Que las decisiones de inversión sean adoptadas por un Inversionista Calificado de acuerdo
-                                    a las consideraciones de esta Norma, en virtud de un contrato de administración de cartera.
-                                    Esto, en la medida que la facultad para participar en los mercados especiales, ofertas y
+                                    e.- Que las decisiones de inversión sean adoptadas por un Inversionista Calificado
+                                    de acuerdo
+                                    a las consideraciones de esta Norma, en virtud de un contrato de administración de
+                                    cartera.
+                                    Esto, en la medida que la facultad para participar en los mercados especiales,
+                                    ofertas y
                                     colocaciones a que se refiere esta Norma haya quedado expresamente señalada en el
                                     contrato de administración respectivo y que el Inversionista Calificado informe
                                     mensualmente al cliente de las operaciones realizadas en virtud de dicha facultad.
                                     <br>
-                                    f.- Ser una persona jurídica o entidad, nacional o extranjera, en que las decisiones de
-                                    inversión sean adoptadas por un Inversionista Calificado de acuerdo a las consideraciones
-                                    de esta Norma. 
-                                    
+                                    f.- Ser una persona jurídica o entidad, nacional o extranjera, en que las decisiones
+                                    de
+                                    inversión sean adoptadas por un Inversionista Calificado de acuerdo a las
+                                    consideraciones
+                                    de esta Norma.
+
                                 </span>
                             </p>
                             <button type="button" id="alternarTexto6" class="btn btn-outline-primary mb-4">Mostrar
@@ -1717,7 +1743,7 @@
                     <br>
                     <br>
                     <br>
-                    <button id="generarPDF" type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                    <button id="generarPDF" type="reset" class="btn btn-primary mb-4">Generar PDF</button>
                 </form>
             </div>
         </div>

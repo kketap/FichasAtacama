@@ -25,7 +25,7 @@ window.addEventListener("load", async () => {
 
   const form = document.querySelector('#form');
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("reset", async (e) => {
     // recuperar los datos del formulario
     e.preventDefault();
 

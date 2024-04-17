@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "docusign-esign": "^5.8.1",
     "express": "^4.18.3",
     "jspdf": "^2.5.1"
   },

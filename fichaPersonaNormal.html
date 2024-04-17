@@ -40,12 +40,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="index.html">Regresar</a></li>
-              <li><a class="dropdown-item" href="#infoEmpresa">Información Empresa</a></li>
-              <li><a class="dropdown-item" href="#accionistas">Accionistas</a></li>
-              <li><a class="dropdown-item" href="#beneficiariosFinales">Beneficiarios Finales</a></li>
-              <li><a class="dropdown-item" href="#otraInfo">Otra Información</a></li>
-              <li><a class="dropdown-item" href="#declaracion">Declaración</a></li>
-              <li><a class="dropdown-item" href="#generarPDF">Generar PDF</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -53,7 +47,8 @@
               Ficha de Cliente Persona Natural
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="fichaPersonaNormal.html">Información Persona</a></li>
+              <li><a class="dropdown-item" href="#idPersonaNatural">Información Persona Natural</a></li>
+              <li><a class="dropdown-item" href="#otraInfoPerNatu">Otra Información</a></li>
             </ul>
           </li>
         </ul>
@@ -62,16 +57,16 @@
   </nav>
   <br>
   <br>
-  <div class="container mt-4">
+  <div class="container mt-3">
     <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
     <input type="checkbox" id="toggle"> <!--Cambiar a modo oscuro-->
     <div class="col">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-md-9 offset-md-2">
         <h1>Formulario Ficha de Cliente <br> Persona Natural</h1>
         <hr>
         <form id="form">
-          <div class="row mb-3">
-            <h2>Identificación del Cliente (Persona Natural)</h2> <!-- 1 -->
+          <div class="row mb-4">
+            <h2 id="idPersonaNatural">Identificación del Cliente (Persona Natural)</h2> <!-- 1 -->
             <br>
             <br>
             <div class="col-md-6">
@@ -148,7 +143,7 @@
             <br>
             <div id="conyuge" style="display: none;">
               <br>
-              <div class="row mb-3">
+              <div class="row mb-4">
                 <br>
                 <hr>
                 <h2>Identificación del cónyuge</h2>
@@ -299,12 +294,12 @@
             <br>
             <br>
             <hr>
-            <h2 id="otraInfo">Medios para Instruir</h2>
+            <h2 id="otraInfoPerNatu">Medios para Instruir</h2>
             <br>
             <h4>Seleccione 1 opción</h4> <!-- 5 -->
             <br>
             <br>
-            <div class="col-md-3">
+            <div class="col-md-6">
               <div class="form-check form-check-inline">
                 <input type="radio" name="opcionMediosPerNatu" class="form-check-input" id="instrEscritaPerNatu"
                   value="0">
@@ -338,7 +333,7 @@
             <h4>Seleccione 1 opción</h4> <!-- 6 -->
             <br>
             <br>
-            <div class="col-md-3">
+            <div class="col-md-6">
               <div class="form-check form-check-inline">
                 <input type="radio" name="opcionRelacionAAMPerNatu" class="form-check-input"
                   id="opcionAccionistaPerNatu" value="0">
@@ -390,7 +385,7 @@
             <h4>Seleccione 1 opción</h4>
             <br>
             <br>
-            <div class="col-md-3">
+            <div class="col-md-6">
               <div class="form-check form-check-inline">
                 <input type="radio" name="opcionInfoClientePerNatu" class="form-check-input" id="direcComercialPerNatu"
                   value="0">
@@ -411,6 +406,8 @@
                 <label for="noEnviarInfoClientePerNatu" class="form-check-label">No Enviar
                   Correspondencia</label>
               </div>
+              <br>
+              <br>
             </div>
             <br>
             <br>
@@ -421,44 +418,41 @@
             <br>
             <br>
             <br>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Moneda</th>
-                  <th scope="col">Banco</th>
-                  <th scope="col">Tipo de Cuenta</th>
-                  <th scope="col">N° de Cuenta</th>
-                  <th scope="col">Cuenta Principal</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">CLP</th>
-                  <td><input type="text" id="bancoCLP"></td>
-                  <td><input type="text" id="tipoCuentaCLP"></td>
-                  <td><input type="number" id="nCuentaCLP"></td>
-                  <td><input type="text" id="cuentaPrincipal"></td>
-                </tr>
-                <tr>
-                  <th scope="row">USS</th>
-                  <td><input type="text" id="bancoUSS"></td>
-                  <td><input type="text" id="tipoCuentaUSS"></td>
-                  <td><input type="number" id="nCuentaUSS"></td>
-                  <td><input type="text" id="cuentaPrincipal"></td>
-                </tr>
-              </tbody>
-            </table>
-            <br>
-            <br>
-            <br>
-            <br>
             <div class="col-md-6">
-              <button type="button" class="btn btn-outline-primary mb-4" id="agregarCtasCorrientes">Agregar
-                otra
-                Cuenta Corriente</button>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Moneda</th>
+                    <th scope="col">Banco</th>
+                    <th scope="col">Tipo de Cuenta</th>
+                    <th scope="col">N° de Cuenta</th>
+                    <th scope="col">Cuenta Principal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">CLP</th>
+                    <td><input type="text" id="bancoCLPPerNatu"></td>
+                    <td><input type="text" id="tipoCuentaCLPPerNatu"></td>
+                    <td><input type="text" id="nCuentaCLPPerNatu"></td>
+                    <td><input type="text" id="cuentaPrincipalPerNatu"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">USS</th>
+                    <td><input type="text" id="bancoUSSPerNatu"></td>
+                    <td><input type="text" id="tipoCuentaUSSPerNatu"></td>
+                    <td><input type="text" id="nCuentaUSSPerNatu"></td>
+                    <td><input type="text" id="cuentaPrincipalPerNatu"></td>
+                  </tr>
+                </tbody>
+              </table>
               <br>
-              <div id="camposCtasCorrientes"> <!-- Aquí se agrega la cuenta corriente-->
-              </div>
+            </div>
+            <button type="button" class="btn btn-outline-primary mb-4" id="agregarCtasCorrientesPerNatu">Agregar
+              otra
+              Cuenta Corriente</button>
+            <br>
+            <div id="camposCtasCorrientesPerNatu"> <!-- Aquí se agrega la cuenta corriente-->
             </div>
           </div> <!--ultimo div-->
         </form>
