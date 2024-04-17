@@ -4,6 +4,7 @@ function guardarDatosFormulario() {
   var datosFormulario = {
     razonSocial: document.getElementById('razon').value,
     rut: document.getElementById('rut').value,
+
     // Agrega aquí los demás campos del formulario que desees guardar
   };
 
@@ -24,6 +25,7 @@ function cargarDatosFormulario() {
     // Asignar los valores del objeto a los campos del formulario
     document.getElementById('razon').value = datosFormulario.razonSocial;
     document.getElementById('rut').value = datosFormulario.rut;
+
     // Agrega aquí la asignación de los demás campos del formulario
   }
 }

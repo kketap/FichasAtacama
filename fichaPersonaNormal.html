@@ -21,6 +21,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
 
   <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+  <script src="test.js"></script>
+
   <script src="JS FichaPerNatu/agregarCamposPerNatu.js"></script>
   <script src="JS FichaPerNatu/arreglosPerNatu.js"></script>
 
@@ -71,7 +73,7 @@
             <br>
             <div class="col-md-6">
               <label for="nombreCompletoPerNatu" class="form-label">Nombres y Apellidos</label>
-              <input type="text" oninput="increaseWidth()" name="nombreCompletoPerNatu" placeholder="Nombre Completo"
+              <input type="text" name="nombreCompletoPerNatu" placeholder="Nombre Completo"
                 class="form-control" id="nombreCompletoPerNatu">
             </div>
             <div class="col-md-6">
@@ -139,6 +141,9 @@
               <label for="telefono2PerNatu" class="form-label">Teléfono 2</label>
               <input type="tel" name="telefono2PerNatu" placeholder="Teléfono 2" class="form-control"
                 id="telefono2PerNatu">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary mb-4">Firmar</button>
             </div>
             <br>
             <div id="conyuge" style="display: none;">
