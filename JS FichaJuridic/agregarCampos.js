@@ -253,9 +253,9 @@ document.addEventListener('DOMContentLoaded', function () { //agregar cta corrie
                                 <thead>
                                     <tr>
                                         <th scope="col">Moneda</th>
-                                        <th scope="col">Banco</th>
-                                        <th scope="col">Tipo de Cuenta</th>
-                                        <th scope="col">N° de Cuenta</th>
+                                        <th scope="col">Banco (${campoIndex})</th>
+                                        <th scope="col">Tipo de Cuenta (${campoIndex})</th>
+                                        <th scope="col">N° de Cuenta (${campoIndex})</th>
                                     </tr>
                                 </thead>
                                 <tbody>
