@@ -286,6 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('mostrarResidenciaBeneficiarios').addEventListener('click', function () {
     const datosBeneficiariosRecuperados = document.getElementById('datosResidenciaBenefRecuperados');

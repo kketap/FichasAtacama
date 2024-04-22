@@ -17,11 +17,7 @@ function loadImage(url) {
   });
 }
 
-
-
 window.addEventListener("load", async () => {
-
-
 
   const form = document.querySelector('#form');
 
