@@ -12,10 +12,48 @@ function guardarDatosFormulario1() {
         telefono1: document.getElementById('telefono1').value,
         telefono2: document.getElementById('telefono2').value,
 
+        razonAccio: document.getElementById('razonAccio').value,
+        nomCompletoAccio: document.getElementById('nomCompletoAccio').value,
+        rutAccio: document.getElementById('rutAccio').value,
         accionistaBenefPregunta: obtenerValorRadio('accionistaBenefPregunta'),
-        accionistaBenefPregunta2: obtenerValorRadio('accionistaBenefPregunta2'),
 
         nomBenef: document.getElementById('nomBenef').value,
+        rutBenef: document.getElementById('rutBenef').value,
+        direccionBenef: document.getElementById('direccionBenef').value,
+        porcentajeBenef: document.getElementById('porcentajeBenef').value,
+
+        nombreGerente: document.getElementById('nombreGerente').value,
+        rutGerente: document.getElementById('rutGerente').value,
+        nacionalidadGerente: document.getElementById('nacionalidadGerente').value,
+        correoGerente: document.getElementById('correoGerente').value,
+        direccionGerente: document.getElementById('direccionGerente').value,
+        comunaGerente: document.getElementById('comunaGerente').value,
+        estadoCivilGerente: document.getElementById('estadoCivilGerente').value,
+        telefono1Gerente: document.getElementById('telefono1Gerente').value,
+        telefono2Gerente: document.getElementById('telefono2Gerente').value,
+
+        nombreApoderado: document.getElementById('nombreApoderado').value,
+        rutApoderado: document.getElementById('rutApoderado').value,
+        nacionalidadApoderado: document.getElementById('nacionalidadApoderado').value,
+        correoApoderado: document.getElementById('correoApoderado').value,
+        direccionApoderado: document.getElementById('direccionApoderado').value,
+        comunaApoderado: document.getElementById('comunaApoderado').value,
+        estadoCivilApoderado: document.getElementById('estadoCivilApoderado').value,
+        telefono1Apoderado: document.getElementById('telefono1Apoderado').value,
+        telefono2Apoderado: document.getElementById('telefono2Apoderado').value,
+
+        nombreAAM: document.getElementById('nombreAAM').value,
+        rutAAM: document.getElementById('rutAAM').value,
+        nacionalidadAAM: document.getElementById('nacionalidadAAM').value,
+        correoAAM: document.getElementById('correoAAM').value,
+        direccionAAM: document.getElementById('direccionAAM').value,
+        comunaAAM: document.getElementById('comunaAAM').value,
+        estadoCivilAAM: document.getElementById('estadoCivilAAM').value,
+        telefono1AAM: document.getElementById('telefono1AAM').value,
+        telefono2AAM: document.getElementById('telefono2AAM').value,
+
+        opcionMedios: obtenerValorRadioMedios('opcionMedios'),
+
     };
     localStorage.setItem('datosFormulario1', JSON.stringify(datosFormulario1)); // Usar una clave única para el formulario 1
 }
@@ -25,44 +63,32 @@ function cargarDatosFormulario1() {
     var datosGuardados = localStorage.getItem('datosFormulario1');
     if (datosGuardados) {
         var datosFormulario1 = JSON.parse(datosGuardados);
-        document.getElementById('razon').value = datosFormulario1.razon;
-        document.getElementById('rut').value = datosFormulario1.rut;
-        document.getElementById('nomFantasia').value = datosFormulario1.nomFantasia;
-        document.getElementById('giro').value = datosFormulario1.giro;
-        document.getElementById('residencia').value = datosFormulario1.residencia;
-        document.getElementById('direccion').value = datosFormulario1.direccion;
-        document.getElementById('comuna').value = datosFormulario1.comuna;
-        document.getElementById('correo').value = datosFormulario1.correo;
-        document.getElementById('telefono1').value = datosFormulario1.telefono1;
-        document.getElementById('telefono2').value = datosFormulario1.telefono2;
-
-        // Establecer el radio button seleccionado
-        if (datosFormulario1.accionistaBenefPregunta !== null) {
-            var radioSeleccionado = document.querySelector(`input[name="accionistaBenefPregunta"][value="${datosFormulario1.accionistaBenefPregunta}"]`);
-            if (radioSeleccionado) {
-                radioSeleccionado.checked = true;
+        for (var key in datosFormulario1) {
+            if (datosFormulario1.hasOwnProperty(key)) {
+                var value = datosFormulario1[key];
+                if (value !== undefined) {
+                    if (key === 'accionistaBenefPregunta' || key === 'opcionMedios') {
+                        var radioSeleccionado = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (radioSeleccionado) {
+                            radioSeleccionado.checked = true;
+                        }
+                    } else {
+                        document.getElementById(key).value = value;
+                    }
+                }
             }
         }
-
-        if (datosFormulario1.accionistaBenefPregunta2 !== null) {
-            var radioSeleccionado = document.querySelector(`input[name="accionistaBenefPregunta2"][value="${datosFormulario1.accionistaBenefPregunta2}"]`);
-            if (radioSeleccionado) {
-                radioSeleccionado.checked = true;
-            }
-        }
-
-        document.getElementById('nomBenef').value = datosFormulario1.nomBenef;
     }
 }
 
 function obtenerValorRadio(accionistaBenefPregunta) {
     var radioSeleccionado = document.querySelector(`input[name="${accionistaBenefPregunta}"]:checked`);
-    return radioSeleccionado ? radioSeleccionado.value : null;
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
 }
 
-function obtenerValorRadio(accionistaBenefPregunta2) {
-    var radioSeleccionado = document.querySelector(`input[name="${accionistaBenefPregunta2}"]:checked`);
-    return radioSeleccionado ? radioSeleccionado.value : null;
+function obtenerValorRadioMedios(opcionMedios) {
+    var radioSeleccionado = document.querySelector(`input[name="${opcionMedios}"]:checked`);
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
 }
 
 // Llamar a la función cargarDatosFormulario1 al cargar la página

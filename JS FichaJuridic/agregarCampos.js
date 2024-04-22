@@ -2,9 +2,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     var agregarCampoBtn = document.getElementById('agregarGerenteBtn');
     var camposContainer = document.getElementById('camposGerente');
+    var limpiarGerentesBtn = document.getElementById('limpiarGerentesBtn');
 
     let campoIndex = 2;
     let maxIndex = 2;
+
+    limpiarGerentesBtn.addEventListener('click', limpiarGerentes);
 
     agregarCampoBtn.addEventListener('click', function () {
         if (campoIndex <= maxIndex) {
@@ -81,12 +84,27 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Solo se puede agregar 1 gerente o representante legal')
         }
     });
+
+    function limpiarGerentes() {
+        if (campoIndex > 2) {
+            var ultimoCampo = camposContainer.lastElementChild;
+
+            camposContainer.removeChild(ultimoCampo);
+
+            campoIndex--;
+        } else {
+            alert('No hay gerentes para limpiar')
+        }
+    }
 });
 
 // funcion agregar apoderados
 document.addEventListener('DOMContentLoaded', function () {
     var agregarCampoBtn = document.getElementById('agregarCampoBtn');
-    var camposContainer = document.getElementById('campos');
+    var camposContainer = document.getElementById('camposApoderados');
+    var limpiarApoderadosBtn = document.getElementById('limpiarApoderadosBtn');
+
+    limpiarApoderadosBtn.addEventListener('click', limpiarApoderados);
 
     var campoIndex = 2;
     let maxIndex = 7;
@@ -168,12 +186,27 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('El máximo de apoderados agregados es de 7')
         }
     });
+
+    function limpiarApoderados() {
+        if (campoIndex > 2) {
+            var ultimoCampo = camposContainer.lastElementChild;
+
+            camposContainer.removeChild(ultimoCampo);
+
+            campoIndex--;
+        } else {
+            alert('No hay gerentes para limpiar')
+        }
+    }
 });
 
 // funcion agregar AAM
 document.addEventListener('DOMContentLoaded', function () {
     var agregarAAMBtn = document.getElementById('agregarAAMBtn');
     var camposContainerAAM = document.getElementById('camposAAM');
+    var limpiarAAMBtn = document.getElementById('limpiarAAMBtn');
+
+    limpiarAAMBtn.addEventListener('click', limpiarAAM)
 
     var campoIndex = 2;
     let maxIndex = 3;
@@ -254,12 +287,27 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Solo pueden haber 3 personas autorizadas')
         }
     });
+
+    function limpiarAAM() {
+        if (campoIndex > 2) {
+            var ultimoCampo = camposContainerAAM.lastElementChild;
+
+            camposContainerAAM.removeChild(ultimoCampo);
+
+            campoIndex--;
+        } else {
+            alert('No hay Personas AAM para limpiar')
+        }
+    }
 });
 
 
 document.addEventListener('DOMContentLoaded', function () { //agregar cta corriente
     var agregarCampoBtn = document.getElementById('agregarCtasCorrientes');
-    var camposContainer = document.getElementById('camposCtasCorrientes');
+    var camposCtasCorrientes = document.getElementById('camposCtasCorrientes');
+    var limpiarCtasCorrientesBtn = document.getElementById('limpiarCtasCorrientesBtn');
+
+    limpiarCtasCorrientesBtn.addEventListener('click', limpiarCtasCorrientes)
 
     var campoIndex = 2;
     let maxIndex = 3;
@@ -307,6 +355,18 @@ document.addEventListener('DOMContentLoaded', function () { //agregar cta corrie
             alert('El máximo de cuentas corrientes es de 3')
         }
     });
+
+    function limpiarCtasCorrientes() {
+        if (campoIndex > 2) {
+            var ultimoCampo = camposCtasCorrientes.lastElementChild;
+
+            camposCtasCorrientes.removeChild(ultimoCampo);
+
+            campoIndex--;
+        } else {
+            alert('No hay Cuentas Corrientes para limpiar')
+        }
+    }
 });
 
 
@@ -403,9 +463,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function limpiarAccionistas() {
-        camposAccionista.innerHTML = ''; // Limpiar todos los accionistas
-        accionistasAgregados = []; // Limpiar el arreglo de accionistas
-        guardarDatosAccionistas();
+        if (clienteIndex  > 2) {
+            var ultimoCampo = camposAccionista.lastElementChild;
+
+            camposAccionista.removeChild(ultimoCampo);
+
+            accionistasAgregados.pop();
+
+            clienteIndex --;
+
+            guardarDatosAccionistas();
+        }else {
+            alert('No hay Accionistas para limpiar')
+        }
     }
 
     function cargarDatosAccionistas() {
@@ -449,7 +519,7 @@ document.addEventListener('DOMContentLoaded', function () {
             camposBenefFinales.appendChild(nuevoBenefDiv);
 
             beneficiariosAgregados.push(obtenerDatosBeneficiarios(clienteIndex));
-            
+
             guardarDatosBeneficiarios();
 
             clienteIndex++;
@@ -484,29 +554,38 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
     }
-    
+
     function obtenerDatosBeneficiarios(index) {
         return {
             nomBenef: document.getElementById(`nomBenef${index}`).value,
         }
     }
 
-    function guardarDatosBeneficiarios(){
-        localStorage.setItem('beneficiariosAgregados',JSON.stringify(beneficiariosAgregados));
+    function guardarDatosBeneficiarios() {
+        localStorage.setItem('beneficiariosAgregados', JSON.stringify(beneficiariosAgregados));
     }
 
     function limpiarBeneficiarios() {
-        camposBenefFinales.innerHTML = '';
-        beneficiariosAgregados = [];
-        guardarDatosBeneficiarios();
-        clienteIndex = 2;
+        if (clienteIndex  > 2) {
+            var ultimoCampo = camposBenefFinales.lastElementChild;
+
+            camposBenefFinales.removeChild(ultimoCampo);
+
+            beneficiariosAgregados.pop();
+
+            clienteIndex --;
+
+            guardarDatosBeneficiarios();
+        }else {
+            alert('No hay Accionistas para limpiar')
+        }
     }
 
     function cargarDatosBeneficiarios() {
         const datosGuardados = localStorage.getItem('beneficiariosAgregados');
         if (datosGuardados) {
             accionistasAgregados = JSON.parse(datosGuardados);
-            accionistasAgregados.forEach((beneficiario, index)=> {
+            accionistasAgregados.forEach((beneficiario, index) => {
                 const nuevoBeneficiarioHTML = generarHTMLBeneficiario(index + 2);
                 const nuevoBeneficiarioDiv = document.createElement('div');
                 nuevoBeneficiarioDiv.innerHTML = nuevoBeneficiarioHTML;

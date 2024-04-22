@@ -34,7 +34,6 @@
 
     <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
     <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
-    <link rel="stylesheet" href="JS FichaJuridic/textoAdicional.css">
 
 </head>
 
@@ -64,14 +63,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="fichaPersonaNormal.html">Formulario Ficha Persona
                                     Natural</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                            UAF
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="UAF.html">Inicio</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -353,10 +344,17 @@
                         <br>
                         <br>
                         <br>
+                        
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarGerenteBtn"> Agregar Otro
                             Gerente
                             o Representante Legal</button>
+                        <button type="button" class="btn btn-outline-primary mb-4" id="limpiarGerentesBtn">
+                            Limpiar a los Gerentes agregados
+                        </button>
                         <div id="camposGerente"></div>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -428,7 +426,10 @@
                         <br>
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarCampoBtn"> Agregar
                             Apoderados (Máximo 7)</button>
-                        <div id="campos">
+                        <button type="button" class="btn btn-outline-primary mb-4" id="limpiarApoderadosBtn">
+                            Limpiar al último Apoderado agregado
+                        </button>
+                        <div id="camposApoderados">
                             <!-- Los Apoderados se agregan en este div -->
                         </div>
                         <br>
@@ -501,6 +502,9 @@
                         <br>
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarAAMBtn"> Agregar Personas
                             Autorizadas (Máximo 3)</button>
+                        <button type="button" class="btn btn-outline-primary mb-4" id="limpiarAAMBtn">
+                            Limpiar a los Apoderados agregados
+                        </button>
                         <br>
                         <div id="camposAAM"> <!-- Aquí se agregan los campos AAM -->
                         </div>
@@ -736,6 +740,9 @@
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarCtasCorrientes">Agregar
                             otra
                             Cuenta Corriente</button>
+                        <button type="button" class="btn btn-outline-primary mb-4" id="limpiarCtasCorrientesBtn">
+                            Limpiar las Cuentas Corrientes agregadas
+                        </button>
                         <br>
                         <div id="camposCtasCorrientes"> <!-- Aquí se agrega la cuenta corriente-->
                         </div>
@@ -923,6 +930,7 @@
                             </div>
                             <br>
                         </div>
+
                         <br>
                         <hr>
                         <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
