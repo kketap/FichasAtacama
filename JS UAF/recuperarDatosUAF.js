@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('mostrarBeneficiariosUAF').addEventListener('click', function () {
     const datosBeneficiariosRecuperados = document.getElementById('datosBenefUAFRecuperados');
     datosBeneficiariosRecuperados.innerHTML = ''; // Limpiar cualquier contenido anterior
@@ -172,3 +172,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+*/

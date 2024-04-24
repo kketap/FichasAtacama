@@ -577,15 +577,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             guardarDatosBeneficiarios();
         }else {
-            alert('No hay Accionistas para limpiar')
+            alert('No hay Beneficiarios para limpiar')
         }
     }
 
     function cargarDatosBeneficiarios() {
         const datosGuardados = localStorage.getItem('beneficiariosAgregados');
         if (datosGuardados) {
-            accionistasAgregados = JSON.parse(datosGuardados);
-            accionistasAgregados.forEach((beneficiario, index) => {
+            beneficiariosAgregados = JSON.parse(datosGuardados);
+            beneficiariosAgregados.forEach((beneficiario, index) => {
                 const nuevoBeneficiarioHTML = generarHTMLBeneficiario(index + 2);
                 const nuevoBeneficiarioDiv = document.createElement('div');
                 nuevoBeneficiarioDiv.innerHTML = nuevoBeneficiarioHTML;

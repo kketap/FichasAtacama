@@ -13,3 +13,16 @@ document.addEventListener('DOMContentLoaded', function () { //Cambiar a modo osc
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("opcionDeclaracionUAF").addEventListener("change", function () {
+    var declaracion = this.value; // Obtener el valor seleccionado del select
+    var sinCambios = document.getElementById("sinCambios");
+
+    if (declaracion === "2") { // Compara con cada valor por separado
+      sinCambios.style.display = "none"; // Mostrar el div "conyuge"
+    } else {
+      sinCambios.style.display = "block"; // Ocultar el div "conyuge" para cualquier otra opción
+    }
+  });
+});
