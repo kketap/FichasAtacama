@@ -159,3 +159,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const botonAlternar = document.getElementById('alternarTexto10');
+  const textoAdicional = document.querySelector('.texto-adicional10');
+  const puntosSuspensivos = document.querySelector('.puntos-suspensivos10'); // Aquí corregido
+
+  botonAlternar.addEventListener('click', function () {
+    if (textoAdicional.style.display === 'inline') {
+      textoAdicional.style.display = 'none'; // Ocultar el texto adicional
+      botonAlternar.textContent = 'Mostrar Mostrar Significado de cada categoría de Riesgo de Cliente'; // Cambiar texto del botón
+      puntosSuspensivos.style.display = 'inline';
+    } else {
+      textoAdicional.style.display = 'inline'; // Mostrar el texto adicional
+      botonAlternar.textContent = 'Mostrar Menos'; // Cambiar texto del botón
+      puntosSuspensivos.style.display = 'none'; // Ocultar los puntos suspensivos
+    }
+  });
+});

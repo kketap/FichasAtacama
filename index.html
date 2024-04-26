@@ -34,6 +34,7 @@
 
     <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
     <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
+    <link rel="stylesheet" href="JS FichaJuridic/textoAdicional.css">
 
 </head>
 
@@ -714,33 +715,30 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-6">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Moneda</th>
-                                        <th scope="col">Banco</th>
-                                        <th scope="col">Tipo de Cuenta</th>
-                                        <th scope="col">N° de Cuenta</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">CLP</th>
-                                        <td><input type="text" id="bancoCLP"></td>
-                                        <td><input type="text" id="tipoCuentaCLP"></td>
-                                        <td><input type="text" id="nCuentaCLP"></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">USS</th>
-                                        <td><input type="text" id="bancoUSS"></td>
-                                        <td><input type="text" id="tipoCuentaUSS"></td>
-                                        <td><input type="text" id="nCuentaUSS"></td>
-                                    </tr>
-                                </tbody>
-
-                            </table>
-                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Moneda</th>
+                                    <th scope="col">Banco</th>
+                                    <th scope="col">Tipo de Cuenta</th>
+                                    <th scope="col">N° de Cuenta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">CLP</th>
+                                    <td><input type="text" id="bancoCLP"></td>
+                                    <td><input type="text" id="tipoCuentaCLP"></td>
+                                    <td><input type="text" id="nCuentaCLP"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">USS</th>
+                                    <td><input type="text" id="bancoUSS"></td>
+                                    <td><input type="text" id="tipoCuentaUSS"></td>
+                                    <td><input type="text" id="nCuentaUSS"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <br>
                         <br>
                         <br>
@@ -1411,11 +1409,9 @@
                                     value="A- ¿La sociedad es una institución financiera?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                                 <div class="input-group-text">
-
                                     <label style="padding-right: 10px;">Si</label>
                                     <input name="preguntaA" class="form-check-input mt-1" type="radio" value="0"
                                         id="preguntaASi">
-
                                 </div>
                                 <div class="input-group-text">
                                     <label style="padding-right: 10px;">No</label>
@@ -1732,7 +1728,6 @@
                         </div>
                         <hr>
                         <br>
-                        <br>
                         <h2>Validar la Información : </h2> <!--15-->
                         <br>
                         <br>
@@ -1775,10 +1770,237 @@
                                     value="He leído y confirmo la veracidad de toda la información ingresada"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
+                            <br>
+                            <br>
                         </div>
-                    </div>
-                    <br>
-                    <br>
+                        <hr>
+                        <br>
+                        <h2>Información Adicional (uso exclusivo de <br> AAM S.A. administradora de activos)</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Identificación del cliente : </h3>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonPerfil" class="form-label">Razón Social</label>
+                            <input type="text" name="razon" placeholder="Razón Social" class="form-control"
+                                id="razonPerfil">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutPerfil" class="form-label">RUT</label>
+                            <input type="text" name="rut" placeholder="RUT" class="form-control" id="rutPerfil">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="clienteConocidoPregunta" class="form-label">Cliente conocido por AAM S.A. o
+                                referenciado por otro cliente:</label>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                    id="clienteConocidoSi">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                    id="clienteConocidoNo">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="referenciaPerfil" class="form-label">Referencia</label>
+                            <input type="text" name="referenciaPerfil" placeholder="Referencia" class="form-control"
+                                id="referenciaPerfil">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2 style="text-align: center;">Perfil (riesgo) del Cliente</h2>
+                        <br>
+                        <br>
+                        <h4 style="text-decoration: underline;">Significado de cada categoría de Riesgo de Cliente :
+                        </h4>
+                        <br>
+                        <p id="texto10" class="texto-completo10">
+                            -Cliente Riesgo Bajo : Se procede con
+                            <span class="puntos-suspensivos10" id="puntos-suspensivos10">...</span>
+                            <span class="texto-adicional10">
+                                enrolamiento de cliente, no necesita autorización de Gerente General.
+                                <br>
+                                <br>
+                                -Cliente Riesgo Medio : Requiere autorización de enrolamiento por del Gerente General de
+                                la Administradora y obtener antecedentes exigidos en este
+                                nivel de riesgos.
+                                <br>
+                                <br>
+                                -Cliente Riesgo Alto : Requiere autorización de enrolamiento por del Gerente General de
+                                la Administradora y obtener antecedentes exigidos en este
+                                nivel de riesgos.
+                            </span>
+                        </p>
+                        <button type="button" id="alternarTexto10" class="btn btn-outline-primary mb-4">Mostrar
+                            Significado de cada categoría de Riesgo de Cliente</button>
+                        <div>
+                            <br>
+
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">Categoría</th>
+                                    <th style="text-align: center;">Bajo</th>
+                                    <th style="text-align: center;">Medio</th>
+                                    <th style="text-align: center;">Alto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th style="width: 28%; text-align: center;">Riesgo del Cliente</th>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
+                                                id="bajoRiesgo">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
+                                                id="medioRiesgo">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
+                                                id="altoRiesgo">
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                        <div>
+                            <br>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align: center;">Si</th>
+                                    <th style="text-align: center;">No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th style="width: 27%; text-align: center;">Funcionario Publico</th>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="funcPublicOpcion" class="form-check-input" type="radio"
+                                                id="funcPublicSi">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="funcPublicOpcion" class="form-check-input" type="radio"
+                                                id="funcPublicNo">
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: center;">Listas Negativas</th>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="listasNegOpcion" class="form-check-input" type="radio"
+                                                id="listasNegSi">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="listasNegOpcion" class="form-check-input" type="radio"
+                                                id="listasNegNo">
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <br>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align: center;">Si</th>
+                                    <th style="text-align: center;">No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th style="width: 30%; text-align: center;">Requiere Autorización</th>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="autorizacionOpcion" class="form-check-input" type="radio"
+                                                id="autorizacionSi">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label class="radio-container">
+                                            <input name="autorizacionOpcion" class="form-check-input" type="radio"
+                                                id="autorizacionSi">
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>Validar la Información : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row-mb-6">
+                            <p>
+                                <span>
+                                    Certifico que la siguiente información contenida en el presente formulario es
+                                    verdadera y además ha sido verificada con la política de conocimiento a
+                                    su cliente de AAM S.A. (AAM S.A. Administradora de Activos considera todas las
+                                    entidades relacionadas a AAM S.A. Administradora de Activos), el
+                                    cliente hará con AAM S.A. Administradora de Activos operaciones con fondos lícitos
+                                    de acuerdo con lo establecido en las políticas de aceptación de
+                                    fondos.
+                                </span>
+                            </p>
+                            <br>
+                            <div class="input-group text-center">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                        <input name="" class="form-check-input" type="radio" id="" disabled>
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                        <input name="" class="form-check-input" type="radio" id="">
+                                    </div>
+                                </div>
+                                <input type="text" readonly class="form-control"
+                                    value="He leído y confirmo la veracidad de toda la información ingresada"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                            <br>
+                        </div>
+                    </div><!--ultimo div-->
                     <br>
                     <button id="generarPDF" type="reset" class="btn btn-primary mb-4">Generar PDF</button>
                 </form>

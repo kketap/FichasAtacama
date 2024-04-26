@@ -28,42 +28,6 @@ h2 {
   text-align: center;
 }
 
-.texto-adicional {
-  display: none;
-}
-
-.texto-adicional2 {
-  display: none;
-}
-
-.texto-adicional3 {
-  display: none;
-}
-
-.texto-adicional4 {
-  display: none;
-}
-
-.texto-adicional5 {
-  display: none;
-}
-
-.texto-adicional6 {
-  display: none;
-}
-
-.texto-adicional7 {
-  display: none;
-}
-
-.texto-adicional8 {
-  display: none;
-}
-
-.texto-adicional9 {
-  display: none;
-}
-
 p {
   font-size: 115%;
   text-align: justify;
@@ -130,4 +94,14 @@ tr {
   border-style: solid;
   border-width: 2px;
   border-color: black;
+}
+
+.radio-container {
+  display: flex;
+  /* Enable flexbox */
+  justify-content: center;
+  /* Center the radio input within the label */
+  align-items: center;
+  /* Optionally, vertically center the radio if needed */
+  
 }
