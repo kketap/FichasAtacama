@@ -32,57 +32,44 @@ function increaseWidth(x) {  //incrementar el tamaño de input a medida que se e
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const pregunta1Si = document.getElementById('pregunta1Si');
+  const pregunta2Si = document.getElementById('pregunta2Si');
+  const pregunta3Si = document.getElementById('pregunta3Si');
 
-document.addEventListener("DOMContentLoaded", function () { //en actividades si selecciona "si" en una de estas, se selecciona automatic el "declaro ser"
-  document.getElementById("pregunta1Si").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = true;
+  pregunta1Si.addEventListener('change', verificarRespuesta);
+  pregunta2Si.addEventListener('change', verificarRespuesta);
+  pregunta3Si.addEventListener('change', verificarRespuesta);
+
+  function verificarRespuesta() {
+    if (pregunta1Si.checked || pregunta2Si.checked || pregunta3Si.checked) {
+      declaroInversionSer.checked = true;
+      declaroInversionSer.disabled = false;
+    } else {
+      declaroInversionSer.checked = false;
+      declaroInversionSer.disabled = true;
     }
-  });
+  }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("pregunta2Si").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = true;
-    }
-  });
-});
+document.addEventListener('DOMContentLoaded', function () {
+  const pregunta1No = document.getElementById('pregunta1No');
+  const pregunta2No = document.getElementById('pregunta2No');
+  const pregunta3No = document.getElementById('pregunta3No');
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("pregunta3Si").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = true;
-    }
-  });
-});
+  pregunta1No.addEventListener('change', verificarRespuesta);
+  pregunta2No.addEventListener('change', verificarRespuesta);
+  pregunta3No.addEventListener('change', verificarRespuesta);
 
-
-document.addEventListener("DOMContentLoaded", function () { //lo mismo pero con la opción "no"
-  document.getElementById("pregunta1No").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = false;
-      document.getElementById("declaroInversionNoSer").checked = true;
+  function verificarRespuesta() {
+    if (pregunta1No.checked && pregunta2No.checked && pregunta3No.checked) {
+      declaroInversionNoSer.checked = true;
+      declaroInversionNoSer.disabled = false;
+    } else {
+      declaroInversionNoSer.checked = false;
+      declaroInversionNoSer.disabled = true;
     }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("pregunta2No").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = false;
-      document.getElementById("declaroInversionNoSer").checked = true;
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("pregunta3No").addEventListener("change", function () {
-    if (this.checked) {
-      document.getElementById("declaroInversionSer").checked = false;
-      document.getElementById("declaroInversionNoSer").checked = true;
-    }
-  });
+  }
 });
 
 

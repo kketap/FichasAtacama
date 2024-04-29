@@ -54,6 +54,7 @@
                             <li><a class="dropdown-item" href="#beneficiariosFinales">Beneficiarios Finales</a></li>
                             <li><a class="dropdown-item" href="#otraInfo">Otra Información</a></li>
                             <li><a class="dropdown-item" href="#declaracion">Declaración</a></li>
+                            <li><a class="dropdown-item" href="#perfilRiesgo">Perfil de Riesgo</a></li>
                             <li><a class="dropdown-item" href="#generarPDF">Generar PDF</a></li>
                         </ul>
                     </li>
@@ -1822,7 +1823,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2 style="text-align: center;">Perfil (riesgo) del Cliente</h2>
+                        <h2 id="perfilRiesgo" style="text-align: center;">Perfil (riesgo) del Cliente</h2>
                         <br>
                         <br>
                         <h4 style="text-decoration: underline;">Significado de cada categoría de Riesgo de Cliente :
@@ -1849,117 +1850,183 @@
                             Significado de cada categoría de Riesgo de Cliente</button>
                         <div>
                             <br>
-
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="text-align: center;">Categoría</th>
-                                    <th style="text-align: center;">Bajo</th>
-                                    <th style="text-align: center;">Medio</th>
-                                    <th style="text-align: center;">Alto</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th style="width: 28%; text-align: center;">Riesgo del Cliente</th>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
-                                                id="bajoRiesgo">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
-                                                id="medioRiesgo">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="riesgoOpcion" class="form-check-input" type="radio"
-                                                id="altoRiesgo">
-                                        </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <h4 style="text-decoration: underline;">Favor de responder el siguiente cuestonario para
+                            identificar su Perfil de Riesgo : </h4>
                         <br>
                         <br>
                         <br>
-                        <div>
+                        <div class="row-md-4">
+                            <h4>1- ¿Cuanto tiempo está dispuesto a esperar para obtener ganancias de su inversión?</h4>
                             <br>
-                        </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th style="text-align: center;">Si</th>
-                                    <th style="text-align: center;">No</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th style="width: 27%; text-align: center;">Funcionario Publico</th>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="funcPublicOpcion" class="form-check-input" type="radio"
-                                                id="funcPublicSi">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="funcPublicOpcion" class="form-check-input" type="radio"
-                                                id="funcPublicNo">
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th style="text-align: center;">Listas Negativas</th>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="listasNegOpcion" class="form-check-input" type="radio"
-                                                id="listasNegSi">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="listasNegOpcion" class="form-check-input" type="radio"
-                                                id="listasNegNo">
-                                        </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil1Opcion1">
+                            <label>Menos de 1 año</label>
                             <br>
+                            <br>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil1Opcion2">
+                            <label style="padding-right: 35px;">De 1 a 5 años</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil1Opcion3">
+                            <label style="padding-right: 29px;">Más de 5 años</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>2- ¿Que porcentaje de sus ahorros estaria dispuesto a invertir?</h4>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil2Opcion1">
+                            <label>Menos del 30%</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil2Opcion2">
+                            <label style="padding-right: 35px;">Entre 30% y 60&</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil2Opcion3">
+                            <label style="padding-right: 29px;">Más del 60%</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>3- ¿Cual es el objetivo principal de su inversión?</h4>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil3Opcion1">
+                            <label>Asegurar y mantener la capital invertida</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil3Opcion2">
+                            <label style="padding-right: 35px;">Aumentar su patrimonio, con retornos estables</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil3Opcion3">
+                            <label style="padding-right: 29px;">Que la inversion aumente sin importar los riesgos de
+                                esta</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>4- ¿Como ha generado el dinero que desea invertir?</h4>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil4Opcion1">
+                            <label>Mediante trabajo</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil4Opcion2">
+                            <label style="padding-right: 35px;">Mediante trabajo, más algunos ahorros</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil4Opcion3">
+                            <label style="padding-right: 29px;">De otras rentas no relacionadas con las anteriores
+                                opciones</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>5- ¿Con que opción describiria su grado de conocimiento en inversiones?</h4>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil5Opcion1">
+                            <label>Bajo</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil5Opcion2">
+                            <label style="padding-right: 35px;">Medio</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil5Opcion3">
+                            <label style="padding-right: 29px;">Alto</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>6- Con cual de las siguientes frases se identifica <br> de mejor manera : </h4>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil6Opcion1">
+                            <label>"Invertiría mi dinero en instrumentos con poco riesgo, <br> aunque su rentabilidad
+                                sea
+                                baja"</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil6Opcion2">
+                            <label style="padding-right: 35px;">"Decidiria buscar un equilibrio en mi inversion, <br>
+                                invertiria en intrumentos de bajo riesgo, con rentabilidad baja <br> y otra, en
+                                instrumentos
+                                más riesgosos, con una mayor rentabilidad "</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil6Opcion3">
+                            <label style="padding-right: 29px;">"Invertiria un gran cantidad de dinero en instrumentos
+                                de alto riesgo, <br> aunque esto signifique asumir mayores riesgos"</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>7- Si su inversión comienza a perder valor, ¿que haría?</h4>
+                            <br>
+                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil7Opcion1">
+                            <label>Vender de forma inmediata</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil7Opcion2" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaSeccion1No">
+                            <label style="padding-right: 35px;">Consultar con un experto sobre que decisión
+                                tomar</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil7Opcion3" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaSeccion1No">
+                            <label style="padding-right: 29px;">Asumiría las perdidas en el corto plazo y esperaria
+                                obtener <br> ganacias en el largo plazo</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>8- La palabra riesgo para usted significa : </h4>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil8Opcion1">
+                            <label>Peligro</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil8Opcion2">
+                            <label style="padding-right: 35px;">Inestabilidad</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil8Opcion3">
+                            <label style="padding-right: 29px;">Oportunidad</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>9- ¿Como espera que se desarrolle su capacidad de ahorro en los proximos años? </h4>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaPerfil9Opcion1">
+                            <label>Disminuirá</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil9Opcion2">
+                            <label style="padding-right: 35px;">Se mantendrá estable</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil9Opcion3">
+                            <label style="padding-right: 29px;">Aumentará</label>
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th style="text-align: center;">Si</th>
-                                    <th style="text-align: center;">No</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th style="width: 30%; text-align: center;">Requiere Autorización</th>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="autorizacionOpcion" class="form-check-input" type="radio"
-                                                id="autorizacionSi">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="radio-container">
-                                            <input name="autorizacionOpcion" class="form-check-input" type="radio"
-                                                id="autorizacionSi">
-                                        </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                         <div>
                             <br>
                         </div>
