@@ -442,6 +442,9 @@
                         <div id="camposApoderados">
                             <!-- Los Apoderados se agregan en este div -->
                         </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -517,6 +520,9 @@
                         </button>
                         <br>
                         <div id="camposAAM"> <!-- Aquí se agregan los campos AAM -->
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
                         </div>
                         <br>
                         <br>
@@ -700,12 +706,15 @@
                                         <div>
                                             <label for="inputMediosCorreo" class="form-label">Indicar otra dirección :
                                             </label>
-                                            <input type="email" class="form-control" id="inputMediosCorreo"
+                                            <input type="email" class="form-control" id="inputDestinoInfoCliente"
                                                 style="width: 300px;">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
                         </div>
                         <br>
                         <br>
@@ -742,11 +751,9 @@
                         </table>
                         <br>
                         <br>
-                        <br>
-                        <br>
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarCtasCorrientes">Agregar
-                            otra
-                            Cuenta Corriente</button>
+                            otra Cuenta Corriente
+                        </button>
                         <button type="button" class="btn btn-outline-primary mb-4" id="limpiarCtasCorrientesBtn">
                             Limpiar las Cuentas Corrientes agregadas
                         </button>
@@ -937,7 +944,9 @@
                             </div>
                             <br>
                         </div>
-
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
+                        </div>
                         <br>
                         <hr>
                         <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
@@ -1297,6 +1306,13 @@
                         <br>
                         <br>
                         <br>
+                        <br>
+                        <div>
+                            <button type="submit" class="btn btn-primary mb-4">Guardar Datos</button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
                         <hr>
                         <br>
                         <h2>DECLARACIÓN CRS PERSONA JURÍDICA : </h2> <!--15-->
@@ -1307,13 +1323,13 @@
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <th scope="row">Razón Social </th>
-                                        <td><input type="text" id="razon" style="width: 380px;"></td>
+                                        <th scope="row">Razón Social</th>
+                                        <td><input type="text" id="razonCRS" style="width: 380px;"></td>
 
                                     </tr>
                                     <tr>
                                         <th scope="row">RUT</th>
-                                        <td><input type="text" id="rut" style="width: 380px;"></td>
+                                        <td><input type="text" id="rutCRS" style="width: 380px;"></td>
 
                                     </tr>
                                     <tr>
@@ -1802,12 +1818,12 @@
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" style="padding-right: 5px;">Si</label>
                                 <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
-                                    id="clienteConocidoSi">
+                                    id="clienteConocidoSi" value="0">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" style="padding-right: 5px;">No</label>
                                 <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
-                                    id="clienteConocidoNo">
+                                    id="clienteConocidoNo" value="1">
                             </div>
                         </div>
                         <br>
@@ -2036,14 +2052,15 @@
                         <div id="divResultado">
                             <button type="button" id="resultadoPerfilRiesgo" class="btn btn-outline-primary mb-4"
                                 onclick="mostrarResultado()">Mostrar Resultado del Cuestonario</button>
-                            <h5 style="font-weight: bold;">Resultado Perfil de Riesgo :</h5><p id="perfilRiesgoRecuperado"></p>
+                            <h5 style="font-weight: bold;">Resultado Perfil de Riesgo :</h5>
+                            <p id="perfilRiesgoRecuperado"></p>
                             <p id="perfilRiesgoRecuperado"></p>
                         </div>
                         <div>
                             <hr>
                             <br>
                             <h3>
-                                Indique su Perfil de Rieso:
+                                Indique su Perfil de Riesgo:
                             </h3>
                             <h5>*Este puede ser distinto al del resultado del cuestonario*</h5>
                             <br>
