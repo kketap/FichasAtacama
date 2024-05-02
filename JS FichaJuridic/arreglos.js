@@ -114,5 +114,65 @@ document.addEventListener("DOMContentLoaded", function () { //mostrar contenido 
   });
 });
 
+
+let total = 0;
+
+function sumar(radio) {
+  let valor = parseInt(radio.value);
+  if (radio.checked) {
+    total += valor;
+  } else {
+    total -= valor;
+  }
+}
+
+function mostrarResultado() {
+  // Array de nombres de grupos de preguntas
+  let gruposPreguntas = [
+    "preguntaPerfil1",
+    "preguntaPerfil2",
+    "preguntaPerfil3",
+    "preguntaPerfil4",
+    "preguntaPerfil5",
+    "preguntaPerfil6",
+    "preguntaPerfil7",
+    "preguntaPerfil8",
+    "preguntaPerfil9"
+  ];
+
+  let cuestionarioCompleto = true;
+
+  // Verificar si todos los grupos de preguntas están completos
+  gruposPreguntas.forEach(function (grupo) {
+    let preguntasGrupo = document.querySelectorAll('input[name="' + grupo + '"]:checked');
+    if (preguntasGrupo.length === 0) {
+      // Si alguna pregunta del grupo no está marcada, el cuestionario no está completo
+      cuestionarioCompleto = false;
+    }
+  });
+
+  // Mostrar el resultado o la alerta según corresponda
+  if (cuestionarioCompleto) {
+    let perfilRiesgoRecuperado = document.getElementById("perfilRiesgoRecuperado");
+    let resultado = "";
+
+    if (total <= 12) {
+      resultado = "Bajo";
+    } else if (total <= 20) {
+      resultado = "Medio";
+    } else {
+      resultado = "Alto";
+    }
+    
+    console.log(total);
+    perfilRiesgoRecuperado.innerText = resultado;
+  } else {
+    alert("Debe completar el cuestionario para saber el resultado");
+  }
+}
+
+
+
 /* arreglos.js:150 Uncaught TypeError: Cannot read properties of null (reading 'value')
-    at HTMLButtonElement.<anonymous> (arreglos.js:150:66)*/
+    at HTMLButtonElement.<anonymous> (arreglos.js:150:66)
+    resultadoPerfilRiesgoN*/
