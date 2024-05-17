@@ -26,7 +26,6 @@
 
     <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
 
-
     <script src="JS FichaJuridic/arreglos.js"></script> <!-- funciones de campos-->
     <script src="JS FichaJuridic/agregarCampos.js"></script> <!-- funciones para agregar campos-->
     <script src="JS FichaJuridic/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
@@ -34,8 +33,7 @@
 
     <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
     <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
-    <link rel="stylesheet" href="JS FichaJuridic/textoAdicional.css">
-
+    <link rel="stylesheet" href="JS FichaJuridic/textoAdicional.css"> <!--Esconder o mostrar texto CSS-->>
 </head>
 
 <body>
@@ -91,10 +89,10 @@
                 <form id="form">
                     <div class="row mb-4">
                         <div class="row mb-4">
-                            <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
+                            <h2>Identificación del Cliente (Empresa)</h2> 
                             <br>
                             <br>
-                            <div class="col-md-6"> <!-- Razón Social -->
+                            <div class="col-md-6"> 
                                 <label for="razon" class="form-label">Razón Social</label>
                                 <input type="text" name="razon" placeholder="Razón Social" class="form-control"
                                     id="razon">
@@ -193,7 +191,8 @@
                         <br>
                         <br>
                         <br>
-                        <h4 style="text-decoration: underline;">Se entiende como Beneficiario Final : </h4>
+                        <h4 style="text-decoration: underline; font-weight: bold;">Se entiende como Beneficiario Final :
+                        </h4>
                         <br>
                         <p id="texto9" class="texto-completo9">
                             Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que
@@ -235,7 +234,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+                        <div>
+                            <br>
+                        </div> 
                         <button type="button" class="btn btn-outline-primary mb-4" id="agregarAccionistasBtn">
                             Agregar Accionistas (Máximo 10)
                         </button>
@@ -370,7 +371,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Apoderados</h2> <!-- 3 -->
+                        <h2>Apoderados</h2> 
                         <br>
                         <br>
                         <div class="col-md-6">
@@ -450,7 +451,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Otras personas autorizadas para dar órdenes a AAM S.A.</h2> <!-- 4 -->
+                        <h2>Otras personas autorizadas para dar órdenes a AAM S.A.</h2> 
                         <br>
                         <br>
                         <div class="col-md-6">
@@ -531,7 +532,7 @@
                         <hr>
                         <h2 id="otraInfo">Medios para Instruir</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 5 -->
+                        <h4>Seleccione 1 opción</h4> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -580,7 +581,7 @@
                         <hr>
                         <h2>Naturaleza de la Relación con AAM S.A</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 6 -->
+                        <h4>Seleccione 1 opción</h4>
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -619,7 +620,7 @@
                         <hr>
                         <h2>Relación Cliente con AAM S.A</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 6 -->
+                        <h4>Seleccione 1 opción</h4> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -668,7 +669,7 @@
                         <hr>
                         <h2>Destino de Información al Cliente</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 7 -->
+                        <h4>Seleccione 1 opción</h4> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -721,7 +722,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Cuentas Corrientes</h2> <!-- 8 -->
+                        <h2>Cuentas Corrientes</h2> 
                         <br>
                         <br>
                         <br>
@@ -765,7 +766,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
+                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -872,7 +873,7 @@
                         <hr>
                         <h2>Patrimonio</h2>
                         <br>
-                        <h4>Seleccione 1 opción</h4> <!-- 10 -->
+                        <h4>Seleccione 1 opción</h4> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -949,7 +950,7 @@
                         </div>
                         <br>
                         <hr>
-                        <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
+                        <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -1040,7 +1041,7 @@
                         </div>
                         <br>
                         <hr>
-                        <h2>¿Es usted cliente PEP?</h2> <!--14-->
+                        <h2>¿Es usted cliente PEP?</h2> 
                         <br>
                         <br>
                         <br>
@@ -1064,7 +1065,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>Identificar Clientes PEP</h2> <!--15-->
+                        <h2>Identificar Clientes PEP</h2> 
                         <br>
                         <br>
                         <br>
@@ -1078,14 +1079,14 @@
                                 <h5 style="font-weight: bold;">Accionistas : </h5>
                                 <br>
                                 <div id="datosAccionistasRecuperados">
-                                    <!-- Contenido del div aquí -->
+                                    <!-- datos accionistas  -->
                                     <br>
                                 </div>
                                 <br>
                                 <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
                                 <br>
                                 <div id="datosBeneficiariosRecuperados">
-                                    <!-- Contenido del div aquí -->
+                                    <!-- datos benef finales -->
                                     <br>
                                 </div>
                             </div>
@@ -1095,7 +1096,7 @@
                         <br>
                         <br>
                         <hr>
-                        <h2>MANTENCIÓN DE REGISTROS : </h2> <!-- 17 -->
+                        <h2>MANTENCIÓN DE REGISTROS : </h2> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -1202,7 +1203,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>Actividades : </h2> <!--15-->
+                        <h2>Actividades : </h2> 
                         <br>
                         <br>
                         <br>
@@ -1279,7 +1280,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
+                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> 
                         <br>
                         <br>
                         <br>
@@ -1315,7 +1316,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN CRS PERSONA JURÍDICA : </h2> <!--15-->
+                        <h2>DECLARACIÓN CRS PERSONA JURÍDICA : </h2> 
                         <br>
                         <br>
                         <br>
@@ -1463,7 +1464,7 @@
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                             <hr>
-                            <h2>Identificar Residencia Fiscal</h2> <!--15-->
+                            <h2>Identificar Residencia Fiscal</h2> 
                             <br>
                             <div class="row-md-9">
                                 <button type="button" class="btn btn-outline-primary mb-4"
@@ -1476,13 +1477,13 @@
                                 <h5 style="font-weight: bold;">Accionistas : </h5>
                                 <br>
                                 <div id="datosResidenciaAccioRecuperados">
-                                    <!-- Contenido del div aquí -->
+                                    <!-- datos accionistas -->
                                     <br>
                                 </div>
                                 <br>
                                 <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
                                 <div id="datosResidenciaBenefRecuperados">
-                                    <!-- Contenido del div aquí -->
+                                    <!-- datos benef finales -->
                                     <br>
                                 </div>
                             </div>
@@ -1492,7 +1493,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>Declaraciones del Cliente : </h2> <!--15-->
+                        <h2>Declaraciones del Cliente : </h2> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -1607,7 +1608,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
+                        <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> 
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -1641,7 +1642,7 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>Sección 1 : </h2> <!--15-->
+                        <h2>Sección 1 : </h2> 
                         <br>
                         <br>
                         <div class="row-md-4">
@@ -1745,7 +1746,7 @@
                         </div>
                         <hr>
                         <br>
-                        <h2>Validar la Información : </h2> <!--15-->
+                        <h2>Validar la Información : </h2> 
                         <br>
                         <br>
                         <div>
@@ -2086,7 +2087,7 @@
                         </div>
                         <hr>
                         <br>
-                        <h2>Validar la Información : </h2> <!--15-->
+                        <h2>Validar la Información : </h2> 
                         <br>
                         <br>
                         <div class="row-mb-6">
