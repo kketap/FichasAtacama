@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var campoIndex = 2;
 
   agregarAAMBtnPerNatu.addEventListener('click', function () {
-      var nuevoCampoHTML = `
+    var nuevoCampoHTML = `
               <!-- código HTML-->
                       <div class="col-md-6">
               <label for="nombreAAMPerNatu${campoIndex}" class="form-label">Nombre Completo (${campoIndex})</label>
@@ -64,6 +64,64 @@ document.addEventListener('DOMContentLoaded', function () {
               <br>
               <br>
           `;
+    var nuevoCampoContainer = document.createElement('div');
+    nuevoCampoContainer.classList.add('row');
+    nuevoCampoContainer.innerHTML = nuevoCampoHTML;
+
+    camposContainerAAM.appendChild(nuevoCampoContainer);
+
+    campoIndex++;
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var agregarAAMBtnPerNatu = document.getElementById('agregarCtasCorrientesPerNatu');
+  var camposContainerAAM = document.getElementById('camposCtasCorrientesPerNatu');
+  var campoIndex = 2;
+  var maxIndex = 4;
+
+  agregarAAMBtnPerNatu.addEventListener('click', function () {
+    if (campoIndex < maxIndex) {
+      var nuevoCampoHTML = `
+              <!-- código HTML-->
+              <div class="col-md-6">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Moneda</th>
+                    <th scope="col">Banco (${campoIndex})</th>
+                    <th scope="col">Tipo de Cuenta (${campoIndex})</th>
+                    <th scope="col">N° de Cuenta (${campoIndex})</th>
+                    <th scope="col">Cuenta Principal (${campoIndex})</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">CLP</th>
+                    <td><input style="width: 170px;" type="text" id="bancoCLPPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="tipoCuentaCLPPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="nCuentaCLPPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="cuentaPrincipalPerNatu${campoIndex}"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">USS</th>
+                    <td><input style="width: 170px;" type="text" id="bancoUSSPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="tipoCuentaUSSPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="nCuentaUSSPerNatu${campoIndex}"></td>
+                    <td><input style="width: 170px;" type="text" id="cuentaPrincipalPerNatu${campoIndex}"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+            </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+          `;
       var nuevoCampoContainer = document.createElement('div');
       nuevoCampoContainer.classList.add('row');
       nuevoCampoContainer.innerHTML = nuevoCampoHTML;
@@ -71,5 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
       camposContainerAAM.appendChild(nuevoCampoContainer);
 
       campoIndex++;
+    } else {
+      alert("El Máximo cuentas corrientes a agregar es de 3")
+    }
   });
 });

@@ -376,222 +376,128 @@ document.addEventListener('DOMContentLoaded', function () {
     const camposAccionista = document.getElementById('camposAccionista');
     const limpiarAccionistasBtn = document.getElementById('limpiarAccionistasBtn');
 
-    let clienteIndex = 2;
-    let maxIndex = 10;
-    let accionistasAgregados = [];
+    let campoIndex = 2;
+    const maxIndex = 10;
 
-    cargarDatosAccionistas();
-
-    agregarAccionistasBtn.addEventListener('click', agregarAccionista);
     limpiarAccionistasBtn.addEventListener('click', limpiarAccionistas);
 
-    function agregarAccionista() {
-        if (clienteIndex <= maxIndex) {
-            const nuevoAccionistaHTML = generarHTMLAccionista(clienteIndex);
-            const nuevoAccionistaDiv = document.createElement('div');
-            nuevoAccionistaDiv.innerHTML = nuevoAccionistaHTML;
-            camposAccionista.appendChild(nuevoAccionistaDiv);
+    agregarAccionistasBtn.addEventListener('click', function () {
+        if (campoIndex <= maxIndex) {
+            const nuevoCampoHTML = `
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="razonAccio${campoIndex}" class="form-label">Razón Social (${campoIndex})</label>
+                        <input type="text" name="razonAccio${campoIndex}" placeholder="Razón Social" class="form-control" id="razonAccio${campoIndex}">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label for="nomCompletoAccio${campoIndex}" class="form-label">Nombre Completo (${campoIndex})</label>
+                        <input type="text" name="nomCompletoAccio${campoIndex}" placeholder="Nombre Completo (${campoIndex})" class="form-control" id="nomCompletoAccio${campoIndex}">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label for="rutAccio${campoIndex}" class="form-label">RUT (${campoIndex})</label>
+                        <input type="text" name="rutAccio${campoIndex}" placeholder="RUT" class="form-control" id="rutAccio${campoIndex}">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="input-group text-center residenciaFiscal">
+                        <input type="text" readonly class="form-control" value="¿Es el accionista (${campoIndex}) considerado beneficiario final?" style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                        <div class="input-group-text">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                <input name="accionistaBenefPregunta${campoIndex}" class="form-check-input" type="radio" value="0" id="accionistaBenefSi${campoIndex}">
+                            </div>
+                        </div>
+                        <div class="input-group-text">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                <input name="accionistaBenefPregunta${campoIndex}" class="form-check-input" type="radio" value="1" id="accionistaBenefNo${campoIndex}">
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            `;
 
-            accionistasAgregados.push(obtenerDatosAccionista(clienteIndex));
+            const nuevoCampoContainer = document.createElement('div');
+            nuevoCampoContainer.innerHTML = nuevoCampoHTML;
+            camposAccionista.appendChild(nuevoCampoContainer);
 
-            guardarDatosAccionistas();
-            clienteIndex++;
+            campoIndex++;
         } else {
-            alert('El máximo de accionistas es de 10')
+            alert('El máximo de accionistas a agregar es de 10');
         }
-    }
+    });
 
-    function generarHTMLAccionista(index) {
-        return `
-            <!-- HTML del nuevo accionista -->
-            <div class="row mb-3">
-            <div class="col-md-6">
-                                  <label for="razonAccio${index}" class="form-label">Razón Social (${index})</label>
-                                  <input type="text" name="razonAccio${index}" placeholder="Razón Social" class="form-control"
-                                      id="razonAccio${index}">
-                              </div>
-                              <div class="col-md-6">
-                                  <label for="nomCompletoAccio${index}" class="form-label">Nombre Completo (${index})</label>
-                                  <input type="text" name="nomCompletoAccio${index}" placeholder="Nombre Completo (${index})" class="form-control"
-                                      id="nomCompletoAccio${index}">
-                              </div>
-                              <br>
-                              <br>
-                              <br>
-                              <div class="col-md-6">
-                                  <label for="rutAccio${index}" class="form-label">RUT (${index})</label>
-                                  <input type="text" name="rutAccio${index}" placeholder="RUT" class="form-control" id="rutAccio${index}">
-                              </div>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <div class="input-group text-center residenciaFiscal">
-                                  <input type="text" readonly class="form-control"
-                                      value="¿Es el accionista (${index}) considerado beneficiario final?"
-                                      style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
-      
-                                  <div class="input-group-text">
-                                      <div class="form-check form-check-inline">
-                                          <label class="form-check-label" style="padding-right: 5px;">Si</label>
-                                          <input name="accionistaBenefPregunta${index}" class="form-check-input" type="radio"
-                                              value="0" id="accionistaBenefSi${index}">
-                                      </div>
-                                  </div>
-                                  <div class="input-group-text">
-                                      <div class="form-check form-check-inline">
-                                          <label class="form-check-label" style="padding-right: 5px;">No</label>
-                                          <input name="accionistaBenefPregunta${index}" class="form-check-input" type="radio"
-                                              value="1" id="accionistaBenefNo${index}">
-                                      </div>
-                                  </div> 
-                              </div>
-                              </div> 
-                              <br> 
-        `;
-    }
-
-    function obtenerDatosAccionista(index) {
-        return {
-            razonSocial: document.getElementById(`razonAccio${index}`).value,
-            // Otros campos del accionista
-        };
-    }
-
-    function guardarDatosAccionistas() {
-        localStorage.setItem('accionistasAgregados', JSON.stringify(accionistasAgregados));
-    }
-
-    function limpiarAccionistas() {
-        if (clienteIndex  > 2) {
-            var ultimoCampo = camposAccionista.lastElementChild;
-
+    function limpiarAccionistas() { //limpiar a los accionistas agregados
+        if (campoIndex > 2) {
+            const ultimoCampo = camposAccionista.lastElementChild;
             camposAccionista.removeChild(ultimoCampo);
-
-            accionistasAgregados.pop();
-
-            clienteIndex --;
-
-            guardarDatosAccionistas();
-        }else {
-            alert('No hay Accionistas para limpiar')
-        }
-    }
-
-    function cargarDatosAccionistas() {
-        const datosGuardados = localStorage.getItem('accionistasAgregados');
-        if (datosGuardados) {
-            accionistasAgregados = JSON.parse(datosGuardados);
-            accionistasAgregados.forEach((accionista, index) => {
-                const nuevoAccionistaHTML = generarHTMLAccionista(index + 2);
-                const nuevoAccionistaDiv = document.createElement('div');
-                nuevoAccionistaDiv.innerHTML = nuevoAccionistaHTML;
-                camposAccionista.appendChild(nuevoAccionistaDiv);
-            });
-            clienteIndex = accionistasAgregados.length + 2;
+            campoIndex--;
+        } else {
+            alert('No hay accionistas para limpiar');
         }
     }
 });
 
 
-
 //beneficiarios
 document.addEventListener('DOMContentLoaded', function () {
-    const agregarBenef = document.getElementById('agregarBenef');
+    const agregarBenefBtn = document.getElementById('agregarBenef');
     const camposBenefFinales = document.getElementById('camposBenefFinales');
     const limpiarBeneficiariosBtn = document.getElementById('limpiarBeneficiariosBtn');
 
-    let clienteIndex = 2;
-    let maxIndex = 10;
+    let campoIndex = 2;
+    const maxIndex = 10;
 
-    let beneficiariosAgregados = [];
-
-    cargarDatosBeneficiarios();
-
-    agregarBenef.addEventListener('click', agregarBeneficiario);
     limpiarBeneficiariosBtn.addEventListener('click', limpiarBeneficiarios);
 
-    function agregarBeneficiario() {
-        if (clienteIndex <= maxIndex) {
-            const nuevoBenefHTML = generarHTMLBeneficiario(clienteIndex);
-            const nuevoBenefDiv = document.createElement('div');
-            nuevoBenefDiv.innerHTML = nuevoBenefHTML;
-            camposBenefFinales.appendChild(nuevoBenefDiv);
+    agregarBenefBtn.addEventListener('click', function () {
+        if (campoIndex <= maxIndex) {
+            const nuevoCampoHTML = `
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nomBenef${campoIndex}" class="form-label">Nombre Completo (${campoIndex})</label>
+                        <input type="text" name="nomBenef${campoIndex}" placeholder="Nombre Completo (${campoIndex})" class="form-control" id="nomBenef${campoIndex}">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label for="rutBenef${campoIndex}" class="form-label">RUT (${campoIndex})</label>
+                        <input type="text" name="rutBenef${campoIndex}" placeholder="RUT (${campoIndex})" class="form-control" id="rutBenef${campoIndex}">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label for="direccionBenef${campoIndex}" class="form-label">Dirección (${campoIndex})</label>
+                        <input type="text" name="direccionBenef${campoIndex}" placeholder="Dirección (${campoIndex})" class="form-control" id="direccionBenef${campoIndex}">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label for="porcentajeBenef${campoIndex}" class="form-label">Porcentaje de participación beneficiario (${campoIndex})</label>
+                        <input type="number" name="porcentajeBenef${campoIndex}" placeholder="% (${campoIndex})" class="form-control" id="porcentajeBenef${campoIndex}" value="10" min="10" max="100">
+                    </div>
+                    <br>
+                    <div class="mb-4"></div>
+                </div>`;
+            
+            const nuevoCampoContainer = document.createElement('div');
+            nuevoCampoContainer.innerHTML = nuevoCampoHTML;
+            camposBenefFinales.appendChild(nuevoCampoContainer);
 
-            beneficiariosAgregados.push(obtenerDatosBeneficiarios(clienteIndex));
-
-            guardarDatosBeneficiarios();
-
-            clienteIndex++;
+            campoIndex++;
         } else {
-            alert('El máximo de beneficiarios finales es de 10')
+            alert('El máximo de beneficiarios a agregar es de 10');
         }
-    }
-
-    function generarHTMLBeneficiario(index) {
-        return `
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="nomBenef${index}" class="form-label">Nombre Completo (${index})</label>
-                    <input type="text" name="nomBenef${index}" placeholder="Nombre Completo (${index})" class="form-control" id="nomBenef${index}">
-                </div>
-                <div class="col-md-6">
-                    <label for="rutBenef${index}" class="form-label">RUT (${index})</label>
-                    <input type="text" name="rutBenef${index}" placeholder="RUT (${index})" class="form-control" id="rutBenef${index}">
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="col-md-6">
-                    <label for="direccionBenef${index}" class="form-label">Dirección (${index})</label>
-                    <input type="text" name="direccionBenef${index}" placeholder="Dirección (${index})" class="form-control" id="direccionBenef${index}">
-                </div>
-                <div class="col-md-6">
-                    <label for="porcentajeBenef${index}" class="form-label">Porcentaje de participación beneficiario (${index})</label>
-                    <input type="number" name="porcentajeBenef${index}" placeholder="% (${index})" class="form-control" id="porcentajeBenef${index}" value="10" min="10" max="100">
-                </div>
-                <div class="mb-4"></div>
-            </div>
-        `;
-    }
-
-    function obtenerDatosBeneficiarios(index) {
-        return {
-            nomBenef: document.getElementById(`nomBenef${index}`).value,
-        }
-    }
-
-    function guardarDatosBeneficiarios() {
-        localStorage.setItem('beneficiariosAgregados', JSON.stringify(beneficiariosAgregados));
-    }
+    });
 
     function limpiarBeneficiarios() {
-        if (clienteIndex  > 2) {
+        if (campoIndex > 2) {
             var ultimoCampo = camposBenefFinales.lastElementChild;
-
             camposBenefFinales.removeChild(ultimoCampo);
-
-            beneficiariosAgregados.pop();
-
-            clienteIndex --;
-
-            guardarDatosBeneficiarios();
-        }else {
-            alert('No hay Beneficiarios para limpiar')
-        }
-    }
-
-    function cargarDatosBeneficiarios() {
-        const datosGuardados = localStorage.getItem('beneficiariosAgregados');
-        if (datosGuardados) {
-            beneficiariosAgregados = JSON.parse(datosGuardados);
-            beneficiariosAgregados.forEach((beneficiario, index) => {
-                const nuevoBeneficiarioHTML = generarHTMLBeneficiario(index + 2);
-                const nuevoBeneficiarioDiv = document.createElement('div');
-                nuevoBeneficiarioDiv.innerHTML = nuevoBeneficiarioHTML;
-                camposBenefFinales.appendChild(nuevoBeneficiarioDiv);
-            });
-            clienteIndex = beneficiariosAgregados.length + 2;
+            campoIndex--;
+        } else {
+            alert('No hay Beneficiarios para limpiar');
         }
     }
 });

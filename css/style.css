@@ -12,7 +12,8 @@ body {
   font-size: 120%;
   display: flex;
   position: fixed;
-  z-index: 1000; /* Ajustar según sea necesario para estar por encima de la herramienta de desarrollo */
+  z-index: 1000;
+  margin-top:auto; /* Ajustar según sea necesario para estar por encima de la herramienta de desarrollo */
 }
 
 
@@ -22,10 +23,16 @@ body {
 
 h1 {
   text-align: center;
+  font-weight: bold;
 }
 
 h2 {
   text-align: center;
+  text-decoration: underline;
+}
+
+h3 {
+  font-weight: bold;
 }
 
 p {
