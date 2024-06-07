@@ -17,17 +17,22 @@ document.addEventListener('DOMContentLoaded', function () { //Cambiar a modo osc
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("opcionEstCivilPerNatu").addEventListener("change", function () {
-    var estadoCivil = this.value; // Obtener el valor seleccionado del select
-    var conyugeDiv = document.getElementById("conyuge");
+  document.querySelectorAll('input[name="opcionEstadoCivil"]').forEach(function (radio) {
+    radio.addEventListener("change", function () {
+      var estadoCivil = this.value; // valor del radio
+      var conyugeDiv = document.getElementById("conyuge");
 
-    if (estadoCivil === "1") { // Si la opción seleccionada es "Casado(a)"
-      conyugeDiv.style.display = "block"; // Mostrar el div "conyuge"
-    } else {
-      conyugeDiv.style.display = "none"; // Ocultar el div "conyuge" para cualquier otra opción
-    }
+      if (conyugeDiv) { //div conyuge 
+        if (estadoCivil === "1") { // Si la opción seleccionada es "Casado(a)"
+          conyugeDiv.style.display = "block"; // Mostrar el div "conyuge"
+        } else {
+          conyugeDiv.style.display = "none"; // Ocultar el div "conyuge" 
+        }
+      }
+    });
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () { //mostrar contenido si se responde "si" y ocultarlo si se elige "no"
   document.getElementById("clientePEPsi").addEventListener("click", function () {

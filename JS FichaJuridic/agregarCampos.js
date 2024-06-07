@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () { //agregar cta corrie
     var camposCtasCorrientes = document.getElementById('camposCtasCorrientes');
     var limpiarCtasCorrientesBtn = document.getElementById('limpiarCtasCorrientesBtn');
 
-    limpiarCtasCorrientesBtn.addEventListener('click', limpiarCtasCorrientes)
+    limpiarCtasCorrientesBtn.addEventListener('click', limpiarCtasCorrientes);
 
     var campoIndex = 2;
     let maxIndex = 3;
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="razonAccio${campoIndex}" class="form-label">Razón Social (${campoIndex})</label>
-                        <input type="text" name="razonAccio${campoIndex}" placeholder="Razón Social" class="form-control" id="razonAccio${campoIndex}">
+                        <input type="text" name="razonAccio${campoIndex}" placeholder="Razón Social (${campoIndex})" class="form-control" id="razonAccio${campoIndex}">
                     </div>
                     <br>
                     <div class="col-md-6">
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <br>
                     <div class="col-md-6">
                         <label for="rutAccio${campoIndex}" class="form-label">RUT (${campoIndex})</label>
-                        <input type="text" name="rutAccio${campoIndex}" placeholder="RUT" class="form-control" id="rutAccio${campoIndex}">
+                        <input type="text" name="rutAccio${campoIndex}" placeholder="RUT (${campoIndex})" class="form-control" id="rutAccio${campoIndex}">
                     </div>
                     <br>
                     <br>

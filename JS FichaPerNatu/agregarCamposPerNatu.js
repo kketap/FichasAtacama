@@ -4,10 +4,16 @@
 document.addEventListener('DOMContentLoaded', function () {
   var agregarAAMBtnPerNatu = document.getElementById('agregarAAMBtnPerNatu');
   var camposContainerAAM = document.getElementById('camposAAMPerNatu');
+  var limpiarAAMBtn = document.getElementById('limpiarAAMBtn');
+
+  limpiarAAMBtn.addEventListener('click', limpiarAAM)
+
   var campoIndex = 2;
+  let maxIndex = 3;
 
   agregarAAMBtnPerNatu.addEventListener('click', function () {
-    var nuevoCampoHTML = `
+    if (campoIndex <= maxIndex) {
+      var nuevoCampoHTML = `
               <!-- código HTML-->
                       <div class="col-md-6">
               <label for="nombreAAMPerNatu${campoIndex}" class="form-label">Nombre Completo (${campoIndex})</label>
@@ -62,28 +68,46 @@ document.addEventListener('DOMContentLoaded', function () {
               <br>
               <br>
               <br>
-              <br>
           `;
-    var nuevoCampoContainer = document.createElement('div');
-    nuevoCampoContainer.classList.add('row');
-    nuevoCampoContainer.innerHTML = nuevoCampoHTML;
+      var nuevoCampoContainer = document.createElement('div');
+      nuevoCampoContainer.classList.add('row');
+      nuevoCampoContainer.innerHTML = nuevoCampoHTML;
 
-    camposContainerAAM.appendChild(nuevoCampoContainer);
+      camposContainerAAM.appendChild(nuevoCampoContainer);
 
-    campoIndex++;
+      campoIndex++;
+    } else {
+      alert("Solo pueden haber 3 personas autorizadas")
+    }
   });
+
+  function limpiarAAM() {
+    if (campoIndex > 2) {
+      var ultimoCampo = camposContainerAAM.lastElementChild;
+
+      camposContainerAAM.removeChild(ultimoCampo);
+
+      campoIndex--;
+    } else {
+      alert('No hay Personas AAM para limpiar')
+    }
+  }
 });
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
   var agregarAAMBtnPerNatu = document.getElementById('agregarCtasCorrientesPerNatu');
-  var camposContainerAAM = document.getElementById('camposCtasCorrientesPerNatu');
+  var camposContainerCtasCorrientes = document.getElementById('camposCtasCorrientesPerNatu');
+  var limpiarCtasCorrientesBtn = document.getElementById('limpiarCtasCorrientesBtn');
+
+  limpiarCtasCorrientesBtn.addEventListener('click', limpiarCtasCorrientes);
+
   var campoIndex = 2;
-  var maxIndex = 4;
+  var maxIndex = 3;
 
   agregarAAMBtnPerNatu.addEventListener('click', function () {
-    if (campoIndex < maxIndex) {
+    if (campoIndex <= maxIndex) {
       var nuevoCampoHTML = `
               <!-- código HTML-->
               <div class="col-md-6">
@@ -118,19 +142,28 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
               <br>
               <br>
-              <br>
-              <br>
-              <br>
           `;
       var nuevoCampoContainer = document.createElement('div');
       nuevoCampoContainer.classList.add('row');
       nuevoCampoContainer.innerHTML = nuevoCampoHTML;
 
-      camposContainerAAM.appendChild(nuevoCampoContainer);
+      camposContainerCtasCorrientes.appendChild(nuevoCampoContainer);
 
       campoIndex++;
     } else {
       alert("El Máximo cuentas corrientes a agregar es de 3")
     }
   });
+
+  function limpiarCtasCorrientes() {
+    if (campoIndex > 2) {
+      var ultimoCampo = camposContainerCtasCorrientes.lastElementChild;
+
+      camposContainerCtasCorrientes.removeChild(ultimoCampo);
+
+      campoIndex--;
+    } else {
+      alert('No hay Cuentas Corrientes para limpiar')
+    }
+  }
 });

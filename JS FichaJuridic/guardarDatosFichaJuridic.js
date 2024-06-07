@@ -17,6 +17,8 @@ function guardarDatosFormulario1() {
         rutAccio: document.getElementById('rutAccio').value,
         accionistaBenefPregunta: obtenerValorRadio('accionistaBenefPregunta'),
 
+        razonAccio2: document.getElementById('razonAccio2').value,
+
         nomBenef: document.getElementById('nomBenef').value,
         rutBenef: document.getElementById('rutBenef').value,
         direccionBenef: document.getElementById('direccionBenef').value,
@@ -90,10 +92,15 @@ function guardarDatosFormulario1() {
         fechaConstCRS: document.getElementById('fechaConstCRS').value,
         nacionalidadCRS: document.getElementById('nacionalidadCRS').value,
 
-        razonPerfil : document.getElementById('razonPerfil').value,
-        rutPerfil : document.getElementById('rutPerfil').value,
+        razonPerfil: document.getElementById('razonPerfil').value,
+        rutPerfil: document.getElementById('rutPerfil').value,
         clienteConocidoOpcion: obtenerValorRadioClienteConocidoOpcion('clienteConocidoOpcion'),
-        referenciaPerfil : document.getElementById('referenciaPerfil').value,
+        referenciaPerfil: document.getElementById('referenciaPerfil').value,
+
+        riesgoOpcion: obtenerValorRadioRiesgoOpcion('riesgoOpcion'),
+        funcPublicOpcion: obtenerValorRadiofuncPublicOpcion('funcPublicOpcion'),
+        listasNegOpcion: obtenerValorRadioListasNegOpcion('listasNegOpcion'),
+        autorizacionOpcion: obtenerValorRadioautorizacionOpcion('autorizacionOpcion'),
 
 
     };
@@ -112,7 +119,8 @@ function cargarDatosFormulario1() {
                     if (key === 'accionistaBenefPregunta' || key === 'opcionMedios' || key === 'opcionRelacionNatuAAM' ||
                         key === 'opcionRelacionAAM' || key === 'opcionInfoCliente' || key === 'opcionNivelRenta' || key === 'opcionPatrimonio'
                         || key === 'opcionClientePEP' || key === 'AreaPregunta1' || key === 'AreaPregunta2' || key === 'AreaPregunta3' ||
-                        key === 'declaroInversionista' || key === 'clienteConocidoOpcion') {
+                        key === 'declaroInversionista' || key === 'clienteConocidoOpcion' || key === 'riesgoOpcion' ||
+                        key === 'funcPublicOpcion' || key === 'listasNegOpcion' || key === 'autorizacionOpcion') {
                         var radioSeleccionado = document.querySelector(`input[name="${key}"][value="${value}"]`);
                         if (radioSeleccionado) {
                             radioSeleccionado.checked = true;
@@ -188,6 +196,26 @@ function obtenerValorRadiodeclaroInversionista(declaroInversionista) {
 
 function obtenerValorRadioClienteConocidoOpcion(clienteConocidoOpcion) {
     var radioSeleccionado = document.querySelector(`input[name="${clienteConocidoOpcion}"]:checked`);
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
+}
+
+function obtenerValorRadioRiesgoOpcion(riesgoOpcion) {
+    var radioSeleccionado = document.querySelector(`input[name="${riesgoOpcion}"]:checked`);
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
+}
+
+function obtenerValorRadiofuncPublicOpcion(funcPublicOpcion) {
+    var radioSeleccionado = document.querySelector(`input[name="${funcPublicOpcion}"]:checked`);
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
+}
+
+function obtenerValorRadioListasNegOpcion(listasNegOpcion) {
+    var radioSeleccionado = document.querySelector(`input[name="${listasNegOpcion}"]:checked`);
+    return radioSeleccionado ? radioSeleccionado.value : undefined;
+}
+
+function obtenerValorRadioautorizacionOpcion(autorizacionOpcion) {
+    var radioSeleccionado = document.querySelector(`input[name="${autorizacionOpcion}"]:checked`);
     return radioSeleccionado ? radioSeleccionado.value : undefined;
 }
 
